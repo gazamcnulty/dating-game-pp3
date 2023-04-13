@@ -48,7 +48,8 @@ Please note, if you dont choose a, b, or c , it will default to option c
 USER = input("Please enter your name:")
 
 print(
-f'''Pleased to make your acquaintance {USER}\n
+f'''Pleased to make your acquaintance {USER}
+
 The dating world is a tempestuous place, but you're on the hunt for love.
 There are 3 potential star crossed lovers on the horizon.
 You've matched with all three, so lets get to know them!
@@ -57,7 +58,7 @@ You've matched with all three, so lets get to know them!
 input("Are you ready to meet the first match? y/n :")
 
 print('''
-Henrietta\n
+Henrietta
 
 Profile : 
 Henrietta is a 25 year old college student at Trinity College. 
@@ -76,7 +77,7 @@ input("Are you ready to meet the second match? y/n :")
 
 print(
 '''
-Francis:
+Francis
 
 Profile:
 Francis is a 29 year old barman who works in a busy pub in Dublin city. 
@@ -95,7 +96,7 @@ input("Are you ready to meet the third match? y/n :")
 
 print(
 '''
-Sarah:
+Sarah
 
 Profile:
 Sarah is 34 year old marketing consultant who works in Dublin.
@@ -118,9 +119,7 @@ print(
 One of these three captivating individuals could be your one true love!
 But as cruel as cupid's arrow, you must choose one and forsake the others.
 Who do you want to go on a date with?
-a = Henrietta
-b = Francis
-c = Sarah
+a) Henrietta, b) Francis, c) Sarah
 ''')
 
 
@@ -176,10 +175,11 @@ No need to rush anywhere , its fine weather for a walk.
 snowy = '''
 After your initial greetings at the luas stop by St.Stephens Green,
 you are met with heavy snow beginning to fall.
-While it is cold,
+While it is a little cold,
 the crunching of snow under your shoes reminds you both fondly of christmas.
 Its nice to be outside in the snow, just don’t freeze up!
 '''
+
 
 if time == 'tomorrow':
     weather = rainy
@@ -188,3 +188,130 @@ elif time == 'the weekend':
 else:
     weather = snowy
 print(weather)
+
+print(
+'''
+While you both seem in good form , you should decide what to do
+a ) go straight to the date venue
+b ) go for a stroll in St.Stephens Green Park
+c) go for a stroll in the shopping centre , grab coffees
+'''
+)
+
+first_steps = input("What would you like to do?")
+
+if first_steps == 'a' and weather == rainy:
+    print(
+    f'''
+    Good call, its not nice to be out in this rain, 
+    best to get to the venue ASAP.
+    {date} might get a bit wet but the weather isn't your fault
+    No change to endearment score
+    ''')
+elif first_steps == 'b' and weather == rainy:
+    print(
+    f'''
+    At your insistence, you and {date} go for a walk in the park.
+    It is lashing rain, while you try to make smalltalk.
+    {date} is unimpressed by your knowledge of the park's history,
+    they seem annoyed and are soaked through to the bone.
+    Maybe the park stroll wasn't the best idea...
+    Minus 1 point from endearement score
+    ''')
+    ENDEARMENT -= 1
+    print(ENDEARMENT)
+elif first_steps == 'c' and weather == rainy:
+    print(
+    f'''
+    You suggest a stroll around the shopping centre, 
+    before heading straight to the venue.
+    You and {date} grab some take away coffees,
+    make small talk and stroll around.
+    Its a little awkward but it was a good idea
+    to get out of the rain. 
+    {date} seems impressed with your initiative
+    Plus 1 point to endearement score
+    ''')
+    ENDEARMENT += 1
+    print(ENDEARMENT)
+elif first_steps == 'a' and weather == sunny:
+    print(
+    f'''
+    At your insistence, you and {date} head straight for the venue.
+    {date} doesn't seem bothered by heading straight there
+    but they comment that it seems like it would have been a nice day for a stroll
+    No change to endearment score
+    ''')
+elif first_steps == 'b' and weather == sunny:
+    print(
+    f'''
+    At your insistence, you and {date} go for a walk in the park.
+    The sun is shining, while you try to make smalltalk.
+    {date} is impressed by your knowledge of the park's history,
+    the fresh air and nice weather puts you both in a good mood.
+    {date} seems happy you suggested it
+    Plus 1 point to endearement score
+    ''')
+    ENDEARMENT += 1
+    print(fENDEARMENT)
+elif first_steps == 'c' and weather == sunny:
+    print(
+    f'''
+    You suggest a stroll around the shopping centre, 
+    before heading straight to the venue.
+    You and {date} grab some take away coffees,
+    make small talk and stroll around.
+    Its a bit stuffy in the shopping centre unlike outside,
+    the weather is so nice and the fresh air is refreshing,
+    {date} seems disappointed you're not outdoors
+    Minus 1 point from endearment score
+    ''')
+    ENDEARMENT -= 1
+    print(ENDEARMENT)
+elif first_steps == 'a' and weather == snowy:
+    print(
+    f'''
+    At your insistence, you and {date} head straight for the venue.
+    {date} doesn't seem bothered by heading straight there
+    but they comment that it seems like it would have been a nice day for a stroll
+    No change to endearment score
+    ''')
+elif first_steps == 'b' and weather == snowy:
+    print(
+    f'''
+    At your insistence, you and {date} go for a walk in the park.
+    Its a bit cold but the gentle snowfall is breathtaking
+    {date} is impressed by your knowledge of the park's history,
+    the blanket of snow reminds you of christmas
+    it puts the both of you in a good mood
+    {date} seems happy you suggested the walk in the park
+    Plus 1 point to endearement score
+    ''')
+    ENDEARMENT += 1
+    print(ENDEARMENT)
+elif first_steps == 'c' and weather == snowy:
+    print(
+    f'''
+    You suggest a stroll around the shopping centre, 
+    before heading straight to the venue.
+    You and {date} grab some take away coffees,
+    make small talk and stroll around.
+    Its warm indoors so its a relief from the cold,
+    but you're not getting to see much snowfall
+    {date} seems disappointed you're not outdoors in the snow
+    Minus 1 point from endearment score
+    ''')
+    ENDEARMENT -= 1
+    print(ENDEARMENT)
+else:
+    print(
+    f'''
+    At your insistence, you and {date} head straight for the venue.
+    {date} doesn't seem bothered by heading straight there
+    but they comment that it seems like it would have been nice
+    to stroll around or grab a coffee somewhere first
+    No change to endearment score
+    ''')
+
+
+
