@@ -1,5 +1,4 @@
-import math
-import random 
+import time
 
 #consts
 USER = None
@@ -10,9 +9,11 @@ date = None
 
 print(
 '''
- there! Welcome to the Dating Game!
+Hello there! Welcome to the Dating Game!
+
 You have been given the chance to find true love. 
 You must pick one of 3 hearthrobs , and then embark on a romantic date.
+
 Your choices matter, each date has their own preferences,
 and remember, lady luck is always watching!
 ''')
@@ -33,6 +34,7 @@ print(
 ──────────▀
 
 ''')
+time.sleep(3)
 
 print(
 '''
@@ -44,18 +46,22 @@ These choices will decide the outcome of the date.
 Please note, if you dont choose a, b, or c , it will default to option c
 '''
 )
-
+time.sleep(2)
 USER = input("Please enter your name:")
 
+print(f"Pleased to make your acquaintance {USER}")
+time.sleep(2)
+
 print(
-f'''Pleased to make your acquaintance {USER}
+'''
 
 The dating world is a tempestuous place, but you're on the hunt for love.
 There are 3 potential star crossed lovers on the horizon.
 You've matched with all three, so lets get to know them!
 ''')
 
-input("Are you ready to meet the first match? y/n :")
+time.sleep(3)
+input("Are you ready to meet the first match? (press any button to continue) :")
 
 print('''
 Henrietta
@@ -73,7 +79,7 @@ She doesn’t drink alcohol but loves to drink coffee.
 Henrietta is a vegetarian and her favourite food is Chana Masala.
 ''')
 
-input("Are you ready to meet the second match? y/n :")
+input("Are you ready to meet the second match? (press any button to continue) :")
 
 print(
 '''
@@ -92,7 +98,7 @@ He enjoys sampling the latest craft beers.
 His favourite food is Supermacs snack box with chicken and chips. 
 ''')
 
-input("Are you ready to meet the third match? y/n :")
+input("Are you ready to meet the third match? (press any button to continue) :")
 
 print(
 '''
@@ -114,6 +120,7 @@ She is partial to glass of cabernet sauvignon after a long day of work.
 She is allergic to shellfish , her favourite food is lasagna.
 ''')
 
+input(" (press any button to continue) :")
 print(
 ''' 
 One of these three captivating individuals could be your one true love!
@@ -123,9 +130,7 @@ a) Henrietta, b) Francis, c) Sarah
 ''')
 
 
-
 date_choice = input("Please choose a, b, or c :")
-print(choice)
 
 if date_choice == 'a':
     date = 'Henrietta'
@@ -134,6 +139,7 @@ elif date_choice == 'b':
 else:
     date = 'Sarah'
 print(f"You've chosen to go on a date with {date}!")
+time.sleep(3)
 
 print(
 '''
@@ -144,19 +150,27 @@ Do you want to go on the date a) tomorrow , b) the weekend, c) next week?
 time_choice = input("Please choose a, b, or c :")
 
 if time_choice == 'a':
-    time = 'tomorrow'
+    date_time = 'tomorrow'
 elif time_choice == 'b':
-    time = 'the weekend'
+    date_time = 'this weekend'
 else:
-    time = 'next week'
-print(f"You've chosen to go on the date with {date} {time}!")
+    date_time = 'next week'
 
 print(
 f'''
-The big day is here {USER}! Time to to on our date with {date}!
+You've chosen to go on the date with {date} {date_time}!
+'''
+)
+time.sleep(3)
+
+print(
+f'''
+The big day is here {USER}!
+Time to to on our date with {date}!
 You have arranged to meet at the luas stop
 just outside St.Stepehen's Green Park in Dublin city centre.
 ''')
+
 
 rainy = '''
 After your initial greetings at the luas stop by St.Stephens Green,
@@ -180,14 +194,14 @@ the crunching of snow under your shoes reminds you both fondly of christmas.
 Its nice to be outside in the snow, just don’t freeze up!
 '''
 
-
-if time == 'tomorrow':
+if date_time == 'tomorrow':
     weather = rainy
-elif time == 'the weekend':
+elif date_time == 'this weekend':
     weather = sunny
 else:
     weather = snowy
 print(weather)
+time.sleep(5)
 
 print(
 '''
@@ -197,8 +211,9 @@ b ) go for a stroll in St.Stephens Green Park
 c) go for a stroll in the shopping centre , grab coffees
 '''
 )
+time.sleep(5)
 
-first_steps = input("What would you like to do?")
+first_steps = input("Please choose a, b, or c")
 
 if first_steps == 'a' and weather == rainy:
     print(
@@ -208,6 +223,7 @@ if first_steps == 'a' and weather == rainy:
     {date} might get a bit wet but the weather isn't your fault
     No change to endearment score
     ''')
+    print(f"Your endearment score is {ENDEARMENT}")
 elif first_steps == 'b' and weather == rainy:
     print(
     f'''
@@ -219,7 +235,7 @@ elif first_steps == 'b' and weather == rainy:
     Minus 1 point from endearement score
     ''')
     ENDEARMENT -= 1
-    print(ENDEARMENT)
+    print(f"Your endearment score is {ENDEARMENT}")
 elif first_steps == 'c' and weather == rainy:
     print(
     f'''
@@ -233,7 +249,7 @@ elif first_steps == 'c' and weather == rainy:
     Plus 1 point to endearement score
     ''')
     ENDEARMENT += 1
-    print(ENDEARMENT)
+    print(f"Your endearment score is {ENDEARMENT}")
 elif first_steps == 'a' and weather == sunny:
     print(
     f'''
@@ -242,6 +258,7 @@ elif first_steps == 'a' and weather == sunny:
     but they comment that it seems like it would have been a nice day for a stroll
     No change to endearment score
     ''')
+    print(f"Your endearment score is {ENDEARMENT}")
 elif first_steps == 'b' and weather == sunny:
     print(
     f'''
@@ -253,7 +270,7 @@ elif first_steps == 'b' and weather == sunny:
     Plus 1 point to endearement score
     ''')
     ENDEARMENT += 1
-    print(fENDEARMENT)
+    print(f"Your endearment score is {ENDEARMENT}")
 elif first_steps == 'c' and weather == sunny:
     print(
     f'''
@@ -267,7 +284,7 @@ elif first_steps == 'c' and weather == sunny:
     Minus 1 point from endearment score
     ''')
     ENDEARMENT -= 1
-    print(ENDEARMENT)
+    print(f"Your endearment score is {ENDEARMENT}")
 elif first_steps == 'a' and weather == snowy:
     print(
     f'''
@@ -276,6 +293,7 @@ elif first_steps == 'a' and weather == snowy:
     but they comment that it seems like it would have been a nice day for a stroll
     No change to endearment score
     ''')
+    print(f"Your endearment score is {ENDEARMENT}")
 elif first_steps == 'b' and weather == snowy:
     print(
     f'''
@@ -288,7 +306,7 @@ elif first_steps == 'b' and weather == snowy:
     Plus 1 point to endearement score
     ''')
     ENDEARMENT += 1
-    print(ENDEARMENT)
+    print(f"Your endearment score is {ENDEARMENT}")
 elif first_steps == 'c' and weather == snowy:
     print(
     f'''
@@ -302,7 +320,7 @@ elif first_steps == 'c' and weather == snowy:
     Minus 1 point from endearment score
     ''')
     ENDEARMENT -= 1
-    print(ENDEARMENT)
+    print(f"Your endearment score is {ENDEARMENT}")
 else:
     print(
     f'''
@@ -312,6 +330,93 @@ else:
     to stroll around or grab a coffee somewhere first
     No change to endearment score
     ''')
+    print(f"Your endearment score is {ENDEARMENT}")
+time.sleep(8)
 
+print(
+f'''
+Time to head to the date venue. 
 
+You've decided to go to an italian restaruant.
+You and {date} arrive at the restaurant and are met with a friendly greeting of the host. 
+Your booking is confirmed and they bring you to the table.
 
+Its an old fashioned italian restaurant,
+with old furniture and paintings on the wall, 
+candlelight casting dancing shadows across square tables with green tablecloth.
+You can see the busy kitchen from here, 
+as well as a gentleman playing piano and singing in italian. 
+
+The music augments the already romantic atmosphere. 
+You both sit down and the host places menus on front of you.
+'''
+)
+time.sleep(10)
+
+print(
+f'''
+The menu has a lot of options , but the prices are rather expensive. 
+Oh no! 
+Your date doesn’t seem to be bothered by this
+as they confidently peruse the menu with interest. 
+{date} asks “so what are you thinking of ordering?”
+'''
+)
+time.sleep(7)
+
+print(
+'''
+What meal will you order from the menu?
+a) Lasagna b)Spaghetti and meatballs c)Veggie pasta
+'''
+)
+
+meal_choice = input("Please choose a, b, or c: ")
+
+if meal_choice == 'a' and date == 'Sarah':
+    print(
+    '''
+    Sarah is beaming. 
+    "No way I was going to order Lasagne too!
+    Lasagne is my favourite food.
+    I guess we have something in common!"
+    Plus 1 point to endearement score
+    '''
+    )
+    ENDEARMENT += 1
+    print(f"Your endearment score is {ENDEARMENT}")
+elif meal_choice == 'b' and date == 'Francis':
+    print(
+    '''
+    Francis is beaming. 
+    "No way I was going to order meatballs too!
+    Meaty dishes are my favourite,
+    I guess we have something in common!"
+    Plus 1 point to endearement score
+    '''
+    )
+    ENDEARMENT += 1
+    print(f"Your endearment score is {ENDEARMENT}")
+elif meal_choice == 'c' and date == 'Henrietta':
+    print(
+    '''
+    Henrietta is beaming. 
+    "No way I was going to order veggie food too!
+    I only eat vegetarian food,
+    I guess we have something in common!"
+    Plus 1 point to endearement score
+    '''
+    )
+    ENDEARMENT += 1
+    print(f"Your endearment score is {ENDEARMENT}")
+else:
+    print(
+    f'''
+    You order your meal but {date} orders something
+    completely different from you.
+    You smile awkwardly at each other and 
+    look around the room for something to talk about.
+    No change to endearment score.
+    '''
+    )
+    print(f"Your endearment score is {ENDEARMENT}")
