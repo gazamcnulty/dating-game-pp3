@@ -140,7 +140,7 @@ a) Henrietta, b) Francis, c) Sarah
 ''')
 
 
-date_choice = input("Please choose a, b, or c :")
+date_choice = input("Please choose a, b, or c :").lower().strip()
 
 if date_choice == 'a':
     date = 'Henrietta'
@@ -160,7 +160,7 @@ We next need to decide when to go on the date.
 Do you want to go on the date a) tomorrow , b) the weekend, c) next week?
 ''')
 
-time_choice = input("Please choose a, b, or c :")
+time_choice = input("Please choose a, b, or c :").lower().strip()
 
 if time_choice == 'a':
     date_time = 'tomorrow'
@@ -229,7 +229,7 @@ c) go for a stroll in the shopping centre , grab coffees
 '''
 )
 
-first_steps = input("Please choose a, b, or c")
+first_steps = input("Please choose a, b, or c").lower().strip()
 os.system('clear')
 
 if first_steps == 'a' and weather == rainy:
@@ -348,7 +348,8 @@ else:
     No change to endearment score
     ''')
     print(f"Your endearment score is {ENDEARMENT}")
-time.sleep(12)
+
+input(" (press any button to continue) :")
 os.system('clear')
 
 print(
@@ -369,7 +370,7 @@ The music augments the already romantic atmosphere.
 You both sit down and the host places menus on front of you.
 '''
 )
-time.sleep(15)
+input(" (press any button to continue) :")
 os.system('clear')
 
 print(
@@ -381,7 +382,7 @@ as they confidently peruse the menu with interest.
 {date} asks “so what are you thinking of ordering?”
 '''
 )
-time.sleep(12)
+time.sleep(15)
 os.system('clear')
 
 print(
@@ -391,7 +392,7 @@ a) Lasagna b)Spaghetti and meatballs c)Veggie pasta
 '''
 )
 
-meal_choice = input("Please choose a, b, or c: ")
+meal_choice = input("Please choose a, b, or c: ").lower().strip()
 os.system('clear')
 
 if meal_choice == 'a' and date == 'Sarah':
