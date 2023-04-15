@@ -1,4 +1,5 @@
 import time
+import os
 
 #consts
 USER = None
@@ -34,7 +35,8 @@ print(
 ──────────▀
 
 ''')
-time.sleep(3)
+input(" (press any button to continue) :")
+os.system('clear')
 
 print(
 '''
@@ -46,11 +48,13 @@ These choices will decide the outcome of the date.
 Please note, if you dont choose a, b, or c , it will default to option c
 '''
 )
-time.sleep(2)
+time.sleep(8)
 USER = input("Please enter your name:")
+os.system('clear')
 
 print(f"Pleased to make your acquaintance {USER}")
-time.sleep(2)
+time.sleep(4)
+os.system('clear')
 
 print(
 '''
@@ -60,8 +64,10 @@ There are 3 potential star crossed lovers on the horizon.
 You've matched with all three, so lets get to know them!
 ''')
 
-time.sleep(3)
+time.sleep(8)
+os.system('clear')
 input("Are you ready to meet the first match? (press any button to continue) :")
+os.system('clear')
 
 print('''
 Henrietta
@@ -80,6 +86,7 @@ Henrietta is a vegetarian and her favourite food is Chana Masala.
 ''')
 
 input("Are you ready to meet the second match? (press any button to continue) :")
+os.system('clear')
 
 print(
 '''
@@ -99,6 +106,7 @@ His favourite food is Supermacs snack box with chicken and chips.
 ''')
 
 input("Are you ready to meet the third match? (press any button to continue) :")
+os.system('clear')
 
 print(
 '''
@@ -121,6 +129,8 @@ She is allergic to shellfish , her favourite food is lasagna.
 ''')
 
 input(" (press any button to continue) :")
+os.system('clear')
+
 print(
 ''' 
 One of these three captivating individuals could be your one true love!
@@ -138,8 +148,11 @@ elif date_choice == 'b':
     date = 'Francis'
 else:
     date = 'Sarah'
+
+os.system('clear')
 print(f"You've chosen to go on a date with {date}!")
-time.sleep(3)
+time.sleep(4)
+os.system('clear')
 
 print(
 '''
@@ -156,12 +169,14 @@ elif time_choice == 'b':
 else:
     date_time = 'next week'
 
+os.system('clear')
 print(
 f'''
 You've chosen to go on the date with {date} {date_time}!
 '''
 )
-time.sleep(3)
+time.sleep(4)
+os.system('clear')
 
 print(
 f'''
@@ -170,7 +185,8 @@ Time to to on our date with {date}!
 You have arranged to meet at the luas stop
 just outside St.Stepehen's Green Park in Dublin city centre.
 ''')
-
+time.sleep(10)
+os.system('clear')
 
 rainy = '''
 After your initial greetings at the luas stop by St.Stephens Green,
@@ -201,7 +217,8 @@ elif date_time == 'this weekend':
 else:
     weather = snowy
 print(weather)
-time.sleep(5)
+time.sleep(10)
+os.system('clear')
 
 print(
 '''
@@ -211,9 +228,9 @@ b ) go for a stroll in St.Stephens Green Park
 c) go for a stroll in the shopping centre , grab coffees
 '''
 )
-time.sleep(5)
 
 first_steps = input("Please choose a, b, or c")
+os.system('clear')
 
 if first_steps == 'a' and weather == rainy:
     print(
@@ -331,7 +348,8 @@ else:
     No change to endearment score
     ''')
     print(f"Your endearment score is {ENDEARMENT}")
-time.sleep(8)
+time.sleep(12)
+os.system('clear')
 
 print(
 f'''
@@ -351,7 +369,8 @@ The music augments the already romantic atmosphere.
 You both sit down and the host places menus on front of you.
 '''
 )
-time.sleep(10)
+time.sleep(15)
+os.system('clear')
 
 print(
 f'''
@@ -362,7 +381,8 @@ as they confidently peruse the menu with interest.
 {date} asks “so what are you thinking of ordering?”
 '''
 )
-time.sleep(7)
+time.sleep(12)
+os.system('clear')
 
 print(
 '''
@@ -372,6 +392,7 @@ a) Lasagna b)Spaghetti and meatballs c)Veggie pasta
 )
 
 meal_choice = input("Please choose a, b, or c: ")
+os.system('clear')
 
 if meal_choice == 'a' and date == 'Sarah':
     print(
@@ -420,3 +441,4 @@ else:
     '''
     )
     print(f"Your endearment score is {ENDEARMENT}")
+    time.sleep()
