@@ -1,12 +1,23 @@
 import time
 import os
+import sys
 
 #consts
 USER = None
+global ENDEARMENT 
 ENDEARMENT = 5
 
 choice = None
 date = None
+
+print(
+'''
+███ █┼█ ███ ┼┼ ██▄ ███ ███ ███ █┼┼█ ████ ┼┼ ████ ███ █▄┼▄█ ███
+┼█┼ █▄█ █▄┼ ┼┼ █┼█ █▄█ ┼█┼ ┼█┼ ██▄█ █┼▄▄ ┼┼ █┼▄▄ █▄█ █┼█┼█ █▄┼
+┼█┼ █┼█ █▄▄ ┼┼ ███ █┼█ ┼█┼ ▄█▄ █┼██ █▄▄█ ┼┼ █▄▄█ █┼█ █┼┼┼█ █▄▄
+'''
+)
+time.sleep(4)
 
 print(
 '''
@@ -18,23 +29,8 @@ You must pick one of 3 hearthrobs , and then embark on a romantic date.
 Your choices matter, each date has their own preferences,
 and remember, lady luck is always watching!
 ''')
+time.sleep(5)
 
-print(
-    '''
-───▄▄▄▄▄▄─────▄▄▄▄▄▄
-─▄█▓▓▓▓▓▓█▄─▄█▓▓▓▓▓▓█▄
-▐█▓▓▒▒▒▒▒▓▓█▓▓▒▒▒▒▒▓▓█▌
-█▓▓▒▒░╔╗╔═╦═╦═╦═╗░▒▒▓▓█
-█▓▓▒▒░║╠╣╬╠╗║╔╣╩╣░▒▒▓▓█
-▐█▓▓▒▒╚═╩═╝╚═╝╚═╝▒▒▓▓█▌
-─▀█▓▓▒▒░░░░░░░░░▒▒▓▓█▀
-───▀█▓▓▒▒░░░░░▒▒▓▓█▀
-─────▀█▓▓▒▒░▒▒▓▓█▀
-──────▀█▓▓▒▓▓█▀
-────────▀█▓█▀
-──────────▀
-
-''')
 input(" (press any button to continue) :")
 os.system('clear')
 
@@ -58,7 +54,6 @@ os.system('clear')
 
 print(
 '''
-
 The dating world is a tempestuous place, but you're on the hunt for love.
 There are 3 potential star crossed lovers on the horizon.
 You've matched with all three, so lets get to know them!
@@ -357,7 +352,8 @@ f'''
 Time to head to the date venue. 
 
 You've decided to go to an italian restaruant.
-You and {date} arrive at the restaurant and are met with a friendly greeting of the host. 
+You and {date} arrive at the restaurant and
+are met with a friendly greeting of the host. 
 Your booking is confirmed and they bring you to the table.
 
 Its an old fashioned italian restaurant,
@@ -382,7 +378,7 @@ as they confidently peruse the menu with interest.
 {date} asks “so what are you thinking of ordering?”
 '''
 )
-time.sleep(15)
+time.sleep(12)
 os.system('clear')
 
 print(
@@ -442,4 +438,84 @@ else:
     '''
     )
     print(f"Your endearment score is {ENDEARMENT}")
-    time.sleep()
+
+time.sleep(12)
+os.system('clear')
+
+
+print(
+f'''
+The waiter asks if you would like to order a drink.
+{date} says "I would love a drink!"
+What will you order?
+a) Beer b) Wine c) Dr.Pepper
+'''
+)
+time.sleep(8)
+
+drink_choice = input("Please choose a, b, or c").lower().strip()
+os.system('clear')
+
+if drink_choice == 'a' or drink_choice == 'b' and date == 'Henrietta':
+    print(
+    f'''
+    {date} orders a water, and proceeds to explain
+    in a lengthy speech why they don't drink alcohol.
+    You decide to keep your opinions to yourself.
+    Minus 1 point from endearment score.
+    '''
+    )
+    ENDEARMENT -= 1
+
+elif drink_choice == 'a' and date == 'Francis':
+    print(
+    f'''
+    {date} slams their fist down on the table in delight.
+    "yeah now we're speaking my language!"
+    "They have some nice craft beers, whats your favourite?"
+    You and {date} begin chatting away about craft beer,
+    you are bonding already!
+    Plus 1 point to endearment score.
+    '''    
+    )
+    ENDEARMENT += 1
+
+elif drink_choice == 'b' and date == 'Sarah':
+    print(
+    f'''
+    {date} slams their fist down on the table in delight.
+    "yeah now we're speaking my language!"
+    "They have some excellent wine, whats your favourite?"
+    You and {date} begin chatting away about wines
+    you are bonding already!
+    Plus 1 point to endearment score.
+    '''    
+    )
+    ENDEARMENT += 1
+
+elif drink_choice == 'c':
+    print(
+    f'''
+    The music suddenly stops. 
+    People around you gasp audibly.
+    The waiter struggles to compose himself.
+    "You ... you said... Dr.Pepper sir?"
+    You begin to sweat profusely and nod nervously.
+    The waiter looks like someone just ran over his dog.
+    The air is thick with tension and fear.
+    {date} is staring at the floor.
+    Without saying a word, they stand up
+    {date} puts on their jacket and walks out of the restaurant.
+    You struggle to come to terms with what just happended,
+    as the waiter finally brings down your beverage.
+    "Your Dr.Pepper sir..." he snarls with utter contempt.
+    You can barely contain your shame as you sip your drink.
+    Maybe Dr.Pepper in a fancy italian restaurant was a bad idea.
+        
+    Minus all points from endearment score
+    GAME OVER.
+    '''
+    )
+    time.sleep(25)
+    os.system('clear')
+    sys.exit()
