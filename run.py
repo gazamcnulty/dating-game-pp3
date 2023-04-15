@@ -73,6 +73,7 @@ She is currently completing her masters in computer science.
 She doesn’t enjoy sports or dancing. 
 She prefers long walks with a good podcast.
 Henrietta likes reading science fiction novels and playing videogames.
+She also likes wearing cool clothes and following fashion.
 She considers herself introverted but has a few close friends.
 She doesn’t like people who are too silly or don’t take themselves seriously.
 She likes people who are honest with her. 
@@ -456,7 +457,7 @@ time.sleep(8)
 drink_choice = input("Please choose a, b, or c").lower().strip()
 os.system('clear')
 
-if drink_choice == 'a' or drink_choice == 'b' and date == 'Henrietta':
+if  date == 'Henrietta' and drink_choice == 'a' or drink_choice == 'b':
     print(
     f'''
     {date} orders a water, and proceeds to explain
@@ -466,7 +467,7 @@ if drink_choice == 'a' or drink_choice == 'b' and date == 'Henrietta':
     '''
     )
     ENDEARMENT -= 1
-
+    print(f"your endearment score is {ENDEARMENT}")
 elif drink_choice == 'a' and date == 'Francis':
     print(
     f'''
@@ -479,7 +480,7 @@ elif drink_choice == 'a' and date == 'Francis':
     '''    
     )
     ENDEARMENT += 1
-
+    print(f"your endearment score is {ENDEARMENT}")
 elif drink_choice == 'b' and date == 'Sarah':
     print(
     f'''
@@ -492,7 +493,7 @@ elif drink_choice == 'b' and date == 'Sarah':
     '''    
     )
     ENDEARMENT += 1
-
+    print(f"your endearment score is {ENDEARMENT}")
 elif drink_choice == 'c':
     print(
     f'''
@@ -519,3 +520,147 @@ elif drink_choice == 'c':
     time.sleep(25)
     os.system('clear')
     sys.exit()
+else: 
+    print(
+    f'''
+    Your drinks arrive in no time at all,
+    you and {date} toast to the evening
+    No change to endearment score
+    '''
+    )
+
+time.sleep(10)
+os.system('clear')
+
+print(
+f'''
+You and {date} both smile at each other 
+in awkward silence for a moment. 
+Searching for something to say 
+you look more closely at your date 
+and ask about something you notice.
+What will you ask them?
+a)You look like you’re in great shape, do you exercise a lot?
+b)I like your outfit, do you have an interest in fashion?
+c)Has your nose ever been broken?
+'''
+)
+time.sleep(15)
+
+observation = input("please choose a, b, or c").lower().strip()
+os.system('clear')
+
+if observation == 'a' and date == 'Francis':
+    print(
+    f'''
+    {date} is impressed you noticed.
+    "You're damn right I do!
+    I train hard every day, thanks for noticing!"
+    {date} suddenly stands up and flexes their muscles
+    they change between multiple poses like Hulk Hogan,
+    to the stunned silence of nearby diners.
+    You are impressed.
+    Plus 1 point to endearment score
+    '''
+    )
+    ENDEARMENT += 1
+    print(f"your endearment score is {ENDEARMENT}")
+elif observation == 'c' and date == 'Francis':
+    print(
+    f'''
+    {date} looks dismayed.
+    "Is it that obvious?
+    A few months ago I was working a night shift in the pub
+    and I refused to serve a customer who was way too drunk.
+    Long story short they punched me in the face 
+    and broke my nose.
+    I had to get surgery on it, it looks bad doesn't it?"
+    Despite your attempts to comfort them, 
+    {date} looks forlorn and is bit quieter.
+    Maybe that wasn't a good topic of conversation...
+    Minus 1 point from endearment score.
+    '''
+    )
+    ENDEARMENT -= 1
+    print(f"your endearment score is {ENDEARMENT}")
+elif observation == 'a' and date == 'Sarah':
+    print(
+    f'''
+    {date} is impressed you noticed.
+    "You're damn right I do!
+    I love to go cycling on the weekends.
+    You and I should go for a cycle sometime!"
+    {date} takes out their phone and pulls up some photos
+    they show you a bunch of photos of them cycling
+    and visiting different places.
+    {date} seems adventurous.
+    Plus 1 point to endearment score
+    '''
+    )
+    ENDEARMENT += 1
+    print(f"your endearment score is {ENDEARMENT}")
+elif observation == 'c' and date == 'Sarah':
+    print(
+    f'''
+    {date} is impressed you noticed.
+    "That's pretty observant of you.
+    I was on a long cycle recently, went over a rock,
+    and flipped right over the handlebars onto the ground.
+    I smashed my nose but it didn't smash my determination!"
+    {date} takes out their phone and pulls up some photos
+    they show you a bunch of photos of them cycling
+    and visiting different places.
+    {date} seems adventurous.
+    Plus 1 point to endearment score
+    '''
+    )
+    ENDEARMENT += 1
+    print(f"your endearment score is {ENDEARMENT}")
+
+elif observation == 'a' and date == 'Henrietta':
+    print(
+    f'''
+    {date} looks dismayed.
+    "OK there's no need to be mean.
+    I know I'm not in great shape, 
+    are you just trying to hurt my feelings?
+    I know I'm not super athletic or anything
+    I'm probably not as skinny as your other dates,
+    not everyone has to be a supermodel ya know."
+    Despite your attempts to comfort them, 
+    {date} looks forlorn and is bit quieter.
+    Maybe that wasn't a good topic of conversation...
+    Minus 1 point from endearment score.
+    '''
+    )
+    ENDEARMENT -= 1
+    print(f"your endearment score is {ENDEARMENT}")
+elif observation == 'b' and date == 'Henrietta':
+    print(
+    f'''
+    {date} is impressed you noticed.
+    "You're damn right I do!
+    I love wearing cool clothes.
+    Check out some of these outfits I had on recently."
+    {date} takes out their phone and pulls up some photos
+    they show you a bunch of photos of them 
+    wearing a wide variety of fashionable atire.
+    {date} is enjoying talking about clothing.
+    Plus 1 point to endearment score
+    '''
+    )
+    ENDEARMENT += 1
+    print(f"your endearment score is {ENDEARMENT}")
+else:
+    print(
+    f'''
+    {date} gives you a polite answer
+    but it doesn't seem to be of interest to them.
+    You talk about your interests without getting too deep.
+    Its hard to tell if {date} is having fun,
+    or if they are just being polite.
+    No change to endearment score.
+    '''
+    )
+    print(f"your endearment score is {ENDEARMENT}")
+
