@@ -5,11 +5,14 @@ import sys
 #consts
 USER = None
 ENDEARMENT = 5
+date = None
+date_time = None
 
 choice = None
 date = None
 
 def input_error():
+    os.system('clear')
     print(
     '''
     You typed in an invalid input.
@@ -17,6 +20,8 @@ def input_error():
     Please review the question and try again
     '''
     )
+    time.sleep(5)
+    os.system('clear')
 
 print(
 '''
@@ -27,218 +32,270 @@ print(
 )
 time.sleep(4)
 
-print(
-'''
-Hello there! Welcome to the Dating Game!
 
-You have been given the chance to find true love. 
-You must pick one of 3 hearthrobs , and then embark on a romantic date.
+def new_game():
+    print(
+    '''
+    Hello there! Welcome to the Dating Game!
 
-Your choices matter, each date has their own preferences,
-and remember, lady luck is always watching!
-''')
-time.sleep(5)
+    You have been given the chance to find true love. 
+    You must pick one of 3 hearthrobs , and then embark on a romantic date.
 
-input(" (press any button to continue) :")
-os.system('clear')
+    Your choices matter, each date has their own preferences,
+    and remember, lady luck is always watching!
+    ''')
+    time.sleep(8)
 
-print(
-'''
-Rules: This is a simple text based game. 
-First you will be asked to enter your name. 
-From there you will be given info about the dates and scenarios.
-You will be offered choices of a, b, or c. 
-These choices will decide the outcome of the date.
-Please note, if you dont choose a, b, or c , it will default to option c
-'''
-)
-time.sleep(8)
-USER = input("Please enter your name:")
-os.system('clear')
+    game_choice = input("Would you like to play? y / n ").lower().strip()
+    os.system('clear')
 
-print(f"Pleased to make your acquaintance {USER}")
-time.sleep(4)
-os.system('clear')
+    if game_choice == 'y':
+        print("That's the spirit! Lets start with the rules.")
+    elif game_choice == 'n':
+        print(
+        '''
+        That's fine, no need to play if you're already winning.
+        There's nothing wrong with being single as long as you're happy!
+        If you ever change your mind, return here to play the dating game!
 
-print(
-'''
-The dating world is a tempestuous place, but you're on the hunt for love.
-There are 3 potential star crossed lovers on the horizon.
-You've matched with all three, so lets get to know them!
-''')
-
-time.sleep(8)
-os.system('clear')
-input("Are you ready to meet the first match? (press any button to continue) :")
-os.system('clear')
-
-print('''
-Henrietta
-
-Profile : 
-Henrietta is a 25 year old college student at Trinity College. 
-She is currently completing her masters in computer science.
-She doesn’t enjoy sports or dancing. 
-She prefers long walks with a good podcast.
-Henrietta likes reading science fiction novels and playing videogames.
-She also likes wearing cool clothes and following fashion.
-She considers herself introverted but has a few close friends.
-She doesn’t like people who are too silly or don’t take themselves seriously.
-She likes people who are honest with her. 
-She doesn’t drink alcohol but loves to drink coffee.
-Henrietta is a vegetarian and her favourite food is Chana Masala.
-''')
-
-input("Are you ready to meet the second match? (press any button to continue) :")
-os.system('clear')
-
-print(
-'''
-Francis
-
-Profile:
-Francis is a 29 year old barman who works in a busy pub in Dublin city. 
-He loves to work out at the gym and goes for a run every day. 
-He’s not really into reading but likes playing multiplayer videogames.
-Francis considers himself an extrovert. 
-He likes to spend his free time hanging out with his friends. 
-Francis likes getting to know people, he likes people who are up for a laugh.  
-He enjoys watching some sporting events like UFC MMA and WWE. 
-Francis loves to drink alcohol socially. 
-He enjoys sampling the latest craft beers. 
-His favourite food is Supermacs snack box with chicken and chips. 
-''')
-
-input("Are you ready to meet the third match? (press any button to continue) :")
-os.system('clear')
-
-print(
-'''
-Sarah
-
-Profile:
-Sarah is 34 year old marketing consultant who works in Dublin.
-She like to go cycling on the weekends, but her real love is film and cinema.
-Sarah has a vast collection of films on dvd.
-She loves to go the Lighthouse Cinema and IFI Cinema. 
-Her job is time consuming and demanding, she is friendly with coworkers.
-She usually doesn’t have time for romance or catching up with friends.
-She isn’t into a lot of sports but will watch the Rugby when its on.
-Sarah likes people who aren’t needy.
-They need to respect her autonomy and independence.
-She understands that its ok to have time on your own.
-Sarah doesn’t go to bars much.
-She is partial to glass of cabernet sauvignon after a long day of work.
-She is allergic to shellfish , her favourite food is lasagna.
-''')
-
-input(" (press any button to continue) :")
-os.system('clear')
-
-print(
-''' 
-One of these three captivating individuals could be your one true love!
-But as cruel as cupid's arrow, you must choose one and forsake the others.
-Who do you want to go on a date with?
-a) Henrietta, b) Francis, c) Sarah
-''')
+        '''
+        )
+        time.sleep(5)
+        print("    GAME OVER")
+        time.sleep(10)
+        os.system('clear')
+        sys.exit()
+    else:
+        input_error()
+        new_game()
 
 
-date_choice = input("Please choose a, b, or c :").lower().strip()
+new_game()
 
-if date_choice == 'a':
-    date = 'Henrietta'
-elif date_choice == 'b':
-    date = 'Francis'
-else:
-    date = 'Sarah'
 
-os.system('clear')
-print(f"You've chosen to go on a date with {date}!")
-time.sleep(4)
-os.system('clear')
+def rules():
+    global USER
+    print(
+    '''
+    Rules: This is a simple text based game. 
+    First you will be asked to enter your name. 
 
-print(
-'''
-We next need to decide when to go on the date.
-Do you want to go on the date a) tomorrow , b) the weekend, c) next week?
-''')
+    From there you will be given info about the dates and scenarios.
 
-time_choice = input("Please choose a, b, or c :").lower().strip()
+    You will be offered choices of a, b, or c. 
+    These choices will decide the outcome of the date.
+    '''
+    )
+    time.sleep(8)
+    USER = input("Please enter your name:")
+    os.system('clear')
 
-if time_choice == 'a':
-    date_time = 'tomorrow'
-elif time_choice == 'b':
-    date_time = 'this weekend'
-else:
-    date_time = 'next week'
+    print(f"Pleased to make your acquaintance {USER}")
+    time.sleep(4)
+    os.system('clear')
 
-os.system('clear')
-print(
-f'''
-You've chosen to go on the date with {date} {date_time}!
-'''
-)
-time.sleep(4)
-os.system('clear')
 
-print(
-f'''
-The big day is here {USER}!
-Time to to on our date with {date}!
-You have arranged to meet at the luas stop
-just outside St.Stepehen's Green Park in Dublin city centre.
-''')
-time.sleep(10)
-os.system('clear')
+rules()
 
-rainy = '''
-After your initial greetings at the luas stop by St.Stephens Green,
-you are struck with torrential rains. 
-Neither of you are wearing suitable clothing, 
-it might be best to head somewhere close by to get out of the rain.
-'''
 
-sunny = '''
-After your initial greetings at the luas stop by St.Stephens Green,
-the clouds part to reveal a warm sunny skyline.
-The sunshine feels good on your face and it puts both of you in a good mood.
-No need to rush anywhere , its fine weather for a walk.
-'''
+def profiles():
+    print(
+    '''
+    The dating world is a tempestuous place, but you're on the hunt for love.
+    There are 3 potential star crossed lovers on the horizon.
+    You've matched with all three, so lets get to know them!
+    ''')
 
-snowy = '''
-After your initial greetings at the luas stop by St.Stephens Green,
-you are met with heavy snow beginning to fall.
-While it is a little cold,
-the crunching of snow under your shoes reminds you both fondly of christmas.
-Its nice to be outside in the snow, just don’t freeze up!
-'''
+    time.sleep(8)
+    os.system('clear')
+    input("Are you ready to meet the first match? (press enter to continue: )")
+    os.system('clear')
 
-if date_time == 'tomorrow':
-    weather = rainy
-elif date_time == 'this weekend':
-    weather = sunny
-else:
-    weather = snowy
-print(weather)
-time.sleep(10)
-os.system('clear')
+    print('''
+    Henrietta
 
-print(
-'''
-While you both seem in good form , you should decide what to do
-a ) go straight to the date venue
-b ) go for a stroll in St.Stephens Green Park
-c) go for a stroll in the shopping centre , grab coffees
-'''
-)
+    Profile : 
+    Henrietta is a 25 year old college student at Trinity College. 
+    She is currently completing her masters in computer science.
+    She doesn’t enjoy sports or dancing. 
+    She prefers long walks with a good podcast.
+    Henrietta likes reading science fiction novels and playing videogames.
+    She also likes wearing cool clothes and following fashion.
+    She considers herself introverted but has a few close friends.
+    She doesn’t like people who are too silly or don’t take themselves seriously.
+    She likes people who are honest with her. 
+    She doesn’t drink alcohol but loves to drink coffee.
+    Henrietta is a vegetarian and her favourite food is Chana Masala.
+    ''')
 
-first_steps = input("Please choose a, b, or c").lower().strip()
-os.system('clear')
+    input("Are you ready to meet the second match? (press enter to continue: )")
+    os.system('clear')
 
-def date_start():
+    print(
+    '''
+    Francis
+
+    Profile:
+    Francis is a 29 year old barman who works in a busy pub in Dublin city. 
+    He loves to work out at the gym and goes for a run every day. 
+    He’s not really into reading but likes playing multiplayer videogames.
+    Francis considers himself an extrovert. 
+    He likes to spend his free time hanging out with his friends. 
+    Francis likes getting to know people, he likes people who are up for a laugh.  
+    He enjoys watching some sporting events like UFC MMA and WWE. 
+    Francis loves to drink alcohol socially. 
+    He enjoys sampling the latest craft beers. 
+    His favourite food is Supermacs snack box with chicken and chips. 
+    ''')
+
+    input("Are you ready to meet the third match? (press enter to continue: )")
+    os.system('clear')
+
+    print(
+    '''
+    Sarah
+
+    Profile:
+    Sarah is 34 year old marketing consultant who works in Dublin.
+    She like to go cycling on the weekends, but her real love is film and cinema.
+    Sarah has a vast collection of films on dvd.
+    She loves to go the Lighthouse Cinema and IFI Cinema. 
+    Her job is time consuming and demanding, she is friendly with coworkers.
+    She usually doesn’t have time for romance or catching up with friends.
+    She isn’t into a lot of sports but will watch the Rugby when its on.
+    Sarah likes people who aren’t needy.
+    They need to respect her autonomy and independence.
+    She understands that its ok to have time on your own.
+    Sarah doesn’t go to bars much.
+    She is partial to glass of cabernet sauvignon after a long day of work.
+    She is allergic to shellfish , her favourite food is lasagna.
+    ''')
+
+    input(" (press enter to continue) :")
+    os.system('clear')
+
+
+profiles()
+
+
+def date_who():
+    global date
+    print(
+    ''' 
+    One of these three captivating individuals could be your one true love!
+    But as cruel as cupid's arrow, you must choose one and forsake the others.
+    Who do you want to go on a date with?
+    a) Henrietta, b) Francis, c) Sarah
+    ''')
+
+
+    date_choice = input("Please choose a, b, or c :").lower().strip()
+
+    if date_choice == 'a':
+        date = 'Henrietta'
+    elif date_choice == 'b':
+        date = 'Francis'
+    elif date_choice == 'c':
+        date = 'Sarah'
+    else:
+        input_error()
+        date_who()
+
+    os.system('clear')
+    print(f"You've chosen to go on a date with {date}!")
+    time.sleep(4)
+    os.system('clear')
+
+
+date_who()
+
+
+def date_when():
+    global date_time
+    print(
+    '''
+    We next need to decide when to go on the date.
+    Do you want to go on the date a) tomorrow , b) the weekend, c) next week?
+    ''')
+
+    time_choice = input("Please choose a, b, or c :").lower().strip()
+
+    if time_choice == 'a':
+        date_time = 'tomorrow'
+    elif time_choice == 'b':
+        date_time = 'this weekend'
+    elif time_choice == 'c':
+        date_time = 'next week'
+    else:
+        input_error()
+        date_when()
+    
+    os.system('clear')
+    print(
+    f'''
+    You've chosen to go on the date with {date} {date_time}!
+    '''
+    )
+    time.sleep(4)
+    os.system('clear')
+
+    print(
+    f'''
+    The big day is here {USER}!
+    Time to to on our date with {date}!
+    You have arranged to meet at the luas stop
+    just outside St.Stepehen's Green Park in Dublin city centre.
+    ''')
+    time.sleep(4)
+    os.system('clear')
+
+
+    if date_time == 'tomorrow':
+        print(
+        '''
+        After your initial greetings at the luas stop by St.Stephens Green,
+        you are struck with torrential rains. 
+        Neither of you are wearing suitable clothing, 
+        it might be best to head somewhere close by to get out of the rain.
+        '''
+        )
+    elif date_time == 'this weekend':
+        print(
+        '''
+        After your initial greetings at the luas stop by St.Stephens Green,
+        the clouds part to reveal a warm sunny skyline.
+        The sunshine feels good on your face and it puts both of you in a good mood.
+        No need to rush anywhere , its fine weather for a walk.
+        '''
+        )
+    else:
+        print(
+        '''
+        After your initial greetings at the luas stop by St.Stephens Green,
+        you are met with heavy snow beginning to fall.
+        While it is a little cold,
+        the crunching of snow under your shoes reminds you both fondly of christmas.
+        Its nice to be outside in the snow, just don’t freeze up!
+        '''
+        )
+    time.sleep(4)
+    os.system('clear')
+
+
     global ENDEARMENT
-    if first_steps == 'a' and weather == rainy:
+    print(
+    '''
+    While you both seem in good form , you should decide what to do
+    a ) go straight to the date venue
+    b ) go for a stroll in St.Stephens Green Park
+    c) go for a stroll in the shopping centre , grab coffees
+    '''
+    )
+
+    first_steps = input("Please choose a, b, or c").lower().strip()
+    print(f"{first_steps} {date_time}")
+    os.system('clear')
+    if first_steps == 'a' and date_time == 'tomorrow':
         print(
         f'''
         Good call, its not nice to be out in this rain, 
@@ -247,7 +304,7 @@ def date_start():
         No change to endearment score
         ''')
         print(f"Your endearment score is {ENDEARMENT}")
-    elif first_steps == 'b' and weather == rainy:
+    elif first_steps == 'b' and date_time == 'tomorrow':
         print(
         f'''
         At your insistence, you and {date} go for a walk in the park.
@@ -259,7 +316,7 @@ def date_start():
         ''')
         ENDEARMENT -= 1
         print(f"Your endearment score is {ENDEARMENT}")
-    elif first_steps == 'c' and weather == rainy:
+    elif first_steps == 'c' and date_time == 'tomorrow':
         print(
         f'''
         You suggest a stroll around the shopping centre, 
@@ -273,7 +330,7 @@ def date_start():
         ''')
         ENDEARMENT += 1
         print(f"Your endearment score is {ENDEARMENT}")
-    elif first_steps == 'a' and weather == sunny:
+    elif first_steps == 'a' and date_time == 'this weekend':
         print(
         f'''
         At your insistence, you and {date} head straight for the venue.
@@ -282,7 +339,7 @@ def date_start():
         No change to endearment score
         ''')
         print(f"Your endearment score is {ENDEARMENT}")
-    elif first_steps == 'b' and weather == sunny:
+    elif first_steps == 'b' and date_time == 'this weekend':
         print(
         f'''
         At your insistence, you and {date} go for a walk in the park.
@@ -294,7 +351,7 @@ def date_start():
         ''')
         ENDEARMENT += 1
         print(f"Your endearment score is {ENDEARMENT}")
-    elif first_steps == 'c' and weather == sunny:
+    elif first_steps == 'c' and date_time == 'this weekend':
         print(
         f'''
         You suggest a stroll around the shopping centre, 
@@ -308,7 +365,7 @@ def date_start():
         ''')
         ENDEARMENT -= 1
         print(f"Your endearment score is {ENDEARMENT}")
-    elif first_steps == 'a' and weather == snowy:
+    elif first_steps == 'a' and date_time == 'next week':
         print(
         f'''
         At your insistence, you and {date} head straight for the venue.
@@ -317,7 +374,7 @@ def date_start():
         No change to endearment score
         ''')
         print(f"Your endearment score is {ENDEARMENT}")
-    elif first_steps == 'b' and weather == snowy:
+    elif first_steps == 'b' and date_time == 'next week':
         print(
         f'''
         At your insistence, you and {date} go for a walk in the park.
@@ -330,7 +387,7 @@ def date_start():
         ''')
         ENDEARMENT += 1
         print(f"Your endearment score is {ENDEARMENT}")
-    elif first_steps == 'c' and weather == snowy:
+    elif first_steps == 'c' and date_time == 'next week':
         print(
         f'''
         You suggest a stroll around the shopping centre, 
@@ -345,18 +402,12 @@ def date_start():
         ENDEARMENT -= 1
         print(f"Your endearment score is {ENDEARMENT}")
     else:
-        print(
-        f'''
-        At your insistence, you and {date} head straight for the venue.
-        {date} doesn't seem bothered by heading straight there
-        but they comment that it seems like it would have been nice
-        to stroll around or grab a coffee somewhere first
-        No change to endearment score
-        ''')
-        print(f"Your endearment score is {ENDEARMENT}")
+        input_error()
+        date_when()
 
 
-date_start()
+date_when()
+
 
 
 input(" (press any button to continue) :")
@@ -384,30 +435,30 @@ You both sit down and the host places menus on front of you.
 input(" (press any button to continue) :")
 os.system('clear')
 
-print(
-f'''
-The menu has a lot of options , but the prices are rather expensive. 
-Oh no! 
-Your date doesn’t seem to be bothered by this
-as they confidently peruse the menu with interest. 
-{date} asks “so what are you thinking of ordering?”
-'''
-)
-time.sleep(12)
-os.system('clear')
-
-print(
-'''
-What meal will you order from the menu?
-a) Lasagna b)Spaghetti and meatballs c)Veggie pasta
-'''
-)
-
-meal_choice = input("Please choose a, b, or c: ").lower().strip()
-os.system('clear')
 
 def menu_choice():
     global ENDEARMENT
+    print(
+    f'''
+    The menu has a lot of options , but the prices are rather expensive. 
+    Oh no! 
+    Your date doesn’t seem to be bothered by this
+    as they confidently peruse the menu with interest. 
+    {date} asks “so what are you thinking of ordering?”
+    '''
+    )
+    time.sleep(4)
+    os.system('clear')
+
+    print(
+    '''
+    What meal will you order from the menu?
+    a) Lasagna b)Spaghetti and meatballs c)Veggie pasta
+    '''
+    )
+
+    meal_choice = input("Please choose a, b, or c: ").lower().strip()
+    os.system('clear')
     if meal_choice == 'a' and date == 'Sarah':
         print(
         '''
@@ -420,6 +471,17 @@ def menu_choice():
         )
         ENDEARMENT += 1
         print(f"Your endearment score is {ENDEARMENT}")
+    elif (meal_choice == 'b' or 'c') and date == 'Sarah':
+        print(
+        f'''
+        You order your meal but {date} orders something
+        completely different from you.
+        You smile awkwardly at each other and 
+        look around the room for something to talk about.
+        No change to endearment score.
+        '''
+        )
+        print(f"Your endearment score is {ENDEARMENT}")  
     elif meal_choice == 'b' and date == 'Francis':
         print(
         '''
@@ -432,6 +494,17 @@ def menu_choice():
         )
         ENDEARMENT += 1
         print(f"Your endearment score is {ENDEARMENT}")
+    elif (meal_choice == 'a' or 'c') and date == 'Francis':
+        print(
+        f'''
+        You order your meal but {date} orders something
+        completely different from you.
+        You smile awkwardly at each other and 
+        look around the room for something to talk about.
+        No change to endearment score.
+        '''
+        )
+        print(f"Your endearment score is {ENDEARMENT}")  
     elif meal_choice == 'c' and date == 'Henrietta':
         print(
         '''
@@ -444,7 +517,7 @@ def menu_choice():
         )
         ENDEARMENT += 1
         print(f"Your endearment score is {ENDEARMENT}")
-    else:
+    elif (meal_choice == 'a' or 'b') and date == 'Henrietta':
         print(
         f'''
         You order your meal but {date} orders something
@@ -454,31 +527,35 @@ def menu_choice():
         No change to endearment score.
         '''
         )
-        print(f"Your endearment score is {ENDEARMENT}")
+        print(f"Your endearment score is {ENDEARMENT}")  
+    else:
+        input_error()
+        menu_choice()
 
-    time.sleep(12)
+    time.sleep(4)
     os.system('clear')
 
 
 menu_choice()
 
-print(
-f'''
-The waiter asks if you would like to order a drink.
-{date} says "I would love a drink!"
-What will you order?
-a) Beer b) Wine c) Dr.Pepper
-'''
-)
-time.sleep(8)
-
-drink_choice = input("Please choose a, b, or c").lower().strip()
-os.system('clear')
-
 
 def beverage_choice():
     global ENDEARMENT
-    if  date == 'Henrietta' and drink_choice == 'a' or drink_choice == 'b':
+    print(
+    f'''
+    The waiter asks if you would like to order a drink.
+    {date} says "I would love a drink!"
+    What will you order?
+    a) Beer b) Wine c) Dr.Pepper
+    '''
+    )
+    time.sleep(4)
+
+    drink_choice = input("Please choose a, b, or c").lower().strip()
+    os.system('clear')
+    print(drink_choice)
+
+    if (drink_choice == 'a' or 'b') and date == 'Henrietta':
         print(
         f'''
         {date} orders a water, and proceeds to explain
@@ -501,6 +578,24 @@ def beverage_choice():
         '''    
         )
         ENDEARMENT += 1
+        print(f"your endearment score is {ENDEARMENT}")
+    elif drink_choice == 'b' and date == 'Francis':
+        print(
+        f'''
+        Your drinks arrive in no time at all,
+        you and {date} toast to the evening
+        No change to endearment score
+        '''
+        )
+        print(f"your endearment score is {ENDEARMENT}")
+    elif drink_choice == 'a' and date == 'Sarah':
+        print(
+        f'''
+        Your drinks arrive in no time at all,
+        you and {date} toast to the evening
+        No change to endearment score
+        '''
+        )
         print(f"your endearment score is {ENDEARMENT}")
     elif drink_choice == 'b' and date == 'Sarah':
         print(
@@ -542,40 +637,34 @@ def beverage_choice():
         os.system('clear')
         sys.exit()
     else: 
-        print(
-        f'''
-        Your drinks arrive in no time at all,
-        you and {date} toast to the evening
-        No change to endearment score
-        '''
-        )
-
+        input_error()
+        beverage_choice()
     time.sleep(10)
     os.system('clear')
 
 
 beverage_choice()
 
-print(
-f'''
-You and {date} both smile at each other 
-in awkward silence for a moment. 
-Searching for something to say 
-you look more closely at your date 
-and ask about something you notice.
-What will you ask them?
-a)You look like you’re in great shape, do you exercise a lot?
-b)I like your outfit, do you have an interest in fashion?
-c)Has your nose ever been broken?
-'''
-)
-time.sleep(15)
-
-observation = input("please choose a, b, or c").lower().strip()
-os.system('clear')
 
 def observation_chat():
     global ENDEARMENT
+    print(
+    f'''
+    You and {date} both smile at each other 
+    in awkward silence for a moment. 
+    Searching for something to say 
+    you look more closely at your date 
+    and ask about something you notice.
+    What will you ask them?
+    a)You look like you’re in great shape, do you exercise a lot?
+    b)I like your outfit, do you have an interest in fashion?
+    c)Has your nose ever been broken?
+    '''
+    )
+    time.sleep(5)
+
+    observation = input("please choose a, b, or c").lower().strip()
+    os.system('clear')
     if observation == 'a' and date == 'Francis':
         print(
         f'''
@@ -590,6 +679,18 @@ def observation_chat():
         '''
         )
         ENDEARMENT += 1
+        print(f"your endearment score is {ENDEARMENT}")
+    elif observation == 'b' and date == 'Francis':
+        print(
+        f'''
+        {date} gives you a polite answer
+        but it doesn't seem to be of interest to them.
+        You talk about your interests without getting too deep.
+        Its hard to tell if {date} is having fun,
+        or if they are just being polite.
+        No change to endearment score.
+        '''
+        )
         print(f"your endearment score is {ENDEARMENT}")
     elif observation == 'c' and date == 'Francis':
         print(
@@ -625,6 +726,18 @@ def observation_chat():
         )
         ENDEARMENT += 1
         print(f"your endearment score is {ENDEARMENT}")
+    elif observation == 'b' and date == 'Sarah':
+        print(
+        f'''
+        {date} gives you a polite answer
+        but it doesn't seem to be of interest to them.
+        You talk about your interests without getting too deep.
+        Its hard to tell if {date} is having fun,
+        or if they are just being polite.
+        No change to endearment score.
+        '''
+        )
+        print(f"your endearment score is {ENDEARMENT}")
     elif observation == 'c' and date == 'Sarah':
         print(
         f'''
@@ -642,7 +755,6 @@ def observation_chat():
         )
         ENDEARMENT += 1
         print(f"your endearment score is {ENDEARMENT}")
-
     elif observation == 'a' and date == 'Henrietta':
         print(
         f'''
@@ -677,7 +789,7 @@ def observation_chat():
         )
         ENDEARMENT += 1
         print(f"your endearment score is {ENDEARMENT}")
-    else:
+    elif observation == 'c' and date == 'Henrietta':
         print(
         f'''
         {date} gives you a polite answer
@@ -689,6 +801,9 @@ def observation_chat():
         '''
         )
         print(f"your endearment score is {ENDEARMENT}")
+    else:
+        input_error()
+        observation_chat()
 
 observation_chat()
 time.sleep(15)
@@ -747,6 +862,19 @@ def talk_about_me():
         Your endearment score is {ENDEARMENT}
         '''
         )
+    elif personality == 'c' and date == 'Henrietta':
+        print(
+        f'''
+        {date} fails to stifle a yawn.
+        Their phone rings and they almost seem relieved.
+        {date} steps away to answer the phone for a bit,
+        while you try to think of other things
+        to talk about.
+        No change to endearment score.
+
+        Your endearment score is {ENDEARMENT}
+        '''
+        )
     elif personality == 'a' and date == 'Francis':
         ENDEARMENT += 2
         print(
@@ -763,7 +891,7 @@ def talk_about_me():
         Your endearment score is {ENDEARMENT}
         '''
         )
-    elif personality == 'b' and date == 'Francis':
+    elif (personality == 'b' or 'c') and date == 'Francis':
         ENDEARMENT -= 1
         print(
         f'''
@@ -795,22 +923,10 @@ def talk_about_me():
         Your endearment score is {ENDEARMENT}
         '''
         )
-    elif personality != 'a' or 'b' or 'c':
+    else:
         input_error()
         talk_about_me()
-    else:
-        print(
-        f'''
-        {date} fails to stifle a yawn.
-        Their phone rings and they almost seem relieved.
-        {date} steps away to answer the phone for a bit,
-        while you try to think of other things
-        to talk about.
-        No change to endearment score.
 
-        Your endearment score is {ENDEARMENT}
-        '''
-        )
 
 
 talk_about_me()
