@@ -4,7 +4,7 @@ import sys
 
 #consts
 USER = None
-global ENDEARMENT 
+global ENDEARMENT
 ENDEARMENT = 5
 
 choice = None
@@ -228,122 +228,128 @@ c) go for a stroll in the shopping centre , grab coffees
 first_steps = input("Please choose a, b, or c").lower().strip()
 os.system('clear')
 
-if first_steps == 'a' and weather == rainy:
-    print(
-    f'''
-    Good call, its not nice to be out in this rain, 
-    best to get to the venue ASAP.
-    {date} might get a bit wet but the weather isn't your fault
-    No change to endearment score
-    ''')
-    print(f"Your endearment score is {ENDEARMENT}")
-elif first_steps == 'b' and weather == rainy:
-    print(
-    f'''
-    At your insistence, you and {date} go for a walk in the park.
-    It is lashing rain, while you try to make smalltalk.
-    {date} is unimpressed by your knowledge of the park's history,
-    they seem annoyed and are soaked through to the bone.
-    Maybe the park stroll wasn't the best idea...
-    Minus 1 point from endearement score
-    ''')
-    ENDEARMENT -= 1
-    print(f"Your endearment score is {ENDEARMENT}")
-elif first_steps == 'c' and weather == rainy:
-    print(
-    f'''
-    You suggest a stroll around the shopping centre, 
-    before heading straight to the venue.
-    You and {date} grab some take away coffees,
-    make small talk and stroll around.
-    Its a little awkward but it was a good idea
-    to get out of the rain. 
-    {date} seems impressed with your initiative
-    Plus 1 point to endearement score
-    ''')
-    ENDEARMENT += 1
-    print(f"Your endearment score is {ENDEARMENT}")
-elif first_steps == 'a' and weather == sunny:
-    print(
-    f'''
-    At your insistence, you and {date} head straight for the venue.
-    {date} doesn't seem bothered by heading straight there
-    but they comment that it seems like it would have been a nice day for a stroll
-    No change to endearment score
-    ''')
-    print(f"Your endearment score is {ENDEARMENT}")
-elif first_steps == 'b' and weather == sunny:
-    print(
-    f'''
-    At your insistence, you and {date} go for a walk in the park.
-    The sun is shining, while you try to make smalltalk.
-    {date} is impressed by your knowledge of the park's history,
-    the fresh air and nice weather puts you both in a good mood.
-    {date} seems happy you suggested it
-    Plus 1 point to endearement score
-    ''')
-    ENDEARMENT += 1
-    print(f"Your endearment score is {ENDEARMENT}")
-elif first_steps == 'c' and weather == sunny:
-    print(
-    f'''
-    You suggest a stroll around the shopping centre, 
-    before heading straight to the venue.
-    You and {date} grab some take away coffees,
-    make small talk and stroll around.
-    Its a bit stuffy in the shopping centre unlike outside,
-    the weather is so nice and the fresh air is refreshing,
-    {date} seems disappointed you're not outdoors
-    Minus 1 point from endearment score
-    ''')
-    ENDEARMENT -= 1
-    print(f"Your endearment score is {ENDEARMENT}")
-elif first_steps == 'a' and weather == snowy:
-    print(
-    f'''
-    At your insistence, you and {date} head straight for the venue.
-    {date} doesn't seem bothered by heading straight there
-    but they comment that it seems like it would have been a nice day for a stroll
-    No change to endearment score
-    ''')
-    print(f"Your endearment score is {ENDEARMENT}")
-elif first_steps == 'b' and weather == snowy:
-    print(
-    f'''
-    At your insistence, you and {date} go for a walk in the park.
-    Its a bit cold but the gentle snowfall is breathtaking
-    {date} is impressed by your knowledge of the park's history,
-    the blanket of snow reminds you of christmas
-    it puts the both of you in a good mood
-    {date} seems happy you suggested the walk in the park
-    Plus 1 point to endearement score
-    ''')
-    ENDEARMENT += 1
-    print(f"Your endearment score is {ENDEARMENT}")
-elif first_steps == 'c' and weather == snowy:
-    print(
-    f'''
-    You suggest a stroll around the shopping centre, 
-    before heading straight to the venue.
-    You and {date} grab some take away coffees,
-    make small talk and stroll around.
-    Its warm indoors so its a relief from the cold,
-    but you're not getting to see much snowfall
-    {date} seems disappointed you're not outdoors in the snow
-    Minus 1 point from endearment score
-    ''')
-    ENDEARMENT -= 1
-    print(f"Your endearment score is {ENDEARMENT}")
-else:
-    print(
-    f'''
-    At your insistence, you and {date} head straight for the venue.
-    {date} doesn't seem bothered by heading straight there
-    but they comment that it seems like it would have been nice
-    to stroll around or grab a coffee somewhere first
-    No change to endearment score
-    ''')
-    print(f"Your endearment score is {ENDEARMENT}")
+def date_start():
+    global ENDEARMENT
+    if first_steps == 'a' and weather == rainy:
+        print(
+        f'''
+        Good call, its not nice to be out in this rain, 
+        best to get to the venue ASAP.
+        {date} might get a bit wet but the weather isn't your fault
+        No change to endearment score
+        ''')
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif first_steps == 'b' and weather == rainy:
+        print(
+        f'''
+        At your insistence, you and {date} go for a walk in the park.
+        It is lashing rain, while you try to make smalltalk.
+        {date} is unimpressed by your knowledge of the park's history,
+        they seem annoyed and are soaked through to the bone.
+        Maybe the park stroll wasn't the best idea...
+        Minus 1 point from endearement score
+        ''')
+        ENDEARMENT -= 1
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif first_steps == 'c' and weather == rainy:
+        print(
+        f'''
+        You suggest a stroll around the shopping centre, 
+        before heading straight to the venue.
+        You and {date} grab some take away coffees,
+        make small talk and stroll around.
+        Its a little awkward but it was a good idea
+        to get out of the rain. 
+        {date} seems impressed with your initiative
+        Plus 1 point to endearement score
+        ''')
+        ENDEARMENT += 1
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif first_steps == 'a' and weather == sunny:
+        print(
+        f'''
+        At your insistence, you and {date} head straight for the venue.
+        {date} doesn't seem bothered by heading straight there
+        but they comment that it seems like it would have been a nice day for a stroll
+        No change to endearment score
+        ''')
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif first_steps == 'b' and weather == sunny:
+        print(
+        f'''
+        At your insistence, you and {date} go for a walk in the park.
+        The sun is shining, while you try to make smalltalk.
+        {date} is impressed by your knowledge of the park's history,
+        the fresh air and nice weather puts you both in a good mood.
+        {date} seems happy you suggested it
+        Plus 1 point to endearement score
+        ''')
+        ENDEARMENT += 1
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif first_steps == 'c' and weather == sunny:
+        print(
+        f'''
+        You suggest a stroll around the shopping centre, 
+        before heading straight to the venue.
+        You and {date} grab some take away coffees,
+        make small talk and stroll around.
+        Its a bit stuffy in the shopping centre unlike outside,
+        the weather is so nice and the fresh air is refreshing,
+        {date} seems disappointed you're not outdoors
+        Minus 1 point from endearment score
+        ''')
+        ENDEARMENT -= 1
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif first_steps == 'a' and weather == snowy:
+        print(
+        f'''
+        At your insistence, you and {date} head straight for the venue.
+        {date} doesn't seem bothered by heading straight there
+        but they comment that it seems like it would have been a nice day for a stroll
+        No change to endearment score
+        ''')
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif first_steps == 'b' and weather == snowy:
+        print(
+        f'''
+        At your insistence, you and {date} go for a walk in the park.
+        Its a bit cold but the gentle snowfall is breathtaking
+        {date} is impressed by your knowledge of the park's history,
+        the blanket of snow reminds you of christmas
+        it puts the both of you in a good mood
+        {date} seems happy you suggested the walk in the park
+        Plus 1 point to endearement score
+        ''')
+        ENDEARMENT += 1
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif first_steps == 'c' and weather == snowy:
+        print(
+        f'''
+        You suggest a stroll around the shopping centre, 
+        before heading straight to the venue.
+        You and {date} grab some take away coffees,
+        make small talk and stroll around.
+        Its warm indoors so its a relief from the cold,
+        but you're not getting to see much snowfall
+        {date} seems disappointed you're not outdoors in the snow
+        Minus 1 point from endearment score
+        ''')
+        ENDEARMENT -= 1
+        print(f"Your endearment score is {ENDEARMENT}")
+    else:
+        print(
+        f'''
+        At your insistence, you and {date} head straight for the venue.
+        {date} doesn't seem bothered by heading straight there
+        but they comment that it seems like it would have been nice
+        to stroll around or grab a coffee somewhere first
+        No change to endearment score
+        ''')
+        print(f"Your endearment score is {ENDEARMENT}")
+
+
+date_start()
+
 
 input(" (press any button to continue) :")
 os.system('clear')
@@ -392,57 +398,61 @@ a) Lasagna b)Spaghetti and meatballs c)Veggie pasta
 meal_choice = input("Please choose a, b, or c: ").lower().strip()
 os.system('clear')
 
-if meal_choice == 'a' and date == 'Sarah':
-    print(
-    '''
-    Sarah is beaming. 
-    "No way I was going to order Lasagne too!
-    Lasagne is my favourite food.
-    I guess we have something in common!"
-    Plus 1 point to endearement score
-    '''
-    )
-    ENDEARMENT += 1
-    print(f"Your endearment score is {ENDEARMENT}")
-elif meal_choice == 'b' and date == 'Francis':
-    print(
-    '''
-    Francis is beaming. 
-    "No way I was going to order meatballs too!
-    Meaty dishes are my favourite,
-    I guess we have something in common!"
-    Plus 1 point to endearement score
-    '''
-    )
-    ENDEARMENT += 1
-    print(f"Your endearment score is {ENDEARMENT}")
-elif meal_choice == 'c' and date == 'Henrietta':
-    print(
-    '''
-    Henrietta is beaming. 
-    "No way I was going to order veggie food too!
-    I only eat vegetarian food,
-    I guess we have something in common!"
-    Plus 1 point to endearement score
-    '''
-    )
-    ENDEARMENT += 1
-    print(f"Your endearment score is {ENDEARMENT}")
-else:
-    print(
-    f'''
-    You order your meal but {date} orders something
-    completely different from you.
-    You smile awkwardly at each other and 
-    look around the room for something to talk about.
-    No change to endearment score.
-    '''
-    )
-    print(f"Your endearment score is {ENDEARMENT}")
+def menu_choice():
+    global ENDEARMENT
+    if meal_choice == 'a' and date == 'Sarah':
+        print(
+        '''
+        Sarah is beaming. 
+        "No way I was going to order Lasagne too!
+        Lasagne is my favourite food.
+        I guess we have something in common!"
+        Plus 1 point to endearement score
+        '''
+        )
+        ENDEARMENT += 1
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif meal_choice == 'b' and date == 'Francis':
+        print(
+        '''
+        Francis is beaming. 
+        "No way I was going to order meatballs too!
+        Meaty dishes are my favourite,
+        I guess we have something in common!"
+        Plus 1 point to endearement score
+        '''
+        )
+        ENDEARMENT += 1
+        print(f"Your endearment score is {ENDEARMENT}")
+    elif meal_choice == 'c' and date == 'Henrietta':
+        print(
+        '''
+        Henrietta is beaming. 
+        "No way I was going to order veggie food too!
+        I only eat vegetarian food,
+        I guess we have something in common!"
+        Plus 1 point to endearement score
+        '''
+        )
+        ENDEARMENT += 1
+        print(f"Your endearment score is {ENDEARMENT}")
+    else:
+        print(
+        f'''
+        You order your meal but {date} orders something
+        completely different from you.
+        You smile awkwardly at each other and 
+        look around the room for something to talk about.
+        No change to endearment score.
+        '''
+        )
+        print(f"Your endearment score is {ENDEARMENT}")
 
-time.sleep(12)
-os.system('clear')
+    time.sleep(12)
+    os.system('clear')
 
+
+menu_choice()
 
 print(
 f'''
@@ -457,80 +467,85 @@ time.sleep(8)
 drink_choice = input("Please choose a, b, or c").lower().strip()
 os.system('clear')
 
-if  date == 'Henrietta' and drink_choice == 'a' or drink_choice == 'b':
-    print(
-    f'''
-    {date} orders a water, and proceeds to explain
-    in a lengthy speech why they don't drink alcohol.
-    You decide to keep your opinions to yourself.
-    Minus 1 point from endearment score.
-    '''
-    )
-    ENDEARMENT -= 1
-    print(f"your endearment score is {ENDEARMENT}")
-elif drink_choice == 'a' and date == 'Francis':
-    print(
-    f'''
-    {date} slams their fist down on the table in delight.
-    "yeah now we're speaking my language!"
-    "They have some nice craft beers, whats your favourite?"
-    You and {date} begin chatting away about craft beer,
-    you are bonding already!
-    Plus 1 point to endearment score.
-    '''    
-    )
-    ENDEARMENT += 1
-    print(f"your endearment score is {ENDEARMENT}")
-elif drink_choice == 'b' and date == 'Sarah':
-    print(
-    f'''
-    {date} slams their fist down on the table in delight.
-    "yeah now we're speaking my language!"
-    "They have some excellent wine, whats your favourite?"
-    You and {date} begin chatting away about wines
-    you are bonding already!
-    Plus 1 point to endearment score.
-    '''    
-    )
-    ENDEARMENT += 1
-    print(f"your endearment score is {ENDEARMENT}")
-elif drink_choice == 'c':
-    print(
-    f'''
-    The music suddenly stops. 
-    People around you gasp audibly.
-    The waiter struggles to compose himself.
-    "You ... you said... Dr.Pepper sir?"
-    You begin to sweat profusely and nod nervously.
-    The waiter looks like someone just ran over his dog.
-    The air is thick with tension and fear.
-    {date} is staring at the floor.
-    Without saying a word, they stand up
-    {date} puts on their jacket and walks out of the restaurant.
-    You struggle to come to terms with what just happended,
-    as the waiter finally brings down your beverage.
-    "Your Dr.Pepper sir..." he snarls with utter contempt.
-    You can barely contain your shame as you sip your drink.
-    Maybe Dr.Pepper in a fancy italian restaurant was a bad idea.
-        
-    Minus all points from endearment score
-    GAME OVER.
-    '''
-    )
-    time.sleep(25)
-    os.system('clear')
-    sys.exit()
-else: 
-    print(
-    f'''
-    Your drinks arrive in no time at all,
-    you and {date} toast to the evening
-    No change to endearment score
-    '''
-    )
 
-time.sleep(10)
-os.system('clear')
+def beverage_choice():
+    if  date == 'Henrietta' and drink_choice == 'a' or drink_choice == 'b':
+        print(
+        f'''
+        {date} orders a water, and proceeds to explain
+        in a lengthy speech why they don't drink alcohol.
+        You decide to keep your opinions to yourself.
+        Minus 1 point from endearment score.
+        '''
+        )
+        ENDEARMENT -= 1
+        print(f"your endearment score is {ENDEARMENT}")
+    elif drink_choice == 'a' and date == 'Francis':
+        print(
+        f'''
+        {date} slams their fist down on the table in delight.
+        "yeah now we're speaking my language!"
+        "They have some nice craft beers, whats your favourite?"
+        You and {date} begin chatting away about craft beer,
+        you are bonding already!
+        Plus 1 point to endearment score.
+        '''    
+        )
+        ENDEARMENT += 1
+        print(f"your endearment score is {ENDEARMENT}")
+    elif drink_choice == 'b' and date == 'Sarah':
+        print(
+        f'''
+        {date} slams their fist down on the table in delight.
+        "yeah now we're speaking my language!"
+        "They have some excellent wine, whats your favourite?"
+        You and {date} begin chatting away about wines
+        you are bonding already!
+        Plus 1 point to endearment score.
+        '''    
+        )
+        ENDEARMENT += 1
+        print(f"your endearment score is {ENDEARMENT}")
+    elif drink_choice == 'c':
+        print(
+        f'''
+        The music suddenly stops. 
+        People around you gasp audibly.
+        The waiter struggles to compose himself.
+        "You ... you said... Dr.Pepper sir?"
+        You begin to sweat profusely and nod nervously.
+        The waiter looks like someone just ran over his dog.
+        The air is thick with tension and fear.
+        {date} is staring at the floor.
+        Without saying a word, they stand up
+        {date} puts on their jacket and walks out of the restaurant.
+        You struggle to come to terms with what just happended,
+        as the waiter finally brings down your beverage.
+        "Your Dr.Pepper sir..." he snarls with utter contempt.
+        You can barely contain your shame as you sip your drink.
+        Maybe Dr.Pepper in a fancy italian restaurant was a bad idea.
+            
+        Minus all points from endearment score
+        GAME OVER.
+        '''
+        )
+        time.sleep(25)
+        os.system('clear')
+        sys.exit()
+    else: 
+        print(
+        f'''
+        Your drinks arrive in no time at all,
+        you and {date} toast to the evening
+        No change to endearment score
+        '''
+        )
+
+    time.sleep(10)
+    os.system('clear')
+
+
+beverage_choice()
 
 print(
 f'''
@@ -550,117 +565,119 @@ time.sleep(15)
 observation = input("please choose a, b, or c").lower().strip()
 os.system('clear')
 
-if observation == 'a' and date == 'Francis':
-    print(
-    f'''
-    {date} is impressed you noticed.
-    "You're damn right I do!
-    I train hard every day, thanks for noticing!"
-    {date} suddenly stands up and flexes their muscles
-    they change between multiple poses like Hulk Hogan,
-    to the stunned silence of nearby diners.
-    You are impressed.
-    Plus 1 point to endearment score
-    '''
-    )
-    ENDEARMENT += 1
-    print(f"your endearment score is {ENDEARMENT}")
-elif observation == 'c' and date == 'Francis':
-    print(
-    f'''
-    {date} looks dismayed.
-    "Is it that obvious?
-    A few months ago I was working a night shift in the pub
-    and I refused to serve a customer who was way too drunk.
-    Long story short they punched me in the face 
-    and broke my nose.
-    I had to get surgery on it, it looks bad doesn't it?"
-    Despite your attempts to comfort them, 
-    {date} looks forlorn and is bit quieter.
-    Maybe that wasn't a good topic of conversation...
-    Minus 1 point from endearment score.
-    '''
-    )
-    ENDEARMENT -= 1
-    print(f"your endearment score is {ENDEARMENT}")
-elif observation == 'a' and date == 'Sarah':
-    print(
-    f'''
-    {date} is impressed you noticed.
-    "You're damn right I do!
-    I love to go cycling on the weekends.
-    You and I should go for a cycle sometime!"
-    {date} takes out their phone and pulls up some photos
-    they show you a bunch of photos of them cycling
-    and visiting different places.
-    {date} seems adventurous.
-    Plus 1 point to endearment score
-    '''
-    )
-    ENDEARMENT += 1
-    print(f"your endearment score is {ENDEARMENT}")
-elif observation == 'c' and date == 'Sarah':
-    print(
-    f'''
-    {date} is impressed you noticed.
-    "That's pretty observant of you.
-    I was on a long cycle recently, went over a rock,
-    and flipped right over the handlebars onto the ground.
-    I smashed my nose but it didn't smash my determination!"
-    {date} takes out their phone and pulls up some photos
-    they show you a bunch of photos of them cycling
-    and visiting different places.
-    {date} seems adventurous.
-    Plus 1 point to endearment score
-    '''
-    )
-    ENDEARMENT += 1
-    print(f"your endearment score is {ENDEARMENT}")
+def observation_chat():
+    global ENDEARMENT
+    if observation == 'a' and date == 'Francis':
+        print(
+        f'''
+        {date} is impressed you noticed.
+        "You're damn right I do!
+        I train hard every day, thanks for noticing!"
+        {date} suddenly stands up and flexes their muscles
+        they change between multiple poses like Hulk Hogan,
+        to the stunned silence of nearby diners.
+        You are impressed.
+        Plus 1 point to endearment score
+        '''
+        )
+        ENDEARMENT += 1
+        print(f"your endearment score is {ENDEARMENT}")
+    elif observation == 'c' and date == 'Francis':
+        print(
+        f'''
+        {date} looks dismayed.
+        "Is it that obvious?
+        A few months ago I was working a night shift in the pub
+        and I refused to serve a customer who was way too drunk.
+        Long story short they punched me in the face 
+        and broke my nose.
+        I had to get surgery on it, it looks bad doesn't it?"
+        Despite your attempts to comfort them, 
+        {date} looks forlorn and is bit quieter.
+        Maybe that wasn't a good topic of conversation...
+        Minus 1 point from endearment score.
+        '''
+        )
+        ENDEARMENT -= 1
+        print(f"your endearment score is {ENDEARMENT}")
+    elif observation == 'a' and date == 'Sarah':
+        print(
+        f'''
+        {date} is impressed you noticed.
+        "You're damn right I do!
+        I love to go cycling on the weekends.
+        You and I should go for a cycle sometime!"
+        {date} takes out their phone and pulls up some photos
+        they show you a bunch of photos of them cycling
+        and visiting different places.
+        {date} seems adventurous.
+        Plus 1 point to endearment score
+        '''
+        )
+        ENDEARMENT += 1
+        print(f"your endearment score is {ENDEARMENT}")
+    elif observation == 'c' and date == 'Sarah':
+        print(
+        f'''
+        {date} is impressed you noticed.
+        "That's pretty observant of you.
+        I was on a long cycle recently, went over a rock,
+        and flipped right over the handlebars onto the ground.
+        I smashed my nose but it didn't smash my determination!"
+        {date} takes out their phone and pulls up some photos
+        they show you a bunch of photos of them cycling
+        and visiting different places.
+        {date} seems adventurous.
+        Plus 1 point to endearment score
+        '''
+        )
+        ENDEARMENT += 1
+        print(f"your endearment score is {ENDEARMENT}")
 
-elif observation == 'a' and date == 'Henrietta':
-    print(
-    f'''
-    {date} looks dismayed.
-    "OK there's no need to be mean.
-    I know I'm not in great shape, 
-    are you just trying to hurt my feelings?
-    I know I'm not super athletic or anything
-    I'm probably not as skinny as your other dates,
-    not everyone has to be a supermodel ya know."
-    Despite your attempts to comfort them, 
-    {date} looks forlorn and is bit quieter.
-    Maybe that wasn't a good topic of conversation...
-    Minus 1 point from endearment score.
-    '''
-    )
-    ENDEARMENT -= 1
-    print(f"your endearment score is {ENDEARMENT}")
-elif observation == 'b' and date == 'Henrietta':
-    print(
-    f'''
-    {date} is impressed you noticed.
-    "You're damn right I do!
-    I love wearing cool clothes.
-    Check out some of these outfits I had on recently."
-    {date} takes out their phone and pulls up some photos
-    they show you a bunch of photos of them 
-    wearing a wide variety of fashionable atire.
-    {date} is enjoying talking about clothing.
-    Plus 1 point to endearment score
-    '''
-    )
-    ENDEARMENT += 1
-    print(f"your endearment score is {ENDEARMENT}")
-else:
-    print(
-    f'''
-    {date} gives you a polite answer
-    but it doesn't seem to be of interest to them.
-    You talk about your interests without getting too deep.
-    Its hard to tell if {date} is having fun,
-    or if they are just being polite.
-    No change to endearment score.
-    '''
-    )
-    print(f"your endearment score is {ENDEARMENT}")
+    elif observation == 'a' and date == 'Henrietta':
+        print(
+        f'''
+        {date} looks dismayed.
+        "OK there's no need to be mean.
+        I know I'm not in great shape, 
+        are you just trying to hurt my feelings?
+        I know I'm not super athletic or anything
+        I'm probably not as skinny as your other dates,
+        not everyone has to be a supermodel ya know."
+        Despite your attempts to comfort them, 
+        {date} looks forlorn and is bit quieter.
+        Maybe that wasn't a good topic of conversation...
+        Minus 1 point from endearment score.
+        '''
+        )
+        ENDEARMENT -= 1
+        print(f"your endearment score is {ENDEARMENT}")
+    elif observation == 'b' and date == 'Henrietta':
+        print(
+        f'''
+        {date} is impressed you noticed.
+        "You're damn right I do!
+        I love wearing cool clothes.
+        Check out some of these outfits I had on recently."
+        {date} takes out their phone and pulls up some photos
+        they show you a bunch of photos of them 
+        wearing a wide variety of fashionable atire.
+        {date} is enjoying talking about clothing.
+        Plus 1 point to endearment score
+        '''
+        )
+        ENDEARMENT += 1
+        print(f"your endearment score is {ENDEARMENT}")
+    else:
+        print(
+        f'''
+        {date} gives you a polite answer
+        but it doesn't seem to be of interest to them.
+        You talk about your interests without getting too deep.
+        Its hard to tell if {date} is having fun,
+        or if they are just being polite.
+        No change to endearment score.
+        '''
+        )
+        print(f"your endearment score is {ENDEARMENT}")
 
