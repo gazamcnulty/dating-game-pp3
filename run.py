@@ -4,11 +4,19 @@ import sys
 
 #consts
 USER = None
-global ENDEARMENT
 ENDEARMENT = 5
 
 choice = None
 date = None
+
+def input_error():
+    print(
+    '''
+    You typed in an invalid input.
+    You need to choose a, b, or c
+    Please review the question and try again
+    '''
+    )
 
 print(
 '''
@@ -469,6 +477,7 @@ os.system('clear')
 
 
 def beverage_choice():
+    global ENDEARMENT
     if  date == 'Henrietta' and drink_choice == 'a' or drink_choice == 'b':
         print(
         f'''
@@ -680,4 +689,132 @@ def observation_chat():
         '''
         )
         print(f"your endearment score is {ENDEARMENT}")
+
+observation_chat()
+time.sleep(15)
+os.system('clear')
+
+
+def talk_about_me():
+    print(
+    f'''
+    As the conversation continues, {date} asks about you.
+    “But what about you, 
+    tell me something about yourself. 
+    How would you describe yourself?”
+    What should you say?
+    a) "I’m mad craic, 
+    I love having a laugh with people and making memories"
+    b) "I’m a bit shy , I have my hobbies,
+    I’m a good friend once you get to know me"
+    c) "I’m confident, I have a drive to succeed, 
+    both in work and in relationships"
+    '''
+    )
+
+    global ENDEARMENT
+    personality = input("please choose a, b, or c").lower().strip()
+    os.system('clear')
+    if personality == 'a' and date == 'Henrietta':
+        ENDEARMENT -= 1
+        print(
+        f'''
+        {date} tries to smile politely, 
+        but you can't help but notice that
+        they roll their eyes at this.
+        Maybe that's not the kind of person
+        they vibe with...
+        Minus 1 point from endearment score
+
+        Your endearment score is {ENDEARMENT}
+        '''
+        )
+    elif personality == 'b' and date == 'Henrietta':
+        ENDEARMENT += 2
+        print(
+        f'''
+        {date} looks at you with real fondness
+        in their eyes.
+        It feels like this is the first time 
+        they've really seen you for who you are.
+        "Wow, I'm pretty similar myself" {date} replies,
+        "I really value those kinds of qualities in someone"
+        {date} reaches across the table and takes your 
+        hand and holds it gently.
+        Your heart is racing!
+        Plus 2 points to endearment score.
+
+        Your endearment score is {ENDEARMENT}
+        '''
+        )
+    elif personality == 'a' and date == 'Francis':
+        ENDEARMENT += 2
+        print(
+        f'''
+        {date} lights up and smiles broadly.
+        It seems like they can barely contain their 
+        excitement as they excitedly reply
+        "Stop, I'm the exact same! We're here to have fun right?
+        I think you and I would get on like a house on fire"
+        {date} reaches across the table and fist bumps you.
+        Your heart is racing!
+        Plus 2 points to endearment score.
+
+        Your endearment score is {ENDEARMENT}
+        '''
+        )
+    elif personality == 'b' and date == 'Francis':
+        ENDEARMENT -= 1
+        print(
+        f'''
+        {date} tries to smile politely, 
+        but you can't help but notice that
+        they roll their eyes at this.
+        Maybe that's not the kind of person
+        they vibe with...
+        Minus 1 point from endearment score
+
+        Your endearment score is {ENDEARMENT}
+        '''
+        )
+    elif personality == 'c' and date == 'Sarah':
+        ENDEARMENT += 2
+        print(
+        f'''
+        {date} looks at you with real fondness
+        in their eyes.
+        It feels like this is the first time 
+        they've really seen you for who you are.
+        "Wow, I'm pretty similar myself" {date} replies,
+        "I really value those kinds of qualities in someone"
+        {date} reaches across the table and takes your 
+        hand and holds it gently.
+        Your heart is racing!
+        Plus 2 points to endearment score.
+
+        Your endearment score is {ENDEARMENT}
+        '''
+        )
+    elif personality != 'a' or 'b' or 'c':
+        input_error()
+        talk_about_me()
+    else:
+        print(
+        f'''
+        {date} fails to stifle a yawn.
+        Their phone rings and they almost seem relieved.
+        {date} steps away to answer the phone for a bit,
+        while you try to think of other things
+        to talk about.
+        No change to endearment score.
+
+        Your endearment score is {ENDEARMENT}
+        '''
+        )
+
+
+talk_about_me()
+time.sleep(15)
+os.system('clear')
+
 
