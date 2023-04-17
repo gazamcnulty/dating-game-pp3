@@ -1,6 +1,7 @@
 import time
 import os
 import sys
+import random
 
 user = None
 endearment = 5
@@ -9,6 +10,8 @@ date_time = None
 
 choice = None
 date = None
+
+meal_choice = None
 
 def input_error():
     os.system('clear')
@@ -43,7 +46,7 @@ def new_game():
     Your choices matter, each date has their own preferences,
     and remember, lady luck is always watching!
     ''')
-    time.sleep(8)
+    time.sleep(3)
 
     game_choice = input("Would you like to play? y / n ").lower().strip()
     os.system('clear')
@@ -85,7 +88,7 @@ def rules():
     These choices will decide the outcome of the date.
     '''
     )
-    time.sleep(8)
+    time.sleep(3)
     user = input("Please enter your name:")
     os.system('clear')
 
@@ -105,7 +108,7 @@ def profiles():
     You've matched with all three, so lets get to know them!
     ''')
 
-    time.sleep(8)
+    time.sleep(3)
     os.system('clear')
     input("Are you ready to meet the first match? (press enter to continue: )")
     os.system('clear')
@@ -437,6 +440,7 @@ os.system('clear')
 
 def menu_choice():
     global endearment
+    global meal_choice
     print(
     f'''
     The menu has a lot of options , but the prices are rather expensive. 
@@ -730,13 +734,15 @@ def observation_chat():
         print(
         f'''
         {date} gives you a polite answer
-        but it doesn't seem to be of interest to them.
+        but it doesn't seem to be something they 
+        are interested in discussing.
         You talk about your interests without getting too deep.
         Its hard to tell if {date} is having fun,
         or if they are just being polite.
         No change to endearment score.
         '''
         )
+        print(f"your endearment score is {endearment}")
         print(f"your endearment score is {endearment}")
     elif observation == 'c' and date == 'Sarah':
         print(
@@ -793,7 +799,8 @@ def observation_chat():
         print(
         f'''
         {date} gives you a polite answer
-        but it doesn't seem to be of interest to them.
+        but it doesn't seem to be something they 
+        are interested in discussing.
         You talk about your interests without getting too deep.
         Its hard to tell if {date} is having fun,
         or if they are just being polite.
@@ -830,21 +837,7 @@ def talk_about_me():
     global endearment
     personality = input("please choose a, b, or c").lower().strip()
     os.system('clear')
-    if (personality == 'a' or 'c') and date == 'Henrietta':
-        endearment -= 1
-        print(
-        f'''
-        {date} tries to smile politely, 
-        but you can't help but notice that
-        they roll their eyes at this.
-        Maybe that's not the kind of person
-        they vibe with...
-        Minus 1 point from endearment score
-
-        Your endearment score is {endearment}
-        '''
-        )
-    elif personality == 'b' and date == 'Henrietta':
+    if date == 'Henrietta' and personality == 'b':
         endearment += 2
         print(
         f'''
@@ -861,8 +854,22 @@ def talk_about_me():
 
         Your endearment score is {endearment}
         '''
+        )   
+    elif date == 'Henrietta' and (personality == 'a' or 'c'):
+        endearment -= 1
+        print(
+        f'''
+        {date} tries to smile politely, 
+        but you can't help but notice that
+        they roll their eyes at this.
+        Maybe that's not the kind of person
+        they vibe with...
+        Minus 1 point from endearment score
+
+        Your endearment score is {endearment}
+        '''
         )
-    elif personality == 'a' and date == 'Francis':
+    elif date == 'Francis' and personality == 'a':
         endearment += 2
         print(
         f'''
@@ -878,7 +885,7 @@ def talk_about_me():
         Your endearment score is {endearment}
         '''
         )
-    elif (personality == 'b' or 'c') and date == 'Francis':
+    elif date == 'Francis' and (personality == 'b' or 'c'):
         endearment -= 1
         print(
         f'''
@@ -892,7 +899,7 @@ def talk_about_me():
         Your endearment score is {endearment}
         '''
         )
-    elif personality == 'c' and date == 'Sarah':
+    elif date == 'Sarah' and personality == 'c':
         endearment += 2
         print(
         f'''
@@ -910,7 +917,7 @@ def talk_about_me():
         Your endearment score is {endearment}
         '''
         )
-    elif (personality == 'a' or 'b') and date == 'Sarah':
+    elif date == 'Sarah' and (personality == 'a' or 'b'):
         endearment -= 1
         print(
         f'''
@@ -931,12 +938,13 @@ def talk_about_me():
 
 
 talk_about_me()
-time.sleep(15)
+time.sleep(5)
 os.system('clear')
 
 
 def eat_meal():
     global endearment
+    global meal_choice
     print(
     '''
     Finally the food has arrived. 
@@ -955,21 +963,7 @@ def eat_meal():
     '''
     )
     dilemma = input("Please choode a, b, or c")
-    if date == 'Henrietta' and dilemma == 'a' and (meal_choice == 'a' or 'b'):
-        endearment -= 2
-        print(
-        f'''
-        {date} is upset
-        "That dish has meat in it, why would I eat that?
-        You would rather me eat meat than send it back?
-        What is wrong with you {user}?"
-        Maybe you shouldn't have offered them this meal...
-        Minus 2 points from endearment score.
-
-        Your endearment score is {endearment}
-        '''
-        )
-    elif date == 'Henrietta' and dilemma == 'a' and meal_choice == 'c':
+    if date == 'Henrietta' and dilemma == 'a' and meal_choice == 'c':
         endearment += 2
         print(
         f'''
@@ -979,6 +973,20 @@ def eat_meal():
         You're really thoughtful {user}!"
         It seems like {date} really likes you!
         Plus 2 points to endearment score.
+
+        Your endearment score is {endearment}
+        '''
+        )
+    elif date == 'Henrietta' and dilemma == 'a' and (meal_choice == 'a' or 'b'):
+        endearment -= 2
+        print(
+        f'''
+        {date} is upset
+        "That dish has meat in it, why would I eat that?
+        You would rather me eat meat than send it back?
+        What is wrong with you {user}?"
+        Maybe you shouldn't have offered them this meal...
+        Minus 2 points from endearment score.
 
         Your endearment score is {endearment}
         '''
@@ -1018,20 +1026,6 @@ def eat_meal():
         Your endearment score is {endearment}
         '''
         )
-    elif date == 'Francis' and dilemma == 'a' and (meal_choice == 'a' or 'b'):
-        endearment += 2
-        print(
-        f'''
-        {date} is moved by your generosity.
-        "That's actually so sweet of you to offer. 
-        Especially because you ordered a meaty too.
-        You're really thoughtful {user}!"
-        It seems like {date} really likes you!
-        Plus 2 points to endearment score.
-
-        Your endearment score is {endearment}
-        '''
-        )
     elif date == 'Francis' and dilemma == 'a' and meal_choice == 'c':
         endearment -= 1
         print(
@@ -1042,6 +1036,20 @@ def eat_meal():
         "No its fine I'll just sort it with the waiter"
         Maybe you shouldn't have offered them that,
         Minus 1 point from endearment score.
+
+        Your endearment score is {endearment}
+        '''
+        )
+    elif date == 'Francis' and dilemma == 'a' and (meal_choice == 'a' or 'b'):
+        endearment += 2
+        print(
+        f'''
+        {date} is moved by your generosity.
+        "That's actually so sweet of you to offer. 
+        Especially because you ordered a meaty too.
+        You're really thoughtful {user}!"
+        It seems like {date} really likes you!
+        Plus 2 points to endearment score.
 
         Your endearment score is {endearment}
         '''
@@ -1103,3 +1111,138 @@ time.sleep(15)
 os.system('clear')
 
 
+def random_encounter():
+    print(
+    f'''
+    You and {date} continue to eat and drink,
+    enjoying your meal in companiable silence.
+    Suddenly you hear a shout behind you, 
+    {date} looks over your shoulder with a 
+    concerned expression.
+    '''
+    )
+    chance = random.randint(0,6)
+    if chance == 1:
+        choking()
+    elif chance == 2:
+        singing()
+    elif chance == 3:
+        robbery()
+    elif chance == 4:
+        rodent()
+    elif chance == 5:
+        argument()
+
+random_encounter():
+
+
+def choking():
+    global endearment
+    print(
+    f'''
+    A gentleman at a nearby table appears to be choking!
+    He jumps up and starts gesturing histrionically,
+    while his companions shout for someone to help.
+    "We need to do something!" says {date}
+    What will you do?
+    a) Attempt the heimlich manoevre on the choking man.
+    b) Run outside and shout for a doctor
+    c) Throw some pepper under his nostrils to make him sneeze
+    '''
+    )
+
+    choke_response = input("Please choose a, b, or c")
+    if choke_response == 'a':
+        heimlich()
+    elif choke_response == 'b':
+        print(
+        f'''
+        You instruct {date} to call an ambulance,
+        while you run outside and shout for a doctor.
+        Luckily a person passing by is a doctor, 
+        they follow you in and perform first aid on the man.
+        The piece of food is extricated and he is able to breathe again.
+        Everyone claps with relief, while {date} smiles at you.
+        "That was the right call {user} you're 
+        great under pressure. You helped save a life!"
+        {date} is impressed.
+        Plus 1 point to endearment score.
+        '''
+        )
+    elif choke_response == 'c':
+        print(
+        f'''
+        Thinking quickly, you grab a pepper shaker and
+        leap into action.
+        You skillfully dart over and fire a cloud
+        of pepper, right into the choking mans nose.
+        A perfectly executed manoevre, the mans nostrils are
+        completely covered in pepper.
+        As you stand there trimphantly, you realise that 
+        everyone else is staring at you in disbelief.
+
+        {date} screams at you
+        "Why the hell did you do that {user}???"
+        With a smug grin, you humbly explain the idea
+        that pepper will cause the gentleman to sneeze violently.
+
+        {date} is beside themselves.
+        "but the food is stuck in his throat , 
+        not inside his nose you idiot!"
+
+        The realisation dawns on you, while the poor man
+        continues to choke and gasp while also sneezing repeatedly.
+        He collapses to the floor, dead as a doorknob.
+
+        The silence in the room is heavy.
+        You slowly raise your head and lock eyes with {date}
+        "Do you want to split the bill or?"
+
+        Unfortunately it appears this date is over.
+
+        Minus all points from endearment score.
+        GAME OVER
+        '''
+        )
+
+        time.sleep(25)
+        os.system('clear')
+        sys.exit()
+
+def singing():
+    print(
+    f'''
+
+    '''
+    )
+
+
+def robbery():
+    print(
+    f'''
+
+    '''
+    )
+
+
+def rodent():
+    print(
+    f'''
+
+    '''
+    )
+
+
+def argument():
+    print(
+    f'''
+
+    '''
+    )
+
+def heimlich():
+    print(
+    f'''
+
+    '''
+    )
