@@ -1153,8 +1153,23 @@ def choking():
 
     choke_response = input("Please choose a, b, or c")
     if choke_response == 'a':
-        heimlich()
+        endearment += 1
+        print(
+        f'''
+        You quickly leap into action, sprinting towards the man
+        you grab him from behind and expertly perform 
+        the heimlich manoeuvre.
+        After 3 mighty thrusts, a piece of bread flies out
+        you've saved him and he can breathe easy again!
+        Everyone claps with relief, while {date} smiles at you.
+        "That was the right call {user} you're 
+        great under pressure. You helped save a life!"
+        {date} is impressed.
+        Plus 1 point to endearment score.
+        '''
+        )
     elif choke_response == 'b':
+        endearment += 1
         print(
         f'''
         You instruct {date} to call an ambulance,
@@ -1210,12 +1225,26 @@ def choking():
         sys.exit()
 
 def singing():
+    global endearment
     print(
     f'''
-
+    The gentleman playing piano is 
+    producing a beautiful seranade,
+    {date} comments on how beautiful the music is.
+    After a moment he stands up and approaches your table
+    "The two of you seem to be having a lovely evening.
+    Would you like to make a request?"
+    {date} nods excitedly 
+    "absolutely , {user} what sond would you like to hear?"
+    What song will you choose?
+    a) Gangster's paradise
+    b) The book of love
+    c) Master of Puppets
     '''
     )
-
+    song_choice = input("Please choose a, b, or c")
+    if song_choice = 'a':
+        
 
 def robbery():
     print(
