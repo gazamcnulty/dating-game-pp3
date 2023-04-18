@@ -205,7 +205,7 @@ def date_who():
 
     os.system('clear')
     print(f"You've chosen to go on a date with {date}!")
-    time.sleep(4)
+    time.sleep(5)
     os.system('clear')
 
 
@@ -238,17 +238,21 @@ def date_when():
     You've chosen to go on the date with {date} {date_time}!
     '''
     )
-    time.sleep(4)
+    time.sleep(5)
     os.system('clear')
 
     print(
     f'''
     The big day is here {user}!
     Time to to on our date with {date}!
-    You have arranged to meet at the luas stop
+    ''')
+    time.sleep(5)
+    print(
+    f'''
+    You have arranged to meet {date} at the luas stop
     just outside St.Stepehen's Green Park in Dublin city centre.
     ''')
-    time.sleep(4)
+    input(" (press any button to continue) :")
     os.system('clear')
 
 
@@ -280,7 +284,7 @@ def date_when():
         Its nice to be outside in the snow, just don’t freeze up!
         '''
         )
-    time.sleep(4)
+    input(" (press any button to continue) :")
     os.system('clear')
 
 
@@ -450,8 +454,7 @@ def menu_choice():
     {date} asks “so {user} what are you thinking of ordering?”
     '''
     )
-    time.sleep(4)
-    os.system('clear')
+    time.sleep(5)
 
     print(
     '''
@@ -535,7 +538,7 @@ def menu_choice():
         input_error()
         menu_choice()
 
-    time.sleep(4)
+    input(" (press enter to continue) :")
     os.system('clear')
 
 
@@ -552,7 +555,7 @@ def beverage_choice():
     a) Beer b) Wine c) Dr.Pepper
     '''
     )
-    time.sleep(4)
+    time.sleep(5)
 
     drink_choice = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
@@ -636,13 +639,13 @@ def beverage_choice():
         GAME OVER.
         '''
         )
-        time.sleep(25)
+        input(" (press enter to clear) :")
         os.system('clear')
         sys.exit()
     else: 
         input_error()
         beverage_choice()
-    time.sleep(10)
+    input(" (press enter to continue) :")
     os.system('clear')
 
 
@@ -813,7 +816,7 @@ def observation_chat():
         observation_chat()
 
 observation_chat()
-time.sleep(15)
+input(" (press enter to continue) :")
 os.system('clear')
 
 
@@ -938,7 +941,7 @@ def talk_about_me():
 
 
 talk_about_me()
-time.sleep(5)
+input(" (press enter to continue) :")
 os.system('clear')
 
 
@@ -962,7 +965,7 @@ def eat_meal():
     c)“Leave this to me , I’ll get the waiter so we can sort this out”
     '''
     )
-    dilemma = input("Please choode a, b, or c")
+    dilemma = input("Please choode a, b, or c").lower().strip()
     if date == 'Henrietta' and dilemma == 'a' and meal_choice == 'c':
         endearment += 2
         print(
@@ -1107,7 +1110,7 @@ def eat_meal():
 
 
 eat_meal()
-time.sleep(15)
+input(" (press enter to continue) :")
 os.system('clear')
 
 
@@ -1151,7 +1154,7 @@ def choking():
     '''
     )
 
-    choke_response = input("Please choose a, b, or c")
+    choke_response = input("Please choose a, b, or c").lower().strip()
     if choke_response == 'a':
         endearment += 1
         print(
@@ -1220,7 +1223,7 @@ def choking():
         '''
         )
 
-        time.sleep(25)
+        input(" (press enter to clear) :")
         os.system('clear')
         sys.exit()
 
@@ -1231,20 +1234,119 @@ def singing():
     The gentleman playing piano is 
     producing a beautiful seranade,
     {date} comments on how beautiful the music is.
-    After a moment he stands up and approaches your table
+    After a moment the musician stands up and approaches your table
     "The two of you seem to be having a lovely evening.
     Would you like to make a request?"
     {date} nods excitedly 
     "absolutely , {user} what sond would you like to hear?"
     What song will you choose?
-    a) Gangster's paradise
+    a) In the air tonight
     b) The book of love
     c) Master of Puppets
     '''
     )
-    song_choice = input("Please choose a, b, or c")
+    song_choice = input("Please choose a, b, or c").lower().strip()
     if song_choice = 'a':
+        print(
+        f'''
+        The musician nods approvingly and begins the song.
+
+        As Phil Collins' classic power balad 
+        echoes between the walls of the restaurant, 
+        you are distracted from the date and focused on the music.
+
+        The musician is so intense, sweat covering his furrowed brow.
+        You nod along getting more and more into the music,
+        completely ignoring your date.
+        By the time the drum solo kicks in prior to the chorus
+        you are on your feat air drumming along.
+
+        You and the musician belt out the chorus 
+        " I can feeeeeel it, cooomin in the air tonight ....  
+        hold on! "
+        This is the most intense musical experience you have ever had.
+        You've never enjoyed a song this much before.
+        As the final notes play out, you drop to your knees 
+        and scream a primal roar.
+
+        The other patrons stand and give a standing ovation 
+        to the musician and to yourself. 
+        You stand up with tears in your eyes, and grab the musician 
+        in a tight bearhug.
+
+        You turn back to the table, {date} is gone.
+        They musn't be a fan of Phil Collins.
+
+        Minus all points from endearment score.
+
+        GAME OVER.
+
+        '''
+        )
+        input(" (press enter to clear) :")
+        os.system('clear')
+        sys.exit()
+    elif song_choice == 'b':
+        endearment += 2
+        print(
+        f'''
+        The musician nods approvingly and begins the song.
+
+        As Stephin Merritt's classic loves song echoes
+        through the halls of the restaurant, 
+        {date} begins to sob.
+        "Its just such a beautiful song" they cry.
+        You don't really know what to say.
+        You decide to hold {date}'s hand and smile, 
+        without saying anything.
+        {date} is very glad you played this song.
+        It seems like love is in the books!
+
+        Plus 2 points to endearment score.
+
+        Your current endearment score is {endearment}
+        '''
+        )
+    elif song_choice == 'c':
+        endearment += 10
+        print(
+        f'''
+        The musician is perplexed, appears weary, but nods.
+        He disappears into another room ,
+        he is gone for so long you begin to wonder if he forgot.
+        {date} laughs at you for making such a request , 
+        though they admit they are a fan of Metallica.
         
+        Then from out of nowhere , he musician emerges again,
+        electric guitar strapped on shoulder and an amp under his arm.
+        The next 8 minutes and 35 seconds are a blur.
+        He gives it his all, absolutely screaming into the microphone.
+        
+        Despite the restaurant managers pleading, the musician will not stop.
+        He has been consumed by the spirit of rock and no one is safe.
+        At first {date} can't believe it, but within moments 
+        they are singing along as well.
+        This seems to be a lot more interesting than dinner.
+
+        You and {date} are moshing along like you have nothing to live for.
+        Unfortunately the head banging is so intense , 
+        {date} literally smashes their head into the table.
+        The results follow shortly:
+
+        A minor concussion , some short term memory loss and ...
+        a second date!!! 
+
+        {date} had such a good time, they want to bring you to a gig.
+        A local rock band is playing next weekend, 
+        {date} is eager to rock out with you once more. 
+        Hopefully this one won't result in a head injury.
+
+        Plus 10 points to endearment score.
+        '''
+        )
+        input(" (press enter to continue) :")
+        game_victory()
+
 
 def robbery():
     print(
@@ -1275,3 +1377,32 @@ def heimlich():
 
     '''
     )
+
+
+def game_victory():
+    print(
+    f'''
+    Congratulations {user}, you did it!
+    {date} has agreed to a second date with you.
+
+    Your final endearment score was {endearment}
+
+    Dating isn't always easy, it can be a minefield sometimes.
+    In this scenario, you trusted your instincts, 
+    you made some tough decisions , and ultimately won the game.
+    You should be proud of your victory, 
+    give yourself a round of applause!
+
+    After building such good first impression, 
+    the second date should be a piece of cake.
+    You and {user} have a bright future ahead of you.
+
+    Well done, and thanks for playing!
+
+    GAME OVER
+    
+    '''
+    )
+    input(" (press enter to clear) :")
+    os.system('clear')
+    sys.exit()
