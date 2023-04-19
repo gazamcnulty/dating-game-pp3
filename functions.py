@@ -3,14 +3,8 @@ import os
 import sys
 import random
 
-endearment = 5
-user = None
-date = None
+endearment = 3
 date_time = None
-
-choice = None
-date = None
-
 meal_choice = None
 
 
@@ -22,20 +16,19 @@ run.py file
 
 def input_error():
     os.system('clear')
-    print('''
+    print
+    ('''
     You typed in an invalid input.
     You need to choose a, b, or c
     Please review the question and try again
-'''
-    )
+    ''')
     time.sleep(5)
     os.system('clear')
 
 
 
 def new_game():
-    print(
-    '''
+    print('''
     Hello there! Welcome to the Dating Game!
 
     You have been given the chance to find true love. 
@@ -80,6 +73,13 @@ def rules():
 
     From there you will be given context + info about
     the various dates and scenarios.
+
+    You start the game with an 'endearment' score of 3 .
+    If you can bring the score to 10 by the end of the date,
+    you secure a second date and win the game!
+
+    Be warned, some choices can have disastourous
+    consequences and result in immediate game over.
 
     You will be offered choices of a, b, or c. 
     These choices will decide the outcome of the date.
@@ -220,7 +220,9 @@ def date_when():
     print(
     '''
     We next need to decide when to go on the date.
+
     When do you want to go on the date? 
+
     a) tomorrow 
     b) the weekend 
     c) next week?
@@ -250,9 +252,13 @@ def date_when():
     print(
     f'''
     The big day is here {user}!
+
     Time to to on our date with {date}!
+
+    You're starting endearment score is {endearment}
     ''')
     time.sleep(5)
+    os.system('clear')
     print(
     f'''
     You have arranged to meet {date} at the luas stop
@@ -302,10 +308,12 @@ def date_when():
 
 def date_start():
     global endearment
+    global date_time
     print(
     '''
     While you both seem in good form , you should decide 
     what to do first
+
     a ) go straight to the date venue
     b ) go for a stroll in St.Stephens Green Park
     c) go for a stroll in the shopping centre , grab coffees
@@ -320,6 +328,7 @@ def date_start():
         Good call , its not nice to be out in this rain, 
         best to get to the venue ASAP.
         {date} might get a bit wet but the weather isn't your fault
+
         No change to endearment score
         ''')
         print(f"Your endearment score is {endearment}")
@@ -331,6 +340,7 @@ def date_start():
         {date} is unimpressed by your knowledge of the park's history,
         they seem annoyed and are soaked through to the bone.
         Maybe the park stroll wasn't the best idea...
+
         Minus 1 point from endearement score
         ''')
         endearment -= 1
@@ -345,6 +355,7 @@ def date_start():
         Its a little awkward but it was a good idea
         to get out of the rain. 
         {date} seems impressed with your initiative
+
         Plus 1 point to endearement score
         ''')
         endearment += 1
@@ -354,7 +365,9 @@ def date_start():
         f'''
         At your insistence, you and {date} head straight for the venue.
         {date} doesn't seem bothered by heading straight there
-        but they comment that it seems like it would have been a nice day for a stroll
+        but they comment that it seems like it would have been 
+        a nice day for a stroll.
+
         No change to endearment score
         ''')
         print(f"Your endearment score is {endearment}")
@@ -366,6 +379,7 @@ def date_start():
         {date} is impressed by your knowledge of the park's history,
         the fresh air and nice weather puts you both in a good mood.
         {date} seems happy you suggested it
+
         Plus 1 point to endearement score
         ''')
         endearment += 1
@@ -380,6 +394,7 @@ def date_start():
         Its a bit stuffy in the shopping centre unlike outside,
         the weather is so nice and the fresh air is refreshing,
         {date} seems disappointed you're not outdoors
+
         Minus 1 point from endearment score
         ''')
         endearment -= 1
@@ -391,6 +406,7 @@ def date_start():
         {date} doesn't seem bothered by heading straight there
         but they comment that it seems like
         it would have been a nice day for a stroll.
+
         No change to endearment score
         ''')
         print(f"Your endearment score is {endearment}")
@@ -403,6 +419,7 @@ def date_start():
         the blanket of snow reminds you of christmas
         it puts the both of you in a good mood
         {date} seems happy you suggested the walk in the park
+
         Plus 1 point to endearement score
         ''')
         endearment += 1
@@ -417,6 +434,7 @@ def date_start():
         Its warm indoors so its a relief from the cold,
         but you're not getting to see much snowfall
         {date} seems disappointed you're not outdoors in the snow
+
         Minus 1 point from endearment score
         ''')
         endearment -= 1
@@ -480,6 +498,7 @@ def menu_choice():
         "No way I was going to order Lasagne too!
         Lasagne is my favourite food.
         I guess we have something in common {user}!"
+
         Plus 1 point to endearement score
         '''
         )
@@ -492,6 +511,7 @@ def menu_choice():
         completely different from you.
         You smile awkwardly at each other and 
         look around the room for something to talk about.
+
         No change to endearment score.
         '''
         )
@@ -503,6 +523,7 @@ def menu_choice():
         "No way I was going to order meatballs too!
         Meaty dishes are my favourite,
         I guess we have something in common {user}!"
+
         Plus 1 point to endearement score
         '''
         )
@@ -515,6 +536,7 @@ def menu_choice():
         completely different from you.
         You smile awkwardly at each other and 
         look around the room for something to talk about.
+
         No change to endearment score.
         '''
         )
@@ -526,6 +548,7 @@ def menu_choice():
         "No way I was going to order veggie food too!
         I only eat vegetarian food,
         I guess we have something in common {user}!"
+
         Plus 1 point to endearement score
         '''
         )
@@ -538,6 +561,7 @@ def menu_choice():
         completely different from you.
         You smile awkwardly at each other and 
         look around the room for something to talk about.
+
         No change to endearment score.
         '''
         )
@@ -555,7 +579,9 @@ def beverage_choice():
     f'''
     The waiter asks if you would like to order a drink.
     {date} says "I would love a drink!"
+
     What will you order?
+
     a) Beer b) Wine c) Dr.Pepper
     '''
     )
@@ -567,9 +593,10 @@ def beverage_choice():
     if (drink_choice == 'a' or 'b') and date == 'Henrietta':
         print(
         f'''
-        {date} orders a water, and proceeds to explain
+        {date} orders a 7-up, and proceeds to explain
         in a lengthy speech why they don't drink alcohol.
         You decide to keep your opinions to yourself.
+
         Minus 1 point from endearment score.
         '''
         )
@@ -583,6 +610,7 @@ def beverage_choice():
         "They have some nice craft beers, whats your favourite?"
         You and {date} begin chatting away about craft beer,
         you are bonding already!
+
         Plus 1 point to endearment score.
         '''    
         )
@@ -593,6 +621,7 @@ def beverage_choice():
         f'''
         Your drinks arrive in no time at all,
         you and {date} toast to the evening
+
         No change to endearment score
         '''
         )
@@ -602,6 +631,7 @@ def beverage_choice():
         f'''
         Your drinks arrive in no time at all,
         you and {date} toast to the evening
+
         No change to endearment score
         '''
         )
@@ -614,6 +644,7 @@ def beverage_choice():
         "They have some excellent wine, whats your favourite?"
         You and {date} begin chatting away about wines
         you are bonding already!
+
         Plus 1 point to endearment score.
         '''    
         )
@@ -660,7 +691,9 @@ def observation_chat():
     Searching for something to say 
     you look more closely at your date 
     and ask about something you notice.
+
     What will you ask them?
+
     a)You look like you’re in great shape, do you exercise a lot?
     b)I like your outfit, do you have an interest in fashion?
     c)Has your nose ever been broken?
@@ -680,6 +713,7 @@ def observation_chat():
         they change between multiple poses like Hulk Hogan,
         to the stunned silence of nearby diners.
         You are impressed.
+
         Plus 1 point to endearment score
         '''
         )
@@ -694,6 +728,7 @@ def observation_chat():
         You talk about your interests without getting too deep.
         Its hard to tell if {date} is having fun,
         or if they are just being polite.
+
         No change to endearment score.
         '''
         )
@@ -711,6 +746,7 @@ def observation_chat():
         Despite your attempts to comfort them, 
         {date} looks forlorn and is bit quieter.
         Maybe that wasn't a good topic of conversation...
+
         Minus 1 point from endearment score.
         '''
         )
@@ -727,6 +763,7 @@ def observation_chat():
         they show you a bunch of photos of them cycling
         and visiting different places.
         {date} seems adventurous.
+
         Plus 1 point to endearment score
         '''
         )
@@ -741,6 +778,7 @@ def observation_chat():
         You talk about your interests without getting too deep.
         Its hard to tell if {date} is having fun,
         or if they are just being polite.
+
         No change to endearment score.
         '''
         )
@@ -758,6 +796,7 @@ def observation_chat():
         they show you a bunch of photos of them cycling
         and visiting different places.
         {date} seems adventurous.
+
         Plus 1 point to endearment score
         '''
         )
@@ -776,6 +815,7 @@ def observation_chat():
         Despite your attempts to comfort them, 
         {date} looks forlorn and is bit quieter.
         Maybe that wasn't a good topic of conversation...
+
         Minus 1 point from endearment score.
         '''
         )
@@ -792,6 +832,7 @@ def observation_chat():
         they show you a bunch of photos of them 
         wearing a wide variety of fashionable atire.
         {date} is enjoying talking about clothing.
+
         Plus 1 point to endearment score
         '''
         )
@@ -806,6 +847,7 @@ def observation_chat():
         You talk about your interests without getting too deep.
         Its hard to tell if {date} is having fun,
         or if they are just being polite.
+
         No change to endearment score.
         '''
         )
@@ -825,6 +867,8 @@ def talk_about_me():
     tell me something about yourself. 
     How would you describe yourself?”
     What should you say?
+
+
     a) "I’m mad craic, 
     I love having a laugh with people and making memories"
     b) "I’m a bit shy , I have my hobbies,
@@ -850,6 +894,7 @@ def talk_about_me():
         {date} reaches across the table and takes your 
         hand and holds it gently.
         Your heart is racing!
+
         Plus 2 points to endearment score.
 
         Your endearment score is {endearment}
@@ -864,6 +909,7 @@ def talk_about_me():
         they roll their eyes at this.
         Maybe that's not the kind of person
         they vibe with...
+
         Minus 1 point from endearment score
 
         Your endearment score is {endearment}
@@ -880,6 +926,7 @@ def talk_about_me():
         I think you and I would get on like a house on fire"
         {date} reaches across the table and fist bumps you.
         Your heart is racing!
+
         Plus 2 points to endearment score.
 
         Your endearment score is {endearment}
@@ -894,6 +941,7 @@ def talk_about_me():
         they roll their eyes at this.
         Maybe that's not the kind of person
         they vibe with...
+
         Minus 1 point from endearment score
 
         Your endearment score is {endearment}
@@ -912,6 +960,7 @@ def talk_about_me():
         {date} reaches across the table and takes your 
         hand and holds it gently.
         Your heart is racing!
+
         Plus 2 points to endearment score.
 
         Your endearment score is {endearment}
@@ -926,6 +975,7 @@ def talk_about_me():
         they roll their eyes at this.
         Maybe that's not the kind of person
         they vibe with...
+
         Minus 1 point from endearment score
 
         Your endearment score is {endearment}
@@ -950,6 +1000,8 @@ def eat_meal():
     They appear to be a bit confused at first ,
     then disappointed when they realise what has happened.
     You both lock eyes. What do you say ?
+
+
     a)“Hey {date} lets swap meals ,
     my dish looks really good I bet you’ll like it!”
     b)“You should let them know they’ve made a mistake,
@@ -968,6 +1020,7 @@ def eat_meal():
         Especially because you ordered a veggie dish too.
         You're really thoughtful {user}!"
         It seems like {date} really likes you!
+
         Plus 2 points to endearment score.
 
         Your endearment score is {endearment}
@@ -1119,7 +1172,9 @@ def choking():
     He jumps up and starts gesturing histrionically,
     while his companions shout for someone to help.
     "We need to do something!" says {date}
+
     What will you do?
+
     a) Attempt the heimlich manoevre on the choking man.
     b) Run outside and shout for a doctor
     c) Throw some pepper under his nostrils to make him sneeze
@@ -1215,7 +1270,9 @@ def singing():
     Would you like to make a request?"
     {date} nods excitedly 
     "absolutely , {user} what sond would you like to hear?"
+
     What song will you choose?
+
     a) In the air tonight
     b) The book of love
     c) Master of Puppets
@@ -1337,7 +1394,9 @@ def robbery():
     Nearby patrons scream and panic, 
     while you and {date} scramble under the table.
     This is a dangerous situation, {date} is scared.
+
     What should you do?
+
     a) Don't take any action , let the robber 
     do what he wants so you can both stay safe.
     b) This is the moment you've been waiting for.
@@ -1346,7 +1405,7 @@ def robbery():
     for some kind of detail or info that can help.
     '''
     )
-    robbery_choice = input("Please choose a, b, or c").lower().stip()
+    robbery_choice = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if robbery_choice == 'a':
         endearment += 1
@@ -1468,13 +1527,15 @@ def rodent():
     "It's a rat!"
     Sure enough, you see the rodent sprinting across the floor.
     {date} is disgusted and the waiter is mortified.
+
     What should you do?
+
     a) Throw your knife at the rat
     b) Throw your complaint at the manager
     c) Throw your money on the table and leave 
     '''
     )
-    rodent_response = input("Please choose a, b, or c").lower().stip()
+    rodent_response = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and rodent_response == 'a':
         print(
@@ -1585,6 +1646,7 @@ def argument():
     It seems like the other couple are having a fierce argument!
 
     What should you do?
+
     a) Mind your own business
     b) Offer to mediate their discussion
     c) Tell them to shut up
@@ -1711,13 +1773,16 @@ def spontaneous():
     you think to yourself, "Hmm I wonder if this date is going well?" 
     "in any case, I can’t coast on good luck. I need 
     to keep the good vibes going. Maybe I can do something else … "
+
     What will you do ?
+
     a) Call the waiter over and order an expensive bottle of champagne
     b) Pierce a chunk of food, and guide the fork towards your date’s mouth
     c) Lean over to your date and whisper in their ear “ I have a bomb”
     '''
     )
     spontaneous_decision = input("Please choose a, b, or c")
+    os.system('clear')
     if date == 'Henrietta' and spontaneous_decision == 'a':
         print(
         f'''
@@ -1772,6 +1837,8 @@ def spontaneous():
         Champagne is always a good call.
 
         Plus 1 point to endearment score.
+
+        Your current endearment score is {endearment}
         ''')
     elif spontaneous_decision == 'b':
         endearment += 1
@@ -1788,6 +1855,8 @@ def spontaneous():
         Well this is cute!
 
         Plus 1 point to endearment score.
+
+        Your current endearment score is {endearment}
         ''')
     elif spontaneous_decision == 'c':
         print(
@@ -1839,11 +1908,13 @@ def dessert():
     asks if you would like anything for desert.
     
     What will you do?
+
     a) Order ice cream 
     b) Order chocolate cake
     c) Order coffee
     ''')
     dessert_choice = input("Please choose a, b, or c").lower().strip()
+    os.system('clear')
     if date == 'Henrietta' and dessert_choice == 'c':
         endearment += 1
         print(
@@ -1952,7 +2023,9 @@ def bill():
     You both smile and open your mouths to speak at the same time,
     then laugh. {date} lets you go first,
     “I’m sorry what were you going to say?”
+
     What should you say?
+
     a) “Shall we split the bill  50 / 50 ?”
     b) “Let me pay for the meal, I insist”
     c) “Grab your jacket, get ready to run”
@@ -2072,13 +2145,16 @@ def goodbye():
 
     The luas display shows it will be here in 
     two minues, its now or never!
+
     What should you say?
+
     a) "I'm really glad I met you"
     b) "Kiss me you fool"
     c) "Lets not end the date, cmon lets grab a drink!"
     '''
     )
     goodbye_chance = input("Please choose a, b, or c")
+    os.system('clear')
     if goodbye_chance == 'a':
         endearment += 1
         print(
@@ -2106,8 +2182,7 @@ def goodbye():
         '''
         )
     elif goodbye_chance == 'b' and endearment >= 8:
-        print(
-        f'''
+        print(f'''
         You put your arm on {date}'s shoulder and 
         say with sincerity
         "Kiss me you fool"
@@ -2116,8 +2191,15 @@ def goodbye():
         "you're an interesting person {user},
         I won't forget you any time soon."
 
-        You watch as {date} gets on the luas.
-        As you're about to walk away, {date}
+        You watch as {date} gets on the luas...
+
+
+        '''
+        )
+        print(f'''
+
+
+        ... Suddenly, as you're about to walk away, {date}
         runs out towards you and pulls you in for a kiss!
         yes!!!
 
