@@ -587,7 +587,7 @@ def beverage_choice():
     )
     time.sleep(5)
 
-    drink_choice = input("Please choose a, b, or c").lower().strip()
+    drink_choice = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
 
     if (drink_choice == 'a' or 'b') and date == 'Henrietta':
@@ -701,7 +701,7 @@ def observation_chat():
     )
     time.sleep(5)
 
-    observation = input("please choose a, b, or c").lower().strip()
+    observation = input("please choose a, b, or c :").lower().strip()
     os.system('clear')
     if observation == 'a' and date == 'Francis':
         print(
