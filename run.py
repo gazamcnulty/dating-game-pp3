@@ -13,6 +13,7 @@ date = None
 
 meal_choice = None
 
+
 def input_error():
     os.system('clear')
     print(
@@ -1839,6 +1840,9 @@ def spontaneous():
     os.system('clear')
 
 
+spontaneous()
+
+
 def dessert():
     global endearment
     print(
@@ -1947,17 +1951,297 @@ def dessert():
     input(" (press enter to continue) :")
     os.system('clear')
 
-spontaneous()
+
+dessert()
+
+
+def bill():
+    print(
+    f'''
+    Finally , the meal is drawing to a close.
+    The waiter brings the bill for payment. 
+
+    This is the classic dilemma, 
+    an inevitable moment for any date. 
+    The bill is placed right in the middle of the table,
+    equal distance between you and {date}. 
+    You both smile and open your mouths to speak at the same time,
+    then laugh. {date} lets you go first,
+    “I’m sorry what were you going to say?”
+    What should you say?
+    a) “Shall we split the bill  50 / 50 ?”
+    b) “Let me pay for the meal, I insist”
+    c) “Grab your jacket, get ready to run”
+    '''
+    )
+    bill_choice = input("Please choose a, b, or c")
+    os.system('clear')
+    if date == 'Francis' and bill_choice == 'a':
+        endearment += 1
+        print(
+        f'''
+        You suggest splitting the bill 50 / 50.
+
+        {date} is delighted to hear that.
+        "That's a relief , i was worried you would
+        want me to pay ha ha!"
+        "All jokes aside, I think its best to 
+        split the bill down the middle, I'm glad you agree."
+
+        {date} is happy with this.
+
+        Plus 1 point to endearment score.
+
+        Your current endearment score is {endearment}
+        '''
+        )
+    elif (date == 'Henrietta' or 'Sarah') and bill_choice == 'a':
+        print(
+        f'''
+        You suggest splitting the bill 50 / 50.
+
+        {date} nods in agreement and takes out some cash to pay.
+        They seem to agree that splitting the bill is the 
+        best thing to do, but you can't help but feel 
+        as though they're not happy about it.
+
+        No change to endearment score.
+
+        Your current endearment score is {endearment}
+        '''
+        )
+    elif  bill_choice == 'b':
+        print(
+        f'''
+        You offer to pay the bill yourself.
+
+        {date} tries to decline and insist that 
+        they should split the bill. 
+        After some convincing, {date} capitulates 
+        and thanks you for being so generous.
+        You take a chance and say
+        "Well since I'm paying on this date, you can
+        pay on the next date!"
+
+        {date} smiles at this , but they don't confirm
+        or deny your assertion.
+        We'll see ...
+
+        Plus 2 points to endearment score.
+
+        Your current endearment score is {endearment}
+
+        '''
+        )
+    elif bill_choice == 'c':
+        endearment -= 3
+        print(
+        f'''
+        You lower your head and look intently at {date}
+        "Grab your jacket , get ready to run"
+
+        {date} seems to think you're kidding, they 
+        let out an awkward laugh while you scout out the exit.
+
+        "Ok , on 3. 1 ... 2 ... 3!"
+        You're up and out like a flash , sprinting towards the door.
+        You dodge around a clueless staff member, and
+        leap over a table like an olympian.
+        You burst out the door and tear down the street.
+
+        After rounding the corner you trip over a small dog.
+        The dog regards you as a threat and leaps into an attack.
+        You run back in the opposite direction , the dog 
+        nipping at your heels as you go.
+
+        As you head back in the opposite direction you run 
+        face first into {date}, causing you, {date} and the dog
+        to fall over into a pile.
+
+        While the dog is biting you in the face, {date}
+        shouts that she had to pay the bill.
+
+        You suspect that this wasn't the best way to end 
+        the date.
+
+        Minus 3 points from endearment score.
+
+        Your current endearment score is {endearment}
+        '''
+        )
+    else:
+        input_error()
+        bill()
+    input(" (press enter to continue) :")
+    os.system('clear')
 
 
 
 
+bill()
 
 
 
+def goodbye():
+    print(
+    f'''
+    With that , its time to wrap up the date.
+    You walk {date} back to the luas stop, you 
+    both chat about the evening.
+    It's hard to tell how much {date} likes you,
+    but you'll never know unless you take a chance.
+
+    The luas display shows it will be here in 
+    two minues, its now or never!
+    What should you say?
+    a) "I'm really glad I met you"
+    b) "Kiss me you fool"
+    c) "Lets not end the date, cmon lets grab a drink!"
+    '''
+    )
+    goodbye_chance = input("Please choose a, b, or c")
+    if goodbye_chance == 'a':
+        endearment += 1
+        print(
+        f'''
+        You put your arm on {date}'s shoulder and 
+        say with sincerity
+        "I'm really glad I met you {date}"
+
+        {date} looks at you and smiles warmly
+        "you're an interesting person {user}, I 
+        can safely say that!
+        And ... yeah I'm glad I met you too.
+
+        You and {date} embrace in a tender hug,
+        before they get on the luas.
+
+        As the luas heads off down the track, you
+        stop to recall the events of the date.
+
+        How well do you think it went?
+        I wonder if there will be a second date...
+
+        Endearment score plus 1
+
+        '''
+        )
+    elif goodbye_chance == 'b' and endearment >= 8:
+        print(
+        f'''
+        You put your arm on {date}'s shoulder and 
+        say with sincerity
+        "Kiss me you fool"
+
+        {date} looks at you and smiles warmly
+        "you're an interesting person {user},
+        I won't forget you any time soon."
+
+        You watch as {date} gets on the luas.
+        As you're about to walk away, {date}
+        runs out towards you and pulls you in for a kiss!
+        yes!!!
+
+        {date} laughs and runs back to squeeze through the 
+        doors of the luas before they close.
+        That was a nice way to end a first date!
+        But will there be a second date?...
+        '''
+        )
+    elif goodbye_chance == 'b' and endearment < 8:
+        endearment += 1
+        print(
+        f'''
+        You put your arm on {date}'s shoulder and 
+        say with sincerity
+        "Kiss me you fool"
+
+        {date} looks at you and smiles warmly
+        "you're an interesting person {user},
+        I won't forget you any time soon.
+        I think there are some things I like about you,
+        but I don't think I want to kiss you right now."
+
+        You and {date} embrace in a tender hug,
+        before they get on the luas.
+
+        As the luas heads off down the track, you
+        stop to recall the events of the date.
+
+        How well do you think it went?
+        I wonder if there will be a second date...
+
+        Endearment score plus 1
+        '''
+        )
+    elif goodbye_chance == 'c':
+        print(
+        f'''
+        You stammer out a final plea
+        "Don't get on the luas! Lets not allow 
+        the date to end here, why don't we go grab a 
+        drink or a coffee somewhere?
+        {date} turns and looks you in the eye
+        '''
+        )
+        chance = random.randint(0,6)
+        if chance == 3:
+            endearment += 3
+            print(
+        f'''
+        {date} answers you 
+        "Ya know what? Why not? Lets keep the date going
+        a bit longer, how much worse can it get right?"
+        You and {date} share a laugh and turn back towards town,
+        looking for a bar or café to spend more time together.
+
+        As the night progresses, the situation has actually 
+        broken the ice a bit,
+        now you and {date} are chatting and laughing like old friends.
+        Before you know it you're swapping stories, telling jokes,
+        and gazing into each other's eyes.
+
+        You wait and wait, then when the time is right, 
+        you steal a kiss!
+        {date}'s face turns red but they can't stop smiling either.
+
+        You walk {date} to the luas stop to bring your date to a close.
+
+        Plus 3 points to endearment score.
+        '''
+        )
+        else:
+            endearment += 1
+            print(
+            f'''
+            {date} answers you 
+            "I'm sorry {user} I don't think 
+            going for a drink is a good idea right now.
+            The date's wrapped up, lets call it a night.
+
+            {date} looks at you and smiles warmly
+            "you're an interesting person {user},
+            I won't forget you any time soon."
+            You and {date} embrace in a tender hug,
+            before they get on the luas.
+
+            As the luas heads off down the track, you
+            stop to recall the events of the date.
+
+            How well do you think it went?
+            I wonder if there will be a second date...
+
+            Endearment score plus 1
+            '''
+            )
+    else:
+        input_error()
+        goodbye()
+    input(" (press enter to continue) :")
+    os.system('clear')
 
 
-
+goodbye()
 
 
 def end_check():
@@ -1966,6 +2250,7 @@ def end_check():
     else:
         game_failure()
 
+end_check()
 
 
 def game_victory():
