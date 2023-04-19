@@ -3,6 +3,7 @@ import os
 import sys
 import random
 import functions
+import profiles
 
 
 print(
@@ -21,7 +22,7 @@ functions.new_game()
 functions.rules()
 
 
-functions.profiles()
+profiles.profile_function()
 
 
 functions.date_who()
