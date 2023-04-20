@@ -28,6 +28,12 @@ def input_error():
 
 
 def new_game():
+    '''
+    Welcomes player, introduces the Dating Game.
+    Gives player choice y / n to play the game.
+    'y' triggers rules() 'n' prints flavour text and ends game
+    input validation rejects any answer besides 'y' or 'n'
+    '''
     print('''
     Hello there! Welcome to the Dating Game!
 
@@ -62,6 +68,9 @@ def new_game():
 
 
 def rules():
+    '''
+    Explains game rules, allows user to enter their name.
+    '''
     global user
     print(
         '''
@@ -97,6 +106,12 @@ def rules():
 
 
 def date_who():
+    '''
+    Introduces the 3 date matches and allows user to choose
+    which person they want to date
+    input validation rejects any answer besides 'a' 'b' or 'c' , 
+    if another answer is given the function loops 
+    '''
     global date
     print(
         f'''
@@ -128,6 +143,10 @@ def date_who():
 
 
 def date_when():
+    '''
+    Asks user to choose when to go on date, assigns the 
+    time choice to weather pattern which will affect date.
+    '''
     global endearment
     global date_time
     print(
@@ -218,6 +237,10 @@ def date_when():
 
 
 def date_start():
+    '''
+    Asks user to choose what to do at the start of the date.
+    Depending on weather, different choices affect score.
+    '''
     global endearment
     global date_time
     print(
@@ -358,6 +381,10 @@ def date_start():
 
 
 def menu_choice():
+    '''
+    Describes setting, asks user to choose meal, 
+    point given for ordering the same as the date.
+    '''
     global endearment
     global meal_choice
     print(
@@ -485,6 +512,11 @@ def menu_choice():
 
 
 def beverage_choice():
+    '''
+    Asks user to order drink, point given if they choose
+    same as the date, (no right answer here for Henrietta),
+    triggers instant game over if user chooses Dr.Pepper
+    '''
     global endearment
     print(
         f'''
@@ -596,6 +628,12 @@ def beverage_choice():
 
 
 def observation_chat():
+    '''
+    Asks user to choose something about their date's 
+    appearance to ask about. points given if the observation
+    reflects the date's interests, points deducted if 
+    the date is offended
+    '''
     global endearment
     print(
         f'''
@@ -773,6 +811,10 @@ def observation_chat():
 
 
 def talk_about_me():
+    '''
+    Asks user to describe their own personality
+    points given if it matches date's personality
+    '''
     print(
         f'''
         As the conversation continues, {date} asks about you.
@@ -902,6 +944,11 @@ def talk_about_me():
 
 
 def eat_meal():
+    '''
+    Asks user to choose how to address the date being
+    given the wrong food order. Gain lose points depending
+    on date's personality / response to choice
+    '''
     global endearment
     print(
         f'''
@@ -1084,6 +1131,11 @@ def eat_meal():
 
 
 def choking():
+    '''
+    1 of 5 possible scenarios , from random_encounter()
+    points given for 2 possible right choices, 
+    instant game over for the wrong choice
+    '''
     global endearment
     print(
         f'''
@@ -1179,6 +1231,11 @@ def choking():
 
 
 def singing():
+    '''
+    1 of 5 possible scenarios , from random_encounter()
+    points given for 2 possible right choices, 
+    instant game over for the wrong choice
+    '''
     global endearment
     print(
         f'''
@@ -1309,6 +1366,11 @@ def singing():
 
 
 def robbery():
+    '''
+    1 of 5 possible scenarios , from random_encounter()
+    points given for 2 possible right choices, 
+    instant game over for the wrong choice
+    '''
     global endearment
     print(
         f'''
@@ -1437,6 +1499,11 @@ def robbery():
 
 
 def rodent():
+    '''
+    1 of 5 possible scenarios , from random_encounter()
+    points given for 2 possible right choices, 
+    instant game over for the wrong choice
+    '''
     global endearment
     print(
         f'''
@@ -1549,6 +1616,11 @@ def rodent():
 
 
 def argument():
+    '''
+    1 of 5 possible scenarios , from random_encounter()
+    points given for 2 possible right choices, 
+    points lost for wrong choice
+    '''
     global endearment
     print(
         f'''
@@ -1654,6 +1726,12 @@ def argument():
 
 
 def random_encounter():
+    '''
+    generates random number between 0 - 6, which then 
+    triggers 1 of 5 possible random scenarios.
+    each scenario has instant game over and game victory
+    possibilities, as well as usual point gain/loss
+    '''
     global endearment
     print(
         f'''
@@ -1676,6 +1754,11 @@ def random_encounter():
 
 
 def spontaneous():
+    '''
+    asks user to choose spontaneous action, can gaing points
+    or result in instant game over depending on the date
+    wrong choice
+    '''
     global endearment
     print(
         f'''
@@ -1785,6 +1868,10 @@ def spontaneous():
 
 
 def dessert():
+    '''
+    asks user to choose dessert, points given if 
+    they order what their date would have wanted
+    '''
     global endearment
     print(
         f'''
@@ -1882,6 +1969,11 @@ def dessert():
 
 
 def bill():
+    '''
+    asks user how to approach paying the bill
+    slight points amount differences depending on the date,
+    points lost if user tries to run
+    '''
     global endearment
     print(
         f'''
@@ -1985,6 +2077,14 @@ def bill():
 
 
 def goodbye():
+    '''
+    asks user to choose how to say goodbye
+    if endearment is 8 points or more, they can kiss
+    and gain more points
+    if user tries to prolong date, it generates 
+    random number. 1 in 5 chance of saying yes and 
+    gain more points
+    '''
     global endearment
     print(
         f'''
@@ -2122,6 +2222,10 @@ def goodbye():
 
 
 def end_check():
+    '''
+    checks endearment score , triggers game_victory if 10 or higher,
+    triggers game_failure() if less than 10
+    '''
     global endearment
     if endearment >= 10:
         game_victory()
@@ -2130,6 +2234,10 @@ def end_check():
 
 
 def game_victory():
+    '''
+    prints victory text congratulating user
+    triggers system exit
+    '''
     global endearment
     print(
         f'''
@@ -2156,6 +2264,10 @@ def game_victory():
 
 
 def game_failure():
+    '''
+    prints failure text offering commiseration and advice
+    triggers system exit
+    '''
     global endearment
     print(
         f'''

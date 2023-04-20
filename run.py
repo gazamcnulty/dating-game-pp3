@@ -1,7 +1,4 @@
-import time
-import os
-import sys
-import random
+
 import functions
 import profiles
 
