@@ -16,13 +16,12 @@ run.py file
 
 def input_error():
     os.system('clear')
-    print
-    ('''
-    You typed in an invalid input.
-    You need to choose a, b, or c
-
-    Please review the question and try again
-    ''')
+    print(
+        '''
+        You typed in an invalid input.
+        You need to choose a, b, or c
+        Please review the question and try again
+        ''')
     time.sleep(5)
     os.system('clear')
 
@@ -44,11 +43,12 @@ def new_game():
     Your choices matter, each date has their own preferences,
     and remember, lady luck is always watching!
     ''')
-    time.sleep(3)
     game_choice = input("Would you like to play? y / n ").lower().strip()
     os.system('clear')
     if game_choice == 'y':
-        rules()
+        print("That's the spirit! Lets start with the rules.")
+        time.sleep(3)
+        os.system('clear')
     elif game_choice == 'n':
         print(
             '''
@@ -57,9 +57,8 @@ def new_game():
             If you ever change your mind, return here to play the dating game!
             '''
         )
-        time.sleep(5)
         print("    GAME OVER")
-        time.sleep(10)
+        input(" (press enter to clear/exit) :")
         os.system('clear')
         sys.exit()
     else:
@@ -74,8 +73,6 @@ def rules():
     global user
     print(
         '''
-        That's the spirit! Lets start with the rules.
-        
         This is a simple text based game.
         First you will be asked to enter your name.
         From there you will be given context + info about
@@ -2255,7 +2252,7 @@ def game_victory():
 
         '''
         )
-    input(" (press enter to clear) :")
+    input(" (press enter to clear/exit) :")
     os.system('clear')
     sys.exit()
 
@@ -2291,6 +2288,6 @@ def game_failure():
         GAME OVER
         '''
         )
-    input(" (press enter to clear) :")
+    input(" (press enter to clear/exit) :")
     os.system('clear')
     sys.exit()

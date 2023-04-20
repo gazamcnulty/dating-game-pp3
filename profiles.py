@@ -1,7 +1,7 @@
-
 import time
 import os
 import sys
+import random
 
 
 # Here I will store character profiles in dictionaries.
