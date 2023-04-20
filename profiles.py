@@ -91,11 +91,11 @@ def profile_function():
         You've matched with all three, so lets get to know them!
         ''')
 
-    time.sleep(3)
-    os.system('clear')
     input("Are you ready to meet the first match? (press enter to continue: )")
     os.system('clear')
-
+    print("Our first match is Henrietta!")
+    input("(press enter to continue: )")
+    os.system('clear')
     print(
         f'''
         The first match is {match_1["date_name"]}.
@@ -120,6 +120,7 @@ def profile_function():
         after a meal is {match_1["dessert_preference"]}
         '''
         )
+
     input("Meet your second match? (press enter to continue: )")
     os.system('clear')
     print(
@@ -175,5 +176,5 @@ def profile_function():
         '''
         )
     input(" (press enter to continue) :")
-
+    print("Those were the 3 matches. Decided yet?")
     os.system('clear')
