@@ -106,6 +106,7 @@ def date_who():
     input validation rejects any answer besides 'a' 'b' or 'c' ,
     if another answer is given the function loops
     '''
+    os.system('clear')
     global date
     print(
         f'''

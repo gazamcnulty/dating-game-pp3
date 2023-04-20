@@ -22,7 +22,7 @@ functions.rules()
 
 
 profiles.profile_function()
-
+os.system('clear')
 
 functions.date_who()
 
