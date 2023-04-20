@@ -48,7 +48,7 @@ def new_game():
     game_choice = input("Would you like to play? y / n ").lower().strip()
     os.system('clear')
     if game_choice == 'y':
-        print("That's the spirit! Lets start with the rules.")
+        rules()
     elif game_choice == 'n':
         print(
             '''
@@ -74,10 +74,10 @@ def rules():
     global user
     print(
         '''
-        Rules: This is a simple text based game.
-
+        That's the spirit! Lets start with the rules.
+        
+        This is a simple text based game.
         First you will be asked to enter your name.
-
         From there you will be given context + info about
         the various dates and scenarios.
 
@@ -88,10 +88,7 @@ def rules():
         Be warned, some choices can have disastourous
         consequences and result in immediate game over.
 
-        You will be offered choices of a, b, or c.
-
         These choices will decide the outcome of the date.
-
         When asked, please type 'a' , 'b' or 'c',
         followed by 'enter' to confirm
         '''
@@ -109,8 +106,8 @@ def date_who():
     '''
     Introduces the 3 date matches and allows user to choose
     which person they want to date
-    input validation rejects any answer besides 'a' 'b' or 'c' , 
-    if another answer is given the function loops 
+    input validation rejects any answer besides 'a' 'b' or 'c' ,
+    if another answer is given the function loops
     '''
     global date
     print(
@@ -144,7 +141,7 @@ def date_who():
 
 def date_when():
     '''
-    Asks user to choose when to go on date, assigns the 
+    Asks user to choose when to go on date, assigns the
     time choice to weather pattern which will affect date.
     '''
     global endearment
@@ -382,7 +379,7 @@ def date_start():
 
 def menu_choice():
     '''
-    Describes setting, asks user to choose meal, 
+    Describes setting, asks user to choose meal,
     point given for ordering the same as the date.
     '''
     global endearment
@@ -629,9 +626,9 @@ def beverage_choice():
 
 def observation_chat():
     '''
-    Asks user to choose something about their date's 
+    Asks user to choose something about their date's
     appearance to ask about. points given if the observation
-    reflects the date's interests, points deducted if 
+    reflects the date's interests, points deducted if
     the date is offended
     '''
     global endearment
@@ -1133,7 +1130,7 @@ def eat_meal():
 def choking():
     '''
     1 of 5 possible scenarios , from random_encounter()
-    points given for 2 possible right choices, 
+    points given for 2 possible right choices,
     instant game over for the wrong choice
     '''
     global endearment
@@ -1233,7 +1230,7 @@ def choking():
 def singing():
     '''
     1 of 5 possible scenarios , from random_encounter()
-    points given for 2 possible right choices, 
+    points given for 2 possible right choices,
     instant game over for the wrong choice
     '''
     global endearment
@@ -1368,7 +1365,7 @@ def singing():
 def robbery():
     '''
     1 of 5 possible scenarios , from random_encounter()
-    points given for 2 possible right choices, 
+    points given for 2 possible right choices,
     instant game over for the wrong choice
     '''
     global endearment
@@ -1501,7 +1498,7 @@ def robbery():
 def rodent():
     '''
     1 of 5 possible scenarios , from random_encounter()
-    points given for 2 possible right choices, 
+    points given for 2 possible right choices,
     instant game over for the wrong choice
     '''
     global endearment
@@ -1607,7 +1604,7 @@ def rodent():
             '''
             )
         input(" (press enter to continue) :")
-        end_check()
+        goodbye()
     else:
         input_error()
         rodent()
@@ -1618,7 +1615,7 @@ def rodent():
 def argument():
     '''
     1 of 5 possible scenarios , from random_encounter()
-    points given for 2 possible right choices, 
+    points given for 2 possible right choices,
     points lost for wrong choice
     '''
     global endearment
@@ -1727,7 +1724,7 @@ def argument():
 
 def random_encounter():
     '''
-    generates random number between 0 - 6, which then 
+    generates random number between 0 - 6, which then
     triggers 1 of 5 possible random scenarios.
     each scenario has instant game over and game victory
     possibilities, as well as usual point gain/loss
@@ -1869,7 +1866,7 @@ def spontaneous():
 
 def dessert():
     '''
-    asks user to choose dessert, points given if 
+    asks user to choose dessert, points given if
     they order what their date would have wanted
     '''
     global endearment
@@ -2081,8 +2078,8 @@ def goodbye():
     asks user to choose how to say goodbye
     if endearment is 8 points or more, they can kiss
     and gain more points
-    if user tries to prolong date, it generates 
-    random number. 1 in 5 chance of saying yes and 
+    if user tries to prolong date, it generates
+    random number. 1 in 5 chance of saying yes and
     gain more points
     '''
     global endearment
