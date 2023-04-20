@@ -178,4 +178,7 @@ def profile_function():
         )
     input(" (press enter to continue) :")
     print("Those were the 3 matches. Decided yet?")
+    time.sleep(5)
     os.system('clear')
+
+profile_function()
