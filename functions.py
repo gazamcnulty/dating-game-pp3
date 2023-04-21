@@ -94,7 +94,8 @@ def rules():
         '''
     )
     time.sleep(3)
-    user = input("Please enter your name:")
+    user = input('''When you're ready to proceed,
+                please type your name and press enter :''')
     os.system('clear')
 
     print(f"Pleased to make your acquaintance {user}")
