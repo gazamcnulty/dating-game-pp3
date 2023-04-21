@@ -15,9 +15,18 @@ meal_choice = None
 # below are functions to be imported into
 # run.py file
 
+def input_error_1():
+    os.system('clear')
+    print(
+        '''
+        You typed in an invalid input.
+        You need to choose y, or n
+        Please review the question and try again
+        ''')
+    time.sleep(5)
+    os.system('clear')
 
-
-def input_error():
+def input_error_2():
     os.system('clear')
     print(
         '''
@@ -70,7 +79,7 @@ def new_game():
             os.system('clear')
             sys.exit()
         else:
-            input_error()
+            input_error_1()
             input_received = False
 
 
@@ -137,7 +146,7 @@ def date_who():
     elif date_choice == 'c':
         date = 'Sarah'
     else:
-        input_error()
+        input_error_2()
         date_who()
 
     os.system('clear')
@@ -173,7 +182,7 @@ def date_when():
     elif time_choice == 'c':
         date_time = 'next week'
     else:
-        input_error()
+        input_error_2()
         date_when()
     os.system('clear')
     print(
@@ -372,7 +381,7 @@ def date_start():
         endearment -= 1
         print(f"Your endearment score is {endearment}")
     else:
-        input_error()
+        input_error_2()
         date_when()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -489,7 +498,7 @@ def menu_choice():
             ''')
         print(f"Your endearment score is {endearment}")
     else:
-        input_error()
+        input_error_2()
         menu_choice()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -603,7 +612,7 @@ def beverage_choice():
         endearment += 1
         print(f"your endearment score is {endearment}")
     else:
-        input_error()
+        input_error_2()
         beverage_choice()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -785,7 +794,7 @@ def observation_chat():
             )
         print(f"your endearment score is {endearment}")
     else:
-        input_error()
+        input_error_2()
         observation_chat()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -918,7 +927,7 @@ def talk_about_me():
             '''
             )
     else:
-        input_error()
+        input_error_2()
         talk_about_me()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -1091,7 +1100,7 @@ def eat_meal():
             '''
             )
     else:
-        input_error()
+        input_error_2()
         eat_meal()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -1187,7 +1196,7 @@ def choking():
         os.system('clear')
         game_failure()
     else:
-        input_error()
+        input_error_2()
         choking()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -1322,7 +1331,7 @@ def singing():
         input(" (press enter to continue) :")
         game_victory()
     else:
-        input_error()
+        input_error_2()
         singing()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -1434,7 +1443,7 @@ def robbery():
             Your current endearment score is {endearment}
             ''')
     else:
-        input_error()
+        input_error_2()
         robbery()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -1545,7 +1554,7 @@ def rodent():
         os.system('clear')
         goodbye()
     else:
-        input_error()
+        input_error_2()
         rodent()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -1653,7 +1662,7 @@ def argument():
             '''
             )
     else:
-        input_error()
+        input_error_2()
         argument()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -1797,7 +1806,7 @@ def spontaneous():
         os.system('clear')
         game_failure()
     else:
-        input_error()
+        input_error_2()
         spontaneous()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -1899,7 +1908,7 @@ def dessert():
             '''
             )
     else:
-        input_error()
+        input_error_2()
         dessert()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -2001,7 +2010,7 @@ def bill():
             Your current endearment score is {endearment}
             ''')
     else:
-        input_error()
+        input_error_2()
         bill()
     input(" (press enter to continue) :")
     os.system('clear')
@@ -2146,7 +2155,7 @@ def goodbye():
                 Endearment score plus 1
                 ''')
     else:
-        input_error()
+        input_error_2()
         goodbye()
     input(" (press enter to continue) :")
     os.system('clear')
