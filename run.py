@@ -62,4 +62,7 @@ functions.bill()
 functions.goodbye()
 
 
+functions.reflection()
+
+
 functions.end_check()

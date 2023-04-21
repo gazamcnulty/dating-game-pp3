@@ -1,5 +1,7 @@
 # PP3 dating game READ ME 
 
+![Image](assets/images/game_start.JPG)
+
 - The following read me file seeks to summarize the intent and implementation of the dating game python file. It was designed as part of the curriculum for code institute 
 It will describe user experience, features, visual design, technologies, validation + testing and acknowledgements
 - The respository on GitHub can be accessed from this link 
@@ -34,10 +36,6 @@ it allows the player to enter their name and roleplay as a suitor on a date. The
 
 Furthermore there are certain events that can immediately result in a game over. While this might seem unfair, the game is short so its not a huge loss if the player does fail. It would also (hopefully) encourage replays .
 
-
-The first block of text introduces the player to the game, briefly explains it, and asks if the player would like to play y / n
-
-
 ## Intent
 I want the dating game to be a quick fun slice of life game that anyone can play. I want it to have broad enough appeal that anyone can give it a go. It’s text based so it can run on any program that read and runs python. In this instance a direct link to the heroku app can be provided , this could be shared between users to instantly load up the game. 
 
@@ -51,11 +49,16 @@ As well as the branching paths based on user choices, there are also a couple of
 **New users :** I want new users to find the dating game amusing and entertaining. It should be novelty to find a quick text based dating game, which presents both recognisable situations and bizarre random events that a user would find funny. I want the rules to be simple and explained clearly, so that even first time players are unlikely to trigger an error. Even if they do, the game will explain they typed the wrong option and allow them to try again. I want the game to be surprising for first time players by witnessing how it can result in an instant game-over based on the wrong choices. Since the game is so quick to restart, I would hope this would encourage them to give it another go and follow a different path. If they enjoy it enough, they would share the game with friends and compare results.
 
 **New user story :** *"It was quiet Wednesday afternoon at work, I was waiting for my reports to generate so I could get to work on my next task. While waiting , a coworker sent me a link to ‘the dating game’. We had recently discussed dates we had been on and compared funny stories. With the link , my coworker joked that “The dating game should give me some practice before the next real date!”
-I found this funny, and decided to give it a shot. It was a simple enough text based game, it reminded me of the old D’nD style text games I used to play years and years ago on my dad’s computer. It explained simple enough rules, put in your name, answer a, b, c to the questions etc. I got to pick which person I wanted to go on the date with and when to have the date itself. Most of the questions were simple enough, like for example : in my scenario it was sunny so I chose to go for a walk in the park. This gained me point, which made sense. Similarly I knew my date liked lasagne so I ordered the same at the restaurant which also gained me points. 
+I found this funny, and decided to give it a shot.
+
+It was a simple enough text based game, it reminded me of the old D’nD style text games I used to play years and years ago on my dad’s computer. It explained simple enough rules, put in your name, answer a, b, c to the questions etc. I got to pick which person I wanted to go on the date with and when to have the date itself. Most of the questions were simple enough, like for example : in my scenario it was sunny so I chose to go for a walk in the park. This gained me point, which made sense. Similarly I knew my date liked lasagne so I ordered the same at the restaurant which also gained me points. 
+
 Funnily enough, despite me thinking the game was so simple, at one stage I actually did mistype the wrong option, instead of a, b, or c. Luckily the game recognised an erroneous answer type and fed back to me that I had typed an unacceptable answer. It then presented the question again, allowing me to answer correctly this time.
 It initially seemed like simple reading comprehension, until some weird questions and answers started coming up. I thought to compliment my date on being in good physical shape, but this actually lost me points as this particular character was self conscious about their physique. Then when a couple were arguing nearby , I chose what I assumed was the clever response: approach them with a friendly manner and offer to arbitrate. This actually lost me points when they threw a glass of wine in my face! 
+
 I found these unexpected results funny, and while it might be considered ‘unfair’ in some ways , because the game was so short it didn’t bother me. The experience of witnessing the funny events was the real game, as opposed to the actual ‘quiz’ of knowing the right answer. I got more enjoyment from failing than from winning!
 I unfortunately didn’t get a second date at the end of the game, but the game text was encouraging to me not to give up in the field of romance. While this was probably just encouraging me to replay, I actually liked the positive message it was trying to deliver, metatextually it was saying not to give up in this game, or in real life.
+
 I did replay the game a few times, and I failed again in a couple of spectacular ways, one involving a brief prison sentence! I eventually won and was pleased with myself. I got to talking again with my coworker about the game and they shared some of their experiences which were totally different to mine. I decided to send it on to my sister as I thought she might get a laugh out of it, and lo and behold she really enjoyed it. She then forwarded it onto our mam and dad, so we all had a go!
 I ultimately found it an amusing way to kill a few minutes on a quiet afternoon, the most fun was getting into random scenarios and comparing those with the experiences of others.*
 
@@ -64,23 +67,23 @@ I ultimately found it an amusing way to kill a few minutes on a quiet afternoon,
 If a return user really wants to, they could even replay so many times with so many choices and results, they are able to map out what will occur from start to finish. This is unlikely to occur but at least the game is robust enough that if someone wants to master it , they can.
 
 **Return user story :** "I remembered the dating game I had played last week. My coworker and I had shared stories on it, even members of my family had played it and shared it around. It got to the stage where someone looped around and shared it back to me , unaware I had been the one sharing it out last week!
- Someone had told me it was possible to get the restaurant musician to play a song by Metallica which apparently results in your date getting a concussion.  It was another slow day at work so I decided to play it again and try to achieve this myself. I had a few run throughs but I didn’t seem to get any opportunity to affect the music.
- I eventually found its a random event for the musician to ask if you would like a song, and although Master of Puppets might seem like the dumbest response , it actually results in a second date! In an unlikely turn of events, you and the date bond over rock music so much you end up agreeing to go to a gig next week. Funnily enough this is one of the few ways you can instantly ‘win’ the game! I was satisfied with this and I was glad I had decided to return to the game again for another few goes. 
 
+Someone had told me it was possible to get the restaurant musician to play a song by Metallica which apparently results in your date getting a concussion.  It was another slow day at work so I decided to play it again and try to achieve this myself. I had a few run throughs but I didn’t seem to get any opportunity to affect the music.
 
-
-
+I eventually found its a random event for the musician to ask if you would like a song, and although Master of Puppets might seem like the dumbest response , it actually results in a second date! In an unlikely turn of events, you and the date bond over rock music so much you end up agreeing to go to a gig next week. Funnily enough this is one of the few ways you can instantly ‘win’ the game! I was satisfied with this and I was glad I had decided to return to the game again for another few goes. 
 
 
 **Frequent users :** I want frequent users to be able to get into the game and skip past the introduction parts as quickly as possible. I had initially had some time based mechanics affecting the text scrawl, whereby the text would appear slowly or line by line after certain delays. This made it more pleasant to read, however it really slowed down the game on replays. So much so that it reduced the replay value. I decided to remove the time mechanics besides on or two. I felt this was the better decision for replay value and frequent users. In the future I might consider adding an option at the start , like a ‘quick’ mode or something that asks if they want to skip the rules and intro, to get straight into the game.
- It is not overly complex so I believe frequent users will know exactly how the dating game works. Although its a simple game, because of the short length and replay value I believe that there could be frequent users who might want to try to experience all the possible scenarios or answers . 
-
+It is not overly complex so I believe frequent users will know exactly how the dating game works. Although its a simple game, because of the short length and replay value I believe that there could be frequent users who might want to try to experience all the possible scenarios or answers . 
 
 
 **Frequent user story :** 
 After comparing stories with other players, I found there were some answers that dates had different responses to and some random events if you chose bizarre answers.
-I thought that was funny so I decided to try to map out the logic or decision flow of the game. I compared my results with the same coworker who gave me her data which helped me map it out quicker. I eventually found that the majority of the date goes the same for all 3, but whether you get points or not is the main thing that changes, if your answer is correct for the particular person you date.
-Beyond this , there are some decisions that will instantly result in a game over, such as ordering Dr.Pepper or trying to fight the robber. The most bizarre events occur in the random encounter, which can include the arguing couple, a rat, a robber, a music request or a man choking. This required me to frequent the game multiple times hoping it would generate the random event I wanted. That was a 1 in 5 chance and even then each of the 5 random events had 3 possible responses , which had their own strange consequences. 
+I thought that was funny so I decided to try to map out the logic or decision flow of the game. I compared my results with the same coworker who gave me her data which helped me map it out quicker.
+
+I eventually found that the majority of the date goes the same for all 3, but whether you get points or not is the main thing that changes, if your answer is correct for the particular person you date.
+Beyond this , there are some decisions that will instantly result in a game over, such as ordering Dr.Pepper or trying to fight the robber. The most bizarre events occur in the random encounter, which can include the arguing couple, a rat, a robber, a music request or a man choking. This required me to frequent the game multiple times hoping it would generate the random event I wanted. That was a 1 in 5 chance and even then each of the 5 random events had 3 possible responses , which had their own strange consequences.
+
 Although this meant a lot of replays , I really didn’t mind since the game is so short you can fly through it really quickly. It got to the stage where I could skip the first few sections by hitting a sequence of keys, which I knew the system would accept as choosing the date, time, what to do, and food to order. This got me halfway through the game in a matter of seconds.
 I eventually mapped out the entire flowchart of possible decisions and responses, I was happy the game was robust and replayable enough for me to achieve this.
 
@@ -93,7 +96,7 @@ Overall structure the dating game is comprised of 3 python .py files. run.py is 
 Run.py is basically just the dating game logo, followed by all of the functions being called in order. It calls new game and rules functions from functions.py, then calls on the profile function from profiles.py. After this all of the functions are called in order , from functions.py.
 
 
-<insert image of dating game start>
+![Image](assets/images/game_start.JPG)
 
 
 I had initially intended to keep all of the code on just run.py, but  I later decided it would be better to seperate out the data. The profile data + dictionaries on one page, the functions on another, and then the main base page that calls on both. I’m aware that this leaves run.py looking a bit bare by comparison. However I feel it actually increases readability for anyone looking at the code, its clear which functions will be called in which order. Furthermore, it allows any contributors to go and alter the code in a specific function of their choosing , rather than having to navigate through mountains of code and change something on the main page.
@@ -106,13 +109,13 @@ At first, the user is offered a choice to play the game by typing ‘y’ or ‘
 ‘n’ results in flavour text about dating / being single and ends the game. This is just for fun/immersion, as most players running the python programme are intending to play the game . In some ways its unnecessary but its just a fun bit of extra content for anyone who decides to say ‘no’
 
 
-<insert no message>
+![Image](assets/images/no.JPG)
 
 
 ‘y’ results in the rules being explained to player. They will type ‘a’ , ‘b’ or ‘c’ to answer questions. They start with endearment score of 3, if its 10 or higher by the end of the date they win the game. Some actions can result in instant game over , each date has their own preferences, luck is a factor also.
 
 
-<insert ss>
+![Image](assets/images/profiles.JPG)
 
 
 Next , the user is shown character profiles describing the 3 people they have matched with : Henrietta, Francis and Sarah. The profiles describe their vocation, age, personality, likes, food, drink and after-dinner preferences. This info is relevant to the subsequent questions . Between each section, the user is asked to press ‘enter’ to continue. This is important as some of the text is a bit lengthy and will take a minute to read, the user input allows the user to proceed only when they are ready, which means the pace is tailored for the player. 
@@ -121,34 +124,57 @@ Next , the user is shown character profiles describing the 3 people they have ma
 The player is given the first a, b, or c choice when asked to choose who to go on the date with , Henrietta, Francis or Sarah. They are then asked when to go on the date, tomorrow, this weekend or next week. This choice determines the weather, which affects the first dilemma presented on the date.
 With that the date begins, after meeting in town the user must decide what to do. The game advises what the current weather is like , then the user must choose to go straight to the venue, walk in the park, or go inside the shopping centre. If the weather is sunny or snowy a walk in the park gains points, if rainy the shopping centre gains points.
 
+![Image](assets/images/first_choice.JPG)
 
 The next section provides a paragraph describing the visuals of the restaurant. I wanted to give the player a visual sense of what the restaurant is like, because its a text based game without images or video. The player must then decide what food to order, points given if they order something their date likes. Each date prefers different food type so the ‘correct’ answer can change from game to game. 
 After this the user orders a drink , similarly points are given if it matches the dates preference. Deliberately I didn’t include a ‘correct’ answer for Henrietta here, I like the idea that in some scenarios you just can’t win! Its also amusing for the user to be lectured on their choice when there is no right answer. Furthermore, if the player chooses Dr.Pepper it results in an instant game over. I included this because I thought it was funny and bizarre, users may find it amusing.
+
+![Image](assets/images/choose_meal.JPG)
+
 Next is some small talk, the user chooses something to say based on their date’s appearance. Points are gained or lost depending on whether the comment is favourable, based on their date’s character profile. The user then is given the choice of describing their personality, with points lost or gained if it matches or contrasts the date.
+
+![Image](assets/images/observation.JPG)
+
 Another dilemma is presented when the wrong food is brought to the date. You can choose whether to swap meals, suggest they send it back, or raise the issue with the waiter yourself. The points here vary depending on what food you ordered yourself to swap, and whether your date will appreciate you pushing to send it back.
+
+![Image](assets/images/meal_dilemma.JPG)
+
 Next is one of 5 possible random encounters, which include a man choking, a couple arguing, a robber bursting in, a rat in the restaurant and the musician asking for a song request. The scenario is random everytime and many of them have instant game over scenarios, or points awarded for good choices. Some will also end the date early while not necessarily resulting in a game over.
 After this the user is asked to do something spontaneous with points lost or gained if it matches or contrasts the date’s preference.
+
+![Image](assets/images/spontaneous.JPG)
+
 Next the user orders dessert, again points can be gained if its the same preference of their date.
 Finally the bill needs to be paid, there are slight variances here for points depending on the character if you offer to pay or split the bill. This isn’t really based on profile comprehension, since the profile info doesn’t advise what their preference would be in this scenario. The user isn’t supposed to have all the info after all, so this is based on intuition / luck.  
+
+![Image](assets/images/bill.JPG)
+
 After the date as you prepare to part ways at the luas the user has their final choice. They can hug the date for a point, try for a kiss or try to prolong the date. If the endearment score is 8 or higher the kiss is successful and awards 2 points. The date being prolonged is decided by another random number generator , with a 1 in 5 chance in the date saying yes. This awards 3 points. But even if unsuccessful, the user is given 1 point for asking.
+
+![Image](assets/images/goodbye.JPG)
+
 The final part of the game checks the users score, if its 10 or above its a victory and a second date. If its below 10 its a loss and they are declined for a second date. Both provide a bit of flavour text and thank the user for playing the game. It finally clears the text and exits the programme.
-Instant Game Over
+
+![Image](assets/images/victory.JPG)
+
+**Instant Game Over**
 A few choices can result in an instant game over, regardless of endearment score. These include:
-Ordering a Dr.Pepper
-Attempting to help the choking man by throwing pepper at his nose
-Requesting ‘In the Air Tonight’ from the musician
-Trying to fight the robber in hand to hand combat
-(with Henrietta) Killing the rat by throwing your knife
-(with Henrietta) Ordering a bottle of champagne
-Joking that you have a bomb
+- Ordering a Dr.Pepper
+- Attempting to help the choking man by throwing pepper at his nose
+- Requesting ‘In the Air Tonight’ from the musician
+- Trying to fight the robber in hand to hand combat
+- (with Henrietta) Killing the rat by throwing your knife
+- (with Henrietta) Ordering a bottle of champagne
+- Joking that you have a bomb
 
 
 These are mostly here for fun and surprise factor. I also feel that if someone chooses some of these extreme options, they are probably not too concerned with doing well on the date, and are more interested in seeing what possibilities the game offers. In any case they provide some humorous content and give the player a chance to think differently on the next playthrough.
-Early Date End
+
+**Early Date End**
 A few choices cut the date short but don’t necessarily result in a game over. Some offer points to increase the likelihood of a win, or in one case guarantee it. These include 
-Paying and leaving upon seeing the rat
-Requesting Master of Puppets from the musician
-Cooperating peacefully with the robber
+- Paying and leaving upon seeing the rat
+- Requesting Master of Puppets from the musician
+- Cooperating peacefully with the robber
 
 
 

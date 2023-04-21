@@ -1209,7 +1209,7 @@ def singing():
         "The two of you seem to be having a lovely evening.
         Would you like to make a request?"
         {date} nods excitedly
-        "absolutely , {user} what sond would you like to hear?"''')
+        "absolutely , {user} what song would you like to hear?"''')
     time.sleep(5)
     print('''What song will you choose?
 
@@ -1258,7 +1258,7 @@ def singing():
         os.system('clear')
         game_failure()
     elif song_choice == 'b':
-        endearment += 2
+        endearment += 1
         print(
             f'''
             The musician nods approvingly and begins the song.
@@ -1274,7 +1274,7 @@ def singing():
             {date} is very glad you played this song.
             It seems like love is in the books!
 
-            Plus 2 points to endearment score.
+            Plus 1 points to endearment score.
 
             Your current endearment score is {endearment}
             '''
@@ -1357,8 +1357,7 @@ def robbery():
     os.system('clear')
     if robbery_choice == 'a':
         endearment += 1
-        print(
-            f'''
+        print(f'''
             The robber fleeces the restaurant of all valuables.
             He empties the cash registers, takes jewellery and wallets.
             {date} pleads for a moment not to hand over their ring
@@ -1367,9 +1366,7 @@ def robbery():
             You hand over your wallet while the robber sneers at you.
             After a 5 minute ordeal that felt like eternity,
             the ne'er do well is gone.
-
-            You and {date} are glad to be safe, but understandably shook.
-            While it doesn't feel right to continue the date,
+            While you're ok, it doesn't feel right to continue the date,
             you offer to walk {date} out.
 
             Outside the luas you both share an awkward laugh,
@@ -1377,40 +1374,31 @@ def robbery():
             Despite everything, {date} is glad you're safe
             What a strange way to end the evening...
 
-            Plus 1 point to endearment score
-            '''
-            )
+            Plus 1 point to endearment score''')
         input(" (press enter to continue) :")
         end_check()
     elif robbery_choice == 'b':
         endearment -= 5
         print(
             f'''
-            When the robber demands your wallet, you respond
-            with an incredulous guffaw.
+            When the robber demands your money, you below with laughter.
             "Filth! You'll not take a euro from me.
-            As a matter of fact, you won't be stealing anything!
             Put up your dukes thug, I challenge you to battle!"
 
             People around you gasp audibly.
             The air is thick with tension and fear.
             The robber's eyes narrow, this isn't his first fight.
-
             He calmly approaches you, grabs you by your ears,
             and then body slams you into a fish tank.
 
             When you eventually regain consiousness, 20 minutes have passed.
 
-            The nice waiter explains the robber got all the goods,
-            and fled the scene.
-            Whats worse is he ridiculed you as while you were KO'd.
+            The nice waiter explains the robber got all the goods, fled.
             {date} was embarrassed by your antics and also
             so impressed by the bravado of the robber, they left too!
-            The last thing the other patrons saw was
-            {date} back of the robber's motorcycle!
+            He was seen leaving with {date} on the back of his motorcycle.
 
             {date} stole your heart , the robber stole your wallet.
-
             What a strange way to end the evening...
 
             Minus 5 points from endearment score
@@ -1423,39 +1411,28 @@ def robbery():
         endearment += 1
         print(
             f'''
-            As the robber moves from table to table grabbing what he can,
-            you look closely at him.
-            Just as he comes up to you, you both lock eyes and behold
-            at each other.
-
+            As the robber moves near, you look closely at him.
             Staring him in the face , it hits you.
             You struggle to speak.
-
             " ... Dad? "
-            The robber's eyes widen.
-            " ... {user}? "
+            The robber's eyes widen. " ... {user}? "
 
             You haven't seen each other in years!
             Before you know it you're both hugging and crying.
             Even {date} can't help but get a little emotional.
 
-            Before you get a chance to talk , the manager
-            says he's calling the police.
-            Your dad rushes to escape , but not before
-            taking one last look at you.
+            Before you reconcile, the manager calls the police.
+            Your dad rushes to escape , and bids you farewell.
             "I'll see you again soon {user} , I promise."
-            And with that he is gone.
 
             {date} doesn't really know what to say ,
             so they just sit back down and continue eating their food.
-            No one wants their dad butting in on a date,
-            but {date} still seems keen!
+            Despite the shock, {date} still seems keen!
 
             Plus 1 point to endearment score.
 
             Your current endearment score is {endearment}
             ''')
-        input(" (press enter to continue) :")
     else:
         input_error()
         robbery()
@@ -1596,7 +1573,7 @@ def argument():
     argument_action = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if argument_action == 'a':
-        endearment += 2
+        endearment += 1
         print(
             f'''
             You wisely decide not to encroach on the
@@ -1616,7 +1593,7 @@ def argument():
             {date} laughs , they also seem keen that
             you envision a relationship, jokingly or not.
 
-            Plus 2 points to endearment, thanks to
+            Plus 1 points to endearment, thanks to
             the dysfunctional couple at the next table.
 
             Your current endearment score is {endearment}
@@ -2082,6 +2059,7 @@ def goodbye():
 
             ''')
     elif goodbye_chance == 'b' and endearment >= 8:
+        endearment += 2
         print(f'''
             You put your arm on {date}'s shoulder and
             say with sincerity
@@ -2098,6 +2076,9 @@ def goodbye():
             {date} laughs and runs back to squeeze through the
             doors of the luas before they close.
             That was a nice way to end a first date!
+
+            Plus 2 points to endearment score
+
             But will there be a second date?...
             ''')
     elif goodbye_chance == 'b' and endearment < 8:
@@ -2117,6 +2098,7 @@ def goodbye():
             stop to recall the events of the date.
             How well do you think it went?
             I wonder if there will be a second date...
+
             Endearment score plus 1
             ''')
     elif goodbye_chance == 'c':
@@ -2127,7 +2109,7 @@ def goodbye():
             drink or a coffee somewhere?
             {date} turns and looks you in the eye
             ''')
-        chance = random.randint(0, 6)
+        chance = random.randint(1, 5)
         if chance == 3:
             endearment += 3
             print(f'''
@@ -2145,9 +2127,9 @@ def goodbye():
                 you steal a kiss!
                 {date}'s face turns red but they can't stop smiling either.
                 You walk {date} to the luas stop to bring your date to a close.
+
                 Plus 3 points to endearment score.
                 ''')
-            end_check()
         else:
             endearment += 1
             print(f'''
@@ -2164,13 +2146,29 @@ def goodbye():
                 stop to recall the events of the date.
                 How well do you think it went?
                 I wonder if there will be a second date...
+                
                 Endearment score plus 1
                 ''')
-            end_check()
     else:
         input_error()
         goodbye()
     input(" (press enter to continue) :")
+    os.system('clear')
+
+def reflection():
+    '''
+    reflects on user's progress and prepares 
+    them for the results of the date
+    '''
+    print(f'''
+        Well {user} the date has come to an end. 
+        Reflect on your decisions, how did you treat {date}?
+        Did you do your best? Were you a good date?
+        Remember, whats less important is whether {date}
+        likes you.
+        Whats more important is if you were true to yourself
+        Always put your best foot forward in dates and life''')
+    input(" (press enter to clear/exit) :")
     os.system('clear')
 
 
