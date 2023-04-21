@@ -180,5 +180,3 @@ def profile_function():
     print("Those were the 3 matches. Decided yet?")
     time.sleep(5)
     os.system('clear')
-
-profile_function()
