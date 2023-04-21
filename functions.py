@@ -6,7 +6,7 @@ import os
 import sys
 import random
 
-endearment = 3
+endearment = 1
 date_time = None
 meal_choice = None
 
@@ -81,7 +81,7 @@ def rules():
         From there you will be given context + info about
         the various dates and scenarios.
 
-        You start the game with an 'endearment' score of 3.
+        You start the game with an 'endearment' score of 1.
 
         If you can bring the score to 10 by the end of the date,
         you secure a second date and win the game!
@@ -1715,21 +1715,17 @@ def spontaneous():
             f'''
             You beckon the waiter over and order
             the finest bottle of champagne they have on offer.
-            At this stage it looks like {date} is
-            ready to burst into tears.
+            it looks like {date} is ready to burst into tears.
             "I told you I don't drink alcohol, why
             would you order that?
-            Do you expect me to just sit here
-             and watch you drink champagne?"
+            Am I supposed to sit here and watch you drink it?"
             Before you can answer, {date} gets up and leaves.
             Right as you're thinking about where it all went wrong,
-            you hear the signature 'pop' of the
-            champagne bottle being opened.
+            you hear the signature 'pop' of the champagne being opened.
             Shame to let some bubbly go to waste.
             You finish your meal, enjoy some champagne and ,
             ya know what? You had an ok night all things considered!
-            Probably!
-            ?
+            Probably! ... ? ... huh ?
             Maybe an entire bottle of champagne is a lot for
             just one person...
             You stumble out the door , while the waiter
@@ -1981,7 +1977,7 @@ def bill():
 
             ''')
     elif bill_choice == 'c':
-        endearment -= 3
+        endearment -= 5
         print(f'''
             You lower your head and look intently at {date}
             "Grab your jacket , get ready to run"
@@ -1996,14 +1992,12 @@ def bill():
             The dog regards you as a threat and leaps into an attack.
             You run back in the opposite direction , the dog
             nipping at your heels as you go.
-            As you head back in the opposite direction you run
-            face first into {date}, causing you, {date} and the dog
-            to fall over into a pile.
+            You fun face first into {date}, causing you,
+            {date} and the dog to fall over into a pile.
             While the dog is biting you in the face, {date}
             shouts that she had to pay the bill.
-            You suspect that this wasn't the best way to end
-            the date.
-            Minus 3 points from endearment score.
+            This wasn't the best way to end the date.
+            Minus 5 points from endearment score.
             Your current endearment score is {endearment}
             ''')
     else:
@@ -2107,10 +2101,12 @@ def goodbye():
             "Don't get on the luas! Lets not allow
             the date to end here, why don't we go grab a
             drink or a coffee somewhere?
-            {date} turns and looks you in the eye
+            {date} turns and looks you in the eye ...
             ''')
-        chance = random.randint(1, 5)
-        if chance == 3:
+        time.sleep(7)
+        os.system('clear')
+        gamble = random.randint(1, 5)
+        if gamble == 3:
             endearment += 3
             print(f'''
                 {date} answers you
@@ -2146,7 +2142,7 @@ def goodbye():
                 stop to recall the events of the date.
                 How well do you think it went?
                 I wonder if there will be a second date...
-                
+
                 Endearment score plus 1
                 ''')
     else:
@@ -2154,6 +2150,7 @@ def goodbye():
         goodbye()
     input(" (press enter to continue) :")
     os.system('clear')
+    reflection()
 
 def reflection():
     '''
@@ -2170,6 +2167,7 @@ def reflection():
         Always put your best foot forward in dates and life''')
     input(" (press enter to clear/exit) :")
     os.system('clear')
+    end_check()
 
 
 def end_check():

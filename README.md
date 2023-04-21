@@ -112,7 +112,7 @@ At first, the user is offered a choice to play the game by typing ‘y’ or ‘
 ![Image](assets/images/no.JPG)
 
 
-‘y’ results in the rules being explained to player. They will type ‘a’ , ‘b’ or ‘c’ to answer questions. They start with endearment score of 3, if its 10 or higher by the end of the date they win the game. Some actions can result in instant game over , each date has their own preferences, luck is a factor also.
+‘y’ results in the rules being explained to player. They will type ‘a’ , ‘b’ or ‘c’ to answer questions. They start with endearment score of 1, if its 10 or higher by the end of the date they win the game. Some actions can result in instant game over , each date has their own preferences, luck is a factor also.
 
 
 ![Image](assets/images/profiles.JPG)
