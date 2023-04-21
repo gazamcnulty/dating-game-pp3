@@ -527,8 +527,34 @@ def beverage_choice():
 
     drink_choice = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
+    if drink_choice == 'c':
+        print(
+            f'''
+            The music suddenly stops.
+            People around you gasp audibly.
+            The waiter struggles to compose himself.
+            "You ... you said... Dr.Pepper sir?"
 
-    if (drink_choice == 'a' or 'b') and date == 'Henrietta':
+            You begin to sweat profusely and nod nervously.
+            The waiter looks like someone just ran over his dog.
+            The air is thick with tension and fear.
+
+            {date} is staring at the floor.
+            Without saying a word, they stand up
+            {date} puts on their jacket and walks out of the restaurant.
+
+            You struggle to come to terms with what just happended,
+            as the waiter finally brings down your beverage.
+            "Your Dr.Pepper sir..." he snarls with utter contempt.
+            You can barely contain your shame as you sip your drink.
+
+            Maybe Dr.Pepper in a fancy italian restaurant was a bad idea.
+            '''
+            )
+        input(" (press enter to continue) :")
+        os.system('clear')
+        game_failure()
+    elif (drink_choice == 'a' or 'b') and date == 'Henrietta':
         print(
             f'''
             {date} orders a 7-up, and proceeds to explain
@@ -588,33 +614,6 @@ def beverage_choice():
             )
         endearment += 1
         print(f"your endearment score is {endearment}")
-    elif drink_choice == 'c':
-        print(
-            f'''
-            The music suddenly stops.
-            People around you gasp audibly.
-            The waiter struggles to compose himself.
-            "You ... you said... Dr.Pepper sir?"
-
-            You begin to sweat profusely and nod nervously.
-            The waiter looks like someone just ran over his dog.
-            The air is thick with tension and fear.
-
-            {date} is staring at the floor.
-            Without saying a word, they stand up
-            {date} puts on their jacket and walks out of the restaurant.
-
-            You struggle to come to terms with what just happended,
-            as the waiter finally brings down your beverage.
-            "Your Dr.Pepper sir..." he snarls with utter contempt.
-            You can barely contain your shame as you sip your drink.
-
-            Maybe Dr.Pepper in a fancy italian restaurant was a bad idea.
-            '''
-            )
-        input(" (press enter to continue) :")
-        os.system('clear')
-        game_failure()
     else:
         input_error()
         beverage_choice()
