@@ -34,7 +34,8 @@ def new_game():
     Welcomes player, introduces the Dating Game.
     Gives player choice y / n to play the game.
     'y' triggers rules() 'n' prints flavour text and ends game
-    input validation rejects any answer besides 'y' or 'n'
+    input validation rejects any answer besides 'y' or 'n' by using 
+    true / false booleans in a while loop
     '''
     print('''
     Hello there! Welcome to the Dating Game!
@@ -46,27 +47,31 @@ def new_game():
     Your choices matter, each date has their own preferences,
     and remember, lady luck is always watching!
     ''')
-    game_choice = input("Would you like to play? y / n ").lower().strip()
-    os.system('clear')
-    if game_choice == 'y':
-        print("That's the spirit! Lets start with the rules.")
-        time.sleep(3)
+    input_received = False
+    while not input_received:
+        game_choice = input("Would you like to play? y / n :").lower().strip()
         os.system('clear')
-    elif game_choice == 'n':
-        print(
-            '''
-            That's fine, no need to play if you're already winning.
-            There's nothing wrong with being single as long as you're happy!
-            If you ever change your mind, return here to play the dating game!
-            '''
-        )
-        print("    GAME OVER")
-        input(" (press enter to clear/exit) :")
-        os.system('clear')
-        sys.exit()
-    else:
-        input_error()
-        new_game()
+        input_received = True
+
+        if game_choice == 'y':
+            print("That's the spirit! Lets start with the rules.")
+            time.sleep(3)
+            os.system('clear')
+        elif game_choice == 'n':
+            print(
+                '''
+                That's fine, no need to play if you're already winning.
+                There's nothing wrong with being single as long as you're happy!
+                If you ever change your mind, return here to play the dating game!
+                '''
+            )
+            print("    GAME OVER")
+            input(" (press enter to clear/exit) :")
+            os.system('clear')
+            sys.exit()
+        else:
+            input_error()
+            input_received = False
 
 
 def rules():
@@ -108,7 +113,7 @@ def date_who():
     Introduces the 3 date matches and allows user to choose
     which person they want to date
     input validation rejects any answer besides 'a' 'b' or 'c' ,
-    if another answer is given the function loops
+    if another answer is given the function loops recursively
     '''
     os.system('clear')
     global date
@@ -253,7 +258,7 @@ def date_start():
         '''
         )
 
-    first_steps = input("Please choose a, b, or c").lower().strip()
+    first_steps = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if first_steps == 'a' and date_time == 'tomorrow':
         print(
@@ -810,7 +815,7 @@ def talk_about_me():
         ''')
 
     global endearment
-    personality = input("please choose a, b, or c").lower().strip()
+    personality = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and personality == 'b':
         endearment += 2
@@ -937,7 +942,7 @@ def eat_meal():
         They appear to be a bit confused at first ,
         then disappointed when they realise what has happened.''')
 
-    time.sleep(5)
+    time.sleep(3)
     print('''You both lock eyes. What do you say ?
 
         a)“Hey {date} lets swap meals ,
@@ -946,7 +951,7 @@ def eat_meal():
         they need to bring you the correct meal!”
         c)“Leave this to me , I’ll get the waiter so we can sort this out”
         ''')
-    dilemma = input("Please choose a, b, or c").lower().strip()
+    dilemma = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and dilemma == 'a' and meal_choice == 'c':
         endearment += 2
@@ -1116,7 +1121,7 @@ def choking():
         b) Run outside and shout for a doctor
         c) Throw some pepper under his nostrils to make him sneeze
         ''')
-    choke_response = input("Please choose a, b, or c").lower().strip()
+    choke_response = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if choke_response == 'a':
         endearment += 1
@@ -1212,7 +1217,7 @@ def singing():
         a) In the air tonight
         b) The book of love
         c) Master of Puppets''')
-    song_choice = input("Please choose a, b, or c").lower().strip()
+    song_choice = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if song_choice == 'a':
         endearment -= 5
@@ -1348,7 +1353,7 @@ def robbery():
         c) Look more closely at the robber,
         for some kind of detail or info that can help.
         ''')
-    robbery_choice = input("Please choose a, b, or c").lower().strip()
+    robbery_choice = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if robbery_choice == 'a':
         endearment += 1
@@ -1457,7 +1462,7 @@ def rodent():
         b) Throw your complaint at the manager
         c) Throw your money on the table and leave
         ''')
-    rodent_response = input("Please choose a, b, or c").lower().strip()
+    rodent_response = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and rodent_response == 'a':
         endearment -= 5
@@ -1565,7 +1570,7 @@ def argument():
         b) Offer to mediate their discussion
         c) Tell them to shut up
         ''')
-    argument_action = input("Please choose a, b, or c").lower().strip()
+    argument_action = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if argument_action == 'a':
         endearment += 1
@@ -1702,7 +1707,7 @@ def spontaneous():
         b) Pierce a chunk of food, and guide the fork towards your date’s mouth
         c) Lean over to your date and whisper in their ear “ I have a bomb”
         ''')
-    spontaneous_decision = input("Please choose a, b, or c")
+    spontaneous_decision = input("Please choose a, b, or c :")
     os.system('clear')
     if date == 'Henrietta' and spontaneous_decision == 'a':
         endearment -= 5
@@ -1816,7 +1821,7 @@ def dessert():
         b) Order chocolate cake
         c) Order coffee
         ''')
-    dessert_choice = input("Please choose a, b, or c").lower().strip()
+    dessert_choice = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and dessert_choice == 'c':
         endearment += 1
@@ -2026,7 +2031,7 @@ def goodbye():
         b) "Kiss me you fool"
         c) "Lets not end the date, cmon lets grab a drink!"
         ''')
-    goodbye_chance = input("Please choose a, b, or c")
+    goodbye_chance = input("Please choose a, b, or c :")
     os.system('clear')
     if goodbye_chance == 'a':
         endearment += 1
@@ -2160,7 +2165,7 @@ def reflection():
         likes you.
         Whats more important is if you were true to yourself
         Always put your best foot forward in dates and life''')
-    input(" (press enter to clear/exit) :")
+    input(" (press enter to continue) :")
     os.system('clear')
     end_check()
 
