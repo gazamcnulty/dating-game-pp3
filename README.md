@@ -217,14 +217,13 @@ It initially found many errors, mainly trailing white lines or too much blank sp
 I consider this a pass in validation.
 
 The Heroku app ran the dating game in Chrome, Edge, Firefox, Safari successfully, in windows and mac. 
-I consider this a pass for browsers.
+I encountered an issue on Mac, where rarely and seemingly for no repeatable reason, it froze and the 'press enter to continue' input would not work. It wasn't a particular code or series of answers, as when I reset and ran the game again with the same decisions it worked just fine.
+I encountered this just once and I was unable to replicate it again despite many repeat attempts. This seems to be a rare glitch for Mac but it can be easily foregone by quickly resetting and rebooting. Therefore, it is more likely related to the safari browser.
+I consider this a pass for browsers, but I will be aware of that Mac issue and consider it in future iterations and improvements of this project.
 
 I encountered an issue with Heroku in the browser, where ‘os.system('clear')’  does not successfully clear all of the text per my commands in the python code. It cleared all text as intended when testing it in the terminal on GitPod but for some reason the heroku app kept the text content from the character profiles. Although it would move them above the screen where the user can’t see, the scroll tab on the right enabled the user to scroll back up and see the profile info was still there.
 
-This issue only affects the profile info, in the dictionaries and accessed by the profiles_function in profiles.py. I tried a few different things like taking it out of the function, running it directly from run.py but the profile text would remain above in the heroku app window.
-It doesn’t occur in GitPod, only on the heroku app in the browser.
-This isn’t a huge issue, as it doesn’t stay on screen. If the user is just playing the game as intended, by typing a b or c, they wont see the text above. But it is less than ideal as it creates a scroll bar on the left, which can distract from the main focus of the game.
-In the future I will investigate this further and I would hope to be able to remove the issue completely from future versions of this programme.
+This was eventually resolved after tidying up the clear code and refreshing through Heroku, thought I did encounter it once more with another string towards the end of the game. It has been resolved for now but I will look to optimise this more in future and reduce the liklihood of such an error occuring.
 
 
 **scenario testing :**
@@ -236,8 +235,8 @@ Beyond this , all of the possible answers do show as correct and yield the corre
 
 
 ## Known bugs and issues
-As I mentioned in the Testing section, I found an issue with Heroku in the browser, where ‘os.system('clear')’  does not successfully clear all of the text per my commands in the python code. This does not occur in the terminal , in GitPod. It only seems to occur in Heroku app in the browser and it only affects the profiles dictionaries in profiles.py. It seems to be related to how the python file is interpreted by a 3rd party app, I unfortunately was unable to resolve it.
-Fortunately it does not affect the display or remain on screen, all visible text on the heroku screen is the intended result from the game. What does happen, is that the text is accessible above the viewable section and it is possible to scroll up and read the profiles section. It is a concern that the user may notice the scroll bar and scroll up, becoming distracted from the main focus of the game. However , if the user follows instructions by just typing out the answers it shouldn’t be a problem.
+As I mentioned in the Testing section, I found an issue with Heroku in the browser, where ‘os.system('clear')’  does not successfully clear all of the text per my commands in the python code. This has since been resolved and no longer occurs.
+Similarly the mac / safari glitch whereby it froze on an input and would not accept 'enter
 This is something I intend to research and resolve in future iterations of this project.
 
 

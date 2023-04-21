@@ -58,7 +58,7 @@ def new_game():
     ''')
     input_received = False
     while not input_received:
-        game_choice = input("Would you like to play? y / n :").lower().strip()
+        game_choice = input("Would you like to play? y / n \:\n" ).lower().strip()
         os.system('clear')
         input_received = True
 
@@ -137,7 +137,7 @@ def date_who():
         a) Henrietta, b) Francis, c) Sarah
         ''')
 
-    date_choice = input("Please choose a, b, or c :").lower().strip()
+    date_choice = input("Please choose a, b, or c :\n").lower().strip()
 
     if date_choice == 'a':
         date = 'Henrietta'
@@ -173,7 +173,7 @@ def date_when():
         c) next week?
         ''')
 
-    time_choice = input("Please choose a, b, or c :").lower().strip()
+    time_choice = input("Please choose a, b, or c :\n").lower().strip()
 
     if time_choice == 'a':
         date_time = 'tomorrow'
@@ -208,7 +208,7 @@ def date_when():
         You have arranged to meet {date} at the luas stop
         just outside St.Stepehen's Green Park in Dublin city centre.
         ''')
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
     if date_time == 'tomorrow':
@@ -245,7 +245,7 @@ def date_when():
             Its nice to be outside in the snow, just don’t freeze up!
             '''
             )
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -267,7 +267,7 @@ def date_start():
         '''
         )
 
-    first_steps = input("Please choose a, b, or c :").lower().strip()
+    first_steps = input("Please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if first_steps == 'a' and date_time == 'tomorrow':
         print(
@@ -383,7 +383,7 @@ def date_start():
     else:
         input_error_2()
         date_when()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -411,7 +411,7 @@ def menu_choice():
 
         You both sit down and the host places menus on front of you.
         ''')
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
     print(
         f'''
@@ -433,7 +433,7 @@ def menu_choice():
         '''
         )
 
-    meal_choice = input("Please choose a, b, or c: ").lower().strip()
+    meal_choice = input("Please choose a, b, or c:\n ").lower().strip()
     os.system('clear')
     if meal_choice == 'a' and date == 'Sarah':
         print(f'''
@@ -500,7 +500,7 @@ def menu_choice():
     else:
         input_error_2()
         menu_choice()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -521,7 +521,7 @@ def beverage_choice():
 
         a) Beer b) Wine c) Dr.Pepper
         ''')
-    drink_choice = input("Please choose a, b, or c :").lower().strip()
+    drink_choice = input("Please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if drink_choice == 'c':
         endearment -= 5
@@ -614,7 +614,7 @@ def beverage_choice():
     else:
         input_error_2()
         beverage_choice()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -642,7 +642,7 @@ def observation_chat():
         '''
         )
 
-    observation = input("please choose a, b, or c :").lower().strip()
+    observation = input("please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if observation == 'a' and date == 'Francis':
         print(
@@ -796,7 +796,7 @@ def observation_chat():
     else:
         input_error_2()
         observation_chat()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -824,7 +824,7 @@ def talk_about_me():
         ''')
 
     global endearment
-    personality = input("Please choose a, b, or c :").lower().strip()
+    personality = input("Please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and personality == 'b':
         endearment += 2
@@ -960,7 +960,7 @@ def eat_meal():
         they need to bring you the correct meal!”
         c)“Leave this to me , I’ll get the waiter so we can sort this out”
         ''')
-    dilemma = input("Please choose a, b, or c :").lower().strip()
+    dilemma = input("Please choose a, b, or c : \n").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and dilemma == 'a' and meal_choice == 'c':
         endearment += 2
@@ -1102,7 +1102,7 @@ def eat_meal():
     else:
         input_error_2()
         eat_meal()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -1130,7 +1130,7 @@ def choking():
         b) Run outside and shout for a doctor
         c) Throw some pepper under his nostrils to make him sneeze
         ''')
-    choke_response = input("Please choose a, b, or c :").lower().strip()
+    choke_response = input("Please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if choke_response == 'a':
         endearment += 1
@@ -1198,7 +1198,7 @@ def choking():
     else:
         input_error_2()
         choking()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -1226,7 +1226,7 @@ def singing():
         a) In the air tonight
         b) The book of love
         c) Master of Puppets''')
-    song_choice = input("Please choose a, b, or c :").lower().strip()
+    song_choice = input("Please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if song_choice == 'a':
         endearment -= 5
@@ -1245,7 +1245,7 @@ def singing():
             You and the musician belt out the chorus
             " I can feeeeeel it, cooomin in the air tonight....
             hold on! "''')
-        input(" (press enter to continue) :")
+        input(" (press enter to continue) :\n")
         os.system('clear')
         print('''This is the most intense musical experience you have ever had.
             You've never enjoyed a song this much before.
@@ -1263,7 +1263,7 @@ def singing():
 
             Minus 5 points from endearment score
             ''')
-        input(" (press enter to continue) :")
+        input(" (press enter to continue) :\n")
         os.system('clear')
         game_failure()
     elif song_choice == 'b':
@@ -1328,12 +1328,12 @@ def singing():
             Plus 10 points to endearment score.
             '''
             )
-        input(" (press enter to continue) :")
+        input(" (press enter to continue) :\n")
         game_victory()
     else:
         input_error_2()
         singing()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -1362,7 +1362,7 @@ def robbery():
         c) Look more closely at the robber,
         for some kind of detail or info that can help.
         ''')
-    robbery_choice = input("Please choose a, b, or c :").lower().strip()
+    robbery_choice = input("Please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if robbery_choice == 'a':
         endearment += 1
@@ -1384,7 +1384,7 @@ def robbery():
             What a strange way to end the evening...
 
             Plus 1 point to endearment score''')
-        input(" (press enter to continue) :")
+        input(" (press enter to continue) :\n")
         end_check()
     elif robbery_choice == 'b':
         endearment -= 5
@@ -1413,7 +1413,7 @@ def robbery():
             Minus 5 points from endearment score
             '''
             )
-        input(" (press enter to continue) :")
+        input(" (press enter to continue) :\n")
         os.system('clear')
         reflection()
     elif robbery_choice == 'c':
@@ -1445,7 +1445,7 @@ def robbery():
     else:
         input_error_2()
         robbery()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -1471,7 +1471,7 @@ def rodent():
         b) Throw your complaint at the manager
         c) Throw your money on the table and leave
         ''')
-    rodent_response = input("Please choose a, b, or c :").lower().strip()
+    rodent_response = input("Please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and rodent_response == 'a':
         endearment -= 5
@@ -1489,7 +1489,7 @@ def rodent():
 
             Minus 5 points from endearment
             ''')
-        input(" (press enter to continue) :")
+        input(" (press enter to continue) :\n")
         os.system('clear')
         game_failure()
     elif (date == 'Francis' or 'Sarah') and rodent_response == 'a':
@@ -1550,13 +1550,13 @@ def rodent():
 
             Your current endearment score is {endearment}
             ''')
-        input(" (press enter to continue) :")
+        input(" (press enter to continue) :\n")
         os.system('clear')
         goodbye()
     else:
         input_error_2()
         rodent()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -1579,7 +1579,7 @@ def argument():
         b) Offer to mediate their discussion
         c) Tell them to shut up
         ''')
-    argument_action = input("Please choose a, b, or c :").lower().strip()
+    argument_action = input("Please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if argument_action == 'a':
         endearment += 1
@@ -1664,7 +1664,7 @@ def argument():
     else:
         input_error_2()
         argument()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -1716,7 +1716,7 @@ def spontaneous():
         b) Pierce a chunk of food, and guide the fork towards your date’s mouth
         c) Lean over to your date and whisper in their ear “ I have a bomb”
         ''')
-    spontaneous_decision = input("Please choose a, b, or c :")
+    spontaneous_decision = input("Please choose a, b, or c :\n")
     os.system('clear')
     if date == 'Henrietta' and spontaneous_decision == 'a':
         endearment -= 5
@@ -1742,7 +1742,7 @@ def spontaneous():
 
             Minus 5 points from endearment
             ''')
-        input(" (press enter to continue) :")
+        input(" (press enter to continue) :\n")
         os.system('clear')
         game_failure()
     elif (date == 'Francis' or 'Sarah') and spontaneous_decision == 'a':
@@ -1808,7 +1808,7 @@ def spontaneous():
     else:
         input_error_2()
         spontaneous()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -1830,7 +1830,7 @@ def dessert():
         b) Order chocolate cake
         c) Order coffee
         ''')
-    dessert_choice = input("Please choose a, b, or c :").lower().strip()
+    dessert_choice = input("Please choose a, b, or c :\n").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and dessert_choice == 'c':
         endearment += 1
@@ -1910,7 +1910,7 @@ def dessert():
     else:
         input_error_2()
         dessert()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -1938,7 +1938,7 @@ def bill():
         b) “Let me pay for the meal, I insist”
         c) “Grab your jacket, get ready to run”
         ''')
-    bill_choice = input("Please choose a, b, or c")
+    bill_choice = input("Please choose a, b, or c: \n ")
     os.system('clear')
     if date == 'Francis' and bill_choice == 'a':
         endearment += 1
@@ -2012,7 +2012,7 @@ def bill():
     else:
         input_error_2()
         bill()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
 
 
@@ -2040,7 +2040,7 @@ def goodbye():
         b) "Kiss me you fool"
         c) "Lets not end the date, cmon lets grab a drink!"
         ''')
-    goodbye_chance = input("Please choose a, b, or c :")
+    goodbye_chance = input("Please choose a, b, or c : \n")
     os.system('clear')
     if goodbye_chance == 'a':
         endearment += 1
@@ -2157,7 +2157,7 @@ def goodbye():
     else:
         input_error_2()
         goodbye()
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) :\n")
     os.system('clear')
     reflection()
 
@@ -2174,7 +2174,7 @@ def reflection():
         likes you.
         Whats more important is if you were true to yourself
         Always put your best foot forward in dates and life''')
-    input(" (press enter to continue) :")
+    input(" (press enter to continue) \n:")
     os.system('clear')
     end_check()
 
@@ -2200,7 +2200,9 @@ def game_victory():
     print(f'''
         The date has wrapped up , how do you think it went?
         Your final endearment score was {endearment}...
+
         Congratulations {user}, you did it!
+
         {date} has agreed to a second date with you.
         Dating isn't always easy, it can be a minefield sometimes.
         In this scenario, you trusted your instincts,
@@ -2214,7 +2216,7 @@ def game_victory():
         GAME OVER
 
         ''')
-    input(" (press enter to clear/exit) :")
+    input(" (press enter to clear/exit) :\n")
     os.system('clear')
     sys.exit()
 
@@ -2231,8 +2233,7 @@ def game_failure():
         Unfortunately you struck out {user},
         {date} has declined your offer of a second date.
         Don't feel too bad {user}, it just wasn't a match.
-        When 2 people are unsuccesful in romance ,
-        it is not a failure in character or effort.
+        When 2 people don't connect, its no one's fault.
         It is simply a fact that these 2 individuals are not compatible.
         Therefore it seen as a victory for both parties,
         it means one or both of you was aware enough,
@@ -2240,10 +2241,8 @@ def game_failure():
         Your reward is the freedom to try again,
         to seek out love in any and all places.
         Let the events of this date spur you forward {user},
-        have courage, compassion, and empathy in all of
-        your future romances.
-        And most importantly remember,
-        you must learn to love yourself
+        have courage, compassion, and empathy in relationships.
+        And most importantly remember, you must learn to love yourself
         before you can learn to love someone else.
         Well done, and thanks for playing!
         GAME OVER
