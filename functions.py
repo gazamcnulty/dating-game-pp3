@@ -290,8 +290,7 @@ def date_start():
         endearment += 1
         print(f"Your endearment score is {endearment}")
     elif first_steps == 'a' and date_time == 'this weekend':
-        print(
-            f'''
+        print(f'''
             At your insistence, you and {date} head straight for the venue.
             {date} doesn't seem bothered by heading straight there
             but they comment that it seems like it would have been
@@ -301,8 +300,7 @@ def date_start():
             ''')
         print(f"Your endearment score is {endearment}")
     elif first_steps == 'b' and date_time == 'this weekend':
-        print(
-            f'''
+        print(f'''
             At your insistence, you and {date} go for a walk in the park.
             The sun is shining, while you try to make smalltalk.
             {date} is impressed by your knowledge of the park's history,
@@ -314,8 +312,7 @@ def date_start():
         endearment += 1
         print(f"Your endearment score is {endearment}")
     elif first_steps == 'c' and date_time == 'this weekend':
-        print(
-            f'''
+        print(f'''
             You suggest a stroll around the shopping centre,
             before heading straight to the venue.
             You and {date} grab some take away coffees,
@@ -329,8 +326,7 @@ def date_start():
         endearment -= 1
         print(f"Your endearment score is {endearment}")
     elif first_steps == 'a' and date_time == 'next week':
-        print(
-            f'''
+        print(f'''
             At your insistence, you and {date} head straight for the venue.
             {date} doesn't seem bothered by heading straight there
             but they comment that it seems like
@@ -340,8 +336,7 @@ def date_start():
             ''')
         print(f"Your endearment score is {endearment}")
     elif first_steps == 'b' and date_time == 'next week':
-        print(
-            f'''
+        print(f'''
             At your insistence, you and {date} go for a walk in the park.
             Its a bit cold but the gentle snowfall is breathtaking
             {date} is impressed by your knowledge of the park's history,
@@ -354,8 +349,7 @@ def date_start():
         endearment += 1
         print(f"Your endearment score is {endearment}")
     elif first_steps == 'c' and date_time == 'next week':
-        print(
-            f'''
+        print(f'''
             You suggest a stroll around the shopping centre,
             before heading straight to the venue.
             You and {date} grab some take away coffees,
@@ -382,8 +376,7 @@ def menu_choice():
     '''
     global endearment
     global meal_choice
-    print(
-        f'''
+    print(f'''
         Time to head to the date venue.
         You've decided to go to an italian restaruant.
         You and {date} arrive at the restaurant and
@@ -399,8 +392,7 @@ def menu_choice():
         The music augments the already romantic atmosphere.
 
         You both sit down and the host places menus on front of you.
-        '''
-        )
+        ''')
     input(" (press enter to continue) :")
     os.system('clear')
     print(
@@ -426,78 +418,66 @@ def menu_choice():
     meal_choice = input("Please choose a, b, or c: ").lower().strip()
     os.system('clear')
     if meal_choice == 'a' and date == 'Sarah':
-        print(
-            f'''
+        print(f'''
             {date} is beaming.
             "No way I was going to order Lasagne too!
             Lasagne is my favourite food.
             I guess we have something in common {user}!"
 
             Plus 1 point to endearement score
-            '''
-            )
+            ''')
         endearment += 1
         print(f"Your endearment score is {endearment}")
     elif (meal_choice == 'b' or 'c') and date == 'Sarah':
-        print(
-            f'''
+        print(f'''
             You order your meal but {date} orders something
             completely different from you.
             You smile awkwardly at each other and
             look around the room for something to talk about.
 
             No change to endearment score.
-            '''
-            )
+            ''')
         print(f"Your endearment score is {endearment}")
     elif meal_choice == 'b' and date == 'Francis':
-        print(
-            f'''
+        print(f'''
             {date} is beaming.
             "No way I was going to order meatballs too!
             Meaty dishes are my favourite,
             I guess we have something in common {user}!"
 
             Plus 1 point to endearement score
-            '''
-            )
+            ''')
         endearment += 1
         print(f"Your endearment score is {endearment}")
     elif (meal_choice == 'a' or 'c') and date == 'Francis':
-        print(
-            f'''
+        print(f'''
             You order your meal but {date} orders something
             completely different from you.
             You smile awkwardly at each other and
             look around the room for something to talk about.
             No change to endearment score.
-            '''
-            )
+            ''')
         print(f"Your endearment score is {endearment}")
     elif meal_choice == 'c' and date == 'Henrietta':
-        print(
-            f'''
+        print(f'''
             {date} is beaming.
             "No way I was going to order veggie food too!
             I only eat vegetarian food,
             I guess we have something in common {user}!"
 
             Plus 1 point to endearement score
-            '''
-            )
+            ''')
         endearment += 1
         print(f"Your endearment score is {endearment}")
     elif (meal_choice == 'a' or 'b') and date == 'Henrietta':
-        print(
-            f'''
+        print(f'''
             You order your meal but {date} orders something
             completely different from you.
             You smile awkwardly at each other and
             look around the room for something to talk about.
 
             No change to endearment score.
-            '''
-            )
+            ''')
         print(f"Your endearment score is {endearment}")
     else:
         input_error()
@@ -513,8 +493,7 @@ def beverage_choice():
     triggers instant game over if user chooses Dr.Pepper
     '''
     global endearment
-    print(
-        f'''
+    print(f'''
         The waiter asks if you would like to order a drink.
         {date} says "I would love a drink!"
         ''')
@@ -527,8 +506,8 @@ def beverage_choice():
     drink_choice = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if drink_choice == 'c':
-        print(
-            f'''
+        endearment -= 5
+        print(f'''
             The music suddenly stops.
             People around you gasp audibly.
             The waiter struggles to compose himself.
@@ -548,8 +527,9 @@ def beverage_choice():
             You can barely contain your shame as you sip your drink.
 
             Maybe Dr.Pepper in a fancy italian restaurant was a bad idea.
-            '''
-            )
+
+            Minus 5 points from endearment score
+            ''')
         input(" (press enter to continue) :")
         os.system('clear')
         game_failure()
@@ -982,8 +962,7 @@ def eat_meal():
     elif date == 'Henrietta' and dilemma == 'a' and (meal_choice == 'a'
                                                      or 'b'):
         endearment -= 2
-        print(
-            f'''
+        print(f'''
             {date} is upset
             "That dish has meat in it, why would I eat that?
             You would rather me eat meat than send it back?
@@ -993,12 +972,10 @@ def eat_meal():
             Minus 2 points from endearment score.
 
             Your current endearment score is {endearment}
-            '''
-            )
+            ''')
     elif date == 'Henrietta' and dilemma == 'b':
         endearment -= 1
-        print(
-            f'''
+        print(f'''
             {date} is embarrassed.
             "No its fine, I'll just eat this one, I won't make a fuss."
             You try to encourage her to raise the issue
@@ -1012,12 +989,10 @@ def eat_meal():
             Minus 1 point from endearment score.
 
             Your current endearment score is {endearment}
-            '''
-            )
+            ''')
     elif date == 'Henrietta' and dilemma == 'c':
         endearment += 2
-        print(
-            f'''
+        print(f'''
             You get the waiter's attention, and explain that
             they have brought the wrong order to {date}
             The staff apologise profusely and take it away.
@@ -1030,12 +1005,10 @@ def eat_meal():
             Plus 2 points to endearment score.
 
             Your current endearment score is {endearment}
-            '''
-            )
+            ''')
     elif date == 'Francis' and dilemma == 'a' and meal_choice == 'c':
         endearment -= 1
-        print(
-            f'''
+        print(f'''
             {date} is less than keen.
             "Uh, thanks {user} but I'd rather not eat
             a veggie meal like that, I need a bit of protein."
@@ -1045,12 +1018,10 @@ def eat_meal():
             Minus 1 point from endearment score.
 
             Your endearment score is {endearment}
-            '''
-            )
+            ''')
     elif date == 'Francis' and dilemma == 'a' and (meal_choice == 'a' or 'b'):
         endearment += 2
-        print(
-            f'''
+        print(f'''
             {date} is moved by your generosity.
             "That's actually so sweet of you to offer.
             Especially because you ordered a meaty dish too.
@@ -1060,12 +1031,10 @@ def eat_meal():
             Plus 2 points to endearment score.
 
             Your endearment score is {endearment}
-            '''
-            )
+            ''')
     elif date == 'Francis' and (dilemma == 'b' or 'c'):
         endearment += 1
-        print(
-            f'''
+        print(f'''
             {date} smiles in agreement.
             After a quick exchange with the waiter,
             the erroneous dish is taken away.
@@ -1078,12 +1047,10 @@ def eat_meal():
             Plus 1 point to endearment score.
 
             Your endearment score is {endearment}
-            '''
-            )
+            ''')
     elif date == 'Sarah' and dilemma == 'a':
         endearment -= 2
-        print(
-            f'''
+        print(f'''
             {date} is dumbfounded
             "I'm not going to eat someone elses dinner {user}."
             "I ordered my own meal, so that's what I'm getting!"
@@ -1095,8 +1062,7 @@ def eat_meal():
             Minus 2 points from endearment score.
 
             Your endearment score is {endearment}
-            '''
-            )
+            ''')
     elif date == 'Sarah' and (dilemma == 'b' or 'c'):
         endearment += 1
         print(
@@ -1183,6 +1149,7 @@ def choking():
             '''
             )
     elif choke_response == 'c':
+        endearment -= 5
         print(
             f'''
             Thinking quickly, you grab a pepper shaker and
@@ -1208,6 +1175,8 @@ def choking():
             "Do you want to split the bill or?"
 
             Unfortunately it appears this date is over.
+
+            Minus 5 points from endearment score
             '''
             )
         input(" (press enter to continue) :")
@@ -1247,6 +1216,7 @@ def singing():
     song_choice = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if song_choice == 'a':
+        endearment -= 5
         print(
             f'''
             The musician nods approvingly and begins the song.
@@ -1277,6 +1247,8 @@ def singing():
             You turn back to the table, {date} is gone.
 
             They musn't be a fan of Phil Collins.
+
+            Minus 5 points from endearment score
             '''
             )
         input(" (press enter to continue) :")
@@ -1408,6 +1380,7 @@ def robbery():
         input(" (press enter to continue) :")
         end_check()
     elif robbery_choice == 'b':
+        endearment -= 5
         print(
             f'''
             When the robber demands your wallet, you respond
@@ -1436,6 +1409,8 @@ def robbery():
             {date} stole your heart , the robber stole your wallet.
 
             What a strange way to end the evening...
+
+            Minus 5 points from endearment score
             '''
             )
         input(" (press enter to continue) :")
@@ -1510,6 +1485,7 @@ def rodent():
     rodent_response = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and rodent_response == 'a':
+        endearment -= 5
         print(f'''
             Like a cold hearted assasin , your throw the knife
             directly at the disease carrying creature.
@@ -1522,12 +1498,13 @@ def rodent():
 
             Maybe you're the true rat.
 
+            Minus 5 points from endearment
             ''')
         input(" (press enter to continue) :")
         os.system('clear')
         game_failure()
     elif (date == 'Francis' or 'Sarah') and rodent_response == 'a':
-        endearment += 2
+        endearment -= 2
         print(f'''
             Like a cold hearted assasin , your throw the knife
             directly at the disease carrying creature.
@@ -1561,7 +1538,7 @@ def rodent():
             Your current endearment score is {endearment}
             ''')
     elif rodent_response == 'c':
-        endearment += 3
+        endearment += 4
         print(f'''
             You will not stand for rodents interrupting romance.
             {date} looks on while you throw money on the table.
@@ -1580,7 +1557,7 @@ def rodent():
             Maybe the rat was a blessing after all?
             You walk {date} to the luas stop to bring your date to a close.
 
-            Plus 3 points to endearment score, thanks to rat-bro.
+            Plus 4 points to endearment score, thanks to rat-bro.
 
             Your current endearment score is {endearment}
             ''')
@@ -1753,6 +1730,7 @@ def spontaneous():
     spontaneous_decision = input("Please choose a, b, or c")
     os.system('clear')
     if date == 'Henrietta' and spontaneous_decision == 'a':
+        endearment -= 5
         print(
             f'''
             You beckon the waiter over and order
@@ -1776,6 +1754,8 @@ def spontaneous():
             just one person...
             You stumble out the door , while the waiter
             chases you down asking for payment.
+
+            Minus 5 points from endearment
             ''')
         input(" (press enter to continue) :")
         os.system('clear')
@@ -1812,6 +1792,7 @@ def spontaneous():
             Your current endearment score is {endearment}
             ''')
     elif spontaneous_decision == 'c':
+        endearment -= 5
         print(
             f'''
             You decide it would be a great idea to try and
@@ -1833,6 +1814,8 @@ def spontaneous():
             It was all a simple misunderstanding.
             Maybe you'll give {date} a call? Although they probably
             have your number blocked at this stage.
+
+            Minus 5 points from endearment
             ''')
         input(" (press enter to continue) :")
         os.system('clear')
@@ -2001,8 +1984,7 @@ def bill():
             '''
             )
     elif bill_choice == 'b':
-        print(
-            f'''
+        print(f'''
             You offer to pay the bill yourself.
             {date} tries to decline and insist that
             they should split the bill.
@@ -2017,12 +1999,10 @@ def bill():
             Plus 2 points to endearment score.
             Your current endearment score is {endearment}
 
-            '''
-            )
+            ''')
     elif bill_choice == 'c':
         endearment -= 3
-        print(
-            f'''
+        print(f'''
             You lower your head and look intently at {date}
             "Grab your jacket , get ready to run"
             {date} seems to think you're kidding, they
@@ -2045,8 +2025,7 @@ def bill():
             the date.
             Minus 3 points from endearment score.
             Your current endearment score is {endearment}
-            '''
-            )
+            ''')
     else:
         input_error()
         bill()
@@ -2064,8 +2043,7 @@ def goodbye():
     gain more points
     '''
     global endearment
-    print(
-        f'''
+    print(f'''
         With that , its time to wrap up the date.
         You walk {date} back to the luas stop, you
         both chat about the evening.
@@ -2083,8 +2061,7 @@ def goodbye():
     os.system('clear')
     if goodbye_chance == 'a':
         endearment += 1
-        print(
-            f'''
+        print(f'''
             You put your arm on {date}'s shoulder and
             say with sincerity
             "I'm really glad I met you {date}"
@@ -2100,8 +2077,7 @@ def goodbye():
             I wonder if there will be a second date...
             Endearment score plus 1
 
-            '''
-            )
+            ''')
     elif goodbye_chance == 'b' and endearment >= 8:
         print(f'''
             You put your arm on {date}'s shoulder and
@@ -2123,8 +2099,7 @@ def goodbye():
             ''')
     elif goodbye_chance == 'b' and endearment < 8:
         endearment += 1
-        print(
-            f'''
+        print(f'''
             You put your arm on {date}'s shoulder and
             say with sincerity
             "Kiss me you fool"
@@ -2140,11 +2115,9 @@ def goodbye():
             How well do you think it went?
             I wonder if there will be a second date...
             Endearment score plus 1
-            '''
-            )
+            ''')
     elif goodbye_chance == 'c':
-        print(
-            f'''
+        print(f'''
             You stammer out a final plea
             "Don't get on the luas! Lets not allow
             the date to end here, why don't we go grab a
@@ -2154,8 +2127,7 @@ def goodbye():
         chance = random.randint(0, 6)
         if chance == 3:
             endearment += 3
-            print(
-                f'''
+            print(f'''
                 {date} answers you
                 "Ya know what? Why not? Lets keep the date going
                 a bit longer, how much worse can it get right?"
@@ -2175,8 +2147,7 @@ def goodbye():
             end_check()
         else:
             endearment += 1
-            print(
-                f'''
+            print(f'''
                 {date} answers you
                 "I'm sorry {user} I don't think
                 going for a drink is a good idea right now.
@@ -2191,8 +2162,7 @@ def goodbye():
                 How well do you think it went?
                 I wonder if there will be a second date...
                 Endearment score plus 1
-                '''
-                )
+                ''')
             end_check()
     else:
         input_error()
@@ -2219,8 +2189,7 @@ def game_victory():
     triggers system exit
     '''
     global endearment
-    print(
-        f'''
+    print(f'''
         The date has wrapped up , how do you think it went?
         Your final endearment score was {endearment}...
         Congratulations {user}, you did it!
@@ -2236,8 +2205,7 @@ def game_victory():
         Well done, and thanks for playing!
         GAME OVER
 
-        '''
-        )
+        ''')
     input(" (press enter to clear/exit) :")
     os.system('clear')
     sys.exit()
@@ -2249,8 +2217,7 @@ def game_failure():
     triggers system exit
     '''
     global endearment
-    print(
-        f'''
+    print(f'''
         The date has wrapped up , how do you think it went?
         Your final endearment score was {endearment}...
         Unfortunately you struck out {user},
@@ -2272,8 +2239,7 @@ def game_failure():
         before you can learn to love someone else.
         Well done, and thanks for playing!
         GAME OVER
-        '''
-        )
+        ''')
     input(" (press enter to clear/exit) :")
     os.system('clear')
     sys.exit()
