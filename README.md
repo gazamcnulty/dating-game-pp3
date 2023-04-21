@@ -235,6 +235,8 @@ Beyond this , all of the possible answers do show as correct and yield the corre
 
 
 ## Known bugs and issues
+I encountered a late bug where inputs would not work on safari, despite using escape charactre /n , unfortunately this is a fail for safari validation
+
 As I mentioned in the Testing section, I found an issue with Heroku in the browser, where ‘os.system('clear')’  does not successfully clear all of the text per my commands in the python code. This has since been resolved and no longer occurs.
 Similarly the mac / safari glitch whereby it froze on an input and would not accept 'enter
 This is something I intend to research and resolve in future iterations of this project.
