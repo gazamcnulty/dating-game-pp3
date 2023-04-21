@@ -137,7 +137,7 @@ def date_who():
 
     os.system('clear')
     print(f"You've chosen to go on a date with {date}!")
-    time.sleep(5)
+    time.sleep(3)
     os.system('clear')
 
 
@@ -176,7 +176,7 @@ def date_when():
         You've chosen to go on the date with {date} {date_time}!
         '''
         )
-    time.sleep(5)
+    time.sleep(3)
     os.system('clear')
 
     print(
@@ -1154,23 +1154,20 @@ def choking():
             )
     elif choke_response == 'c':
         endearment -= 5
-        print(
-            f'''
-            Thinking quickly, you grab a pepper shaker and
-            leap into action.
+        print(f'''
+            you grab a pepper shaker and leap into action.
             You skillfully dart over and fire a cloud
             of pepper, right into the choking mans nose.
             A perfectly executed manoevre, the mans nostrils are
             completely covered in pepper.
-            As you stand there trimphantly, you realise that
             everyone else is staring at you in disbelief.
             {date} screams at you
-            "Why the hell did you do that {user}???"
-            With a smug grin, you humbly explain the idea
+            "Why the hell did you do that {user}???"''')
+
+        print('''With a smug grin, you humbly explain the idea
             that pepper will cause the gentleman to sneeze violently.
             {date} is beside themselves.
-            "but the food is stuck in his throat ,
-            not inside his nose you idiot!"
+            "the food is stuck in his throat , not inside his nose!"
             The realisation dawns on you, while the poor man
             continues to choke and gasp while also sneezing repeatedly.
             He collapses to the floor, dead as a doorknob.
@@ -1180,9 +1177,7 @@ def choking():
 
             Unfortunately it appears this date is over.
 
-            Minus 5 points from endearment score
-            '''
-            )
+            Minus 5 points from endearment score''')
         input(" (press enter to continue) :")
         os.system('clear')
         game_failure()
@@ -1211,7 +1206,7 @@ def singing():
         Would you like to make a request?"
         {date} nods excitedly
         "absolutely , {user} what song would you like to hear?"''')
-    time.sleep(5)
+    time.sleep(3)
     print('''What song will you choose?
 
         a) In the air tonight
@@ -1221,8 +1216,7 @@ def singing():
     os.system('clear')
     if song_choice == 'a':
         endearment -= 5
-        print(
-            f'''
+        print('''
             The musician nods approvingly and begins the song.
             As Phil Collins' classic power balad
             echoes between the walls of the restaurant,
@@ -1236,9 +1230,10 @@ def singing():
             you are on your feat air drumming along.
             You and the musician belt out the chorus
             " I can feeeeeel it, cooomin in the air tonight....
-            hold on! "
-
-            This is the most intense musical experience you have ever had.
+            hold on! "''')
+        input(" (press enter to continue) :")
+        os.system('clear')
+        print('''This is the most intense musical experience you have ever had.
             You've never enjoyed a song this much before.
             As the final notes play out, you drop to your knees
             and scream a primal roar.
@@ -1253,8 +1248,7 @@ def singing():
             They musn't be a fan of Phil Collins.
 
             Minus 5 points from endearment score
-            '''
-            )
+            ''')
         input(" (press enter to continue) :")
         os.system('clear')
         game_failure()

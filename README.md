@@ -214,8 +214,10 @@ Then I created a Config Var called PORT set to 8000
 **errors and validation :**
 The Code Institute CI Python Linter was used to validate the python code from PEP8 standard.
 It initially found many errors, mainly trailing white lines or too much blank space. These were corrected and then after testing again , all 3 .py files returned 'All clear, no errors found.
+I consider this a pass in validation.
 
 The Heroku app ran the dating game in Chrome, Edge, Firefox, Safari successfully, in windows and mac. 
+I consider this a pass for browsers.
 
 I encountered an issue with Heroku in the browser, where ‘os.system('clear')’  does not successfully clear all of the text per my commands in the python code. It cleared all text as intended when testing it in the terminal on GitPod but for some reason the heroku app kept the text content from the character profiles. Although it would move them above the screen where the user can’t see, the scroll tab on the right enabled the user to scroll back up and see the profile info was still there.
 
