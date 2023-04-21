@@ -98,104 +98,104 @@ match_3 = {
 # Here I will store the function to read and display profiles
 
 
-def profile_function():
-    print(
-        '''
-        The dating world is a tempestuous place,
-        but take heart! You're on the hunt for love.
-        There are 3 potential star crossed lovers on the horizon.
-        You've matched with all three, so lets get to know them!
-        ''')
 
-    input("Are you ready to meet the first match? (press enter to continue: )")
-    os.system('clear')
-    print("Our first match is Henrietta!")
-    input("(press enter to continue: )")
-    os.system('clear')
-    print(
-        f'''
-        The first match is {match_1["date_name"]}.
+print(
+    '''
+    The dating world is a tempestuous place,
+    but take heart! You're on the hunt for love.
+    There are 3 potential star crossed lovers on the horizon.
+    You've matched with all three, so lets get to know them!
+    ''')
 
-        {match_1["date_name"]} is a {match_1["vocation"]}
+input("Are you ready to meet the first match? (press enter to continue: )")
+os.system('clear')
+print("Our first match is Henrietta!")
+input("(press enter to continue: )")
+os.system('clear')
+print(
+    f'''
+    The first match is {match_1["date_name"]}.
 
-        {match_1["date_name"]} is {match_1["age"]} years old.
+    {match_1["date_name"]} is a {match_1["vocation"]}
 
-        {match_1["date_name"]}'s personality can be described
-        as follows - {match_1["personality"]}
+    {match_1["date_name"]} is {match_1["age"]} years old.
 
-        {match_1["date_name"]}'s likes can be
-        described as follows -{match_1["likes"]}
+    {match_1["date_name"]}'s personality can be described
+    as follows - {match_1["personality"]}
 
-        {match_1["date_name"]}'s favourite food type
-        is {match_1["food_preference"]}
+    {match_1["date_name"]}'s likes can be
+    described as follows -{match_1["likes"]}
 
-        {match_1["date_name"]}'s favourite drink type
-        is {match_1["drink_preference"]}
+    {match_1["date_name"]}'s favourite food type
+    is {match_1["food_preference"]}
 
-        {match_1["date_name"]}'s favourite thing to have
-        after a meal is {match_1["dessert_preference"]}
-        '''
-        )
+    {match_1["date_name"]}'s favourite drink type
+    is {match_1["drink_preference"]}
 
-    input("Meet your second match? (press enter to continue: )")
-    os.system('clear')
-    print(
-        f'''
-        The second match is {match_2["date_name"]}.
+    {match_1["date_name"]}'s favourite thing to have
+    after a meal is {match_1["dessert_preference"]}
+    '''
+    )
 
-        {match_2["date_name"]} is a {match_2["vocation"]}
+input("Meet your second match? (press enter to continue: )")
+os.system('clear')
+print(
+    f'''
+    The second match is {match_2["date_name"]}.
 
-        {match_2["date_name"]} is {match_2["age"]} years old.
+    {match_2["date_name"]} is a {match_2["vocation"]}
 
-        {match_2["date_name"]}'s personality can be described
-        as follows - {match_2["personality"]}
+    {match_2["date_name"]} is {match_2["age"]} years old.
 
-        {match_2["date_name"]}'s likes can be described
-        as follows -{match_2["likes"]}
+    {match_2["date_name"]}'s personality can be described
+    as follows - {match_2["personality"]}
 
-        {match_2["date_name"]}'s favourite
-        food type is {match_2["food_preference"]}
+    {match_2["date_name"]}'s likes can be described
+    as follows -{match_2["likes"]}
 
-        {match_2["date_name"]}'s favourite drink type is
+    {match_2["date_name"]}'s favourite
+    food type is {match_2["food_preference"]}
 
-        {match_2["drink_preference"]}
+    {match_2["date_name"]}'s favourite drink type is
 
-        {match_2["date_name"]}'s favourite thing to have
-        after a meal is {match_2["dessert_preference"]}
-        '''
-        )
-    input("Meet your third match? (press enter to continue: )")
-    os.system('clear')
+    {match_2["drink_preference"]}
 
-    print(
-        f'''
-        The third match is {match_3["date_name"]}.
+    {match_2["date_name"]}'s favourite thing to have
+    after a meal is {match_2["dessert_preference"]}
+    '''
+    )
+input("Meet your third match? (press enter to continue: )")
+os.system('clear')
 
-        {match_3["date_name"]} is a {match_3["vocation"]}
+print(
+    f'''
+    The third match is {match_3["date_name"]}.
 
-        {match_3["date_name"]} is {match_3["age"]} years old.
+    {match_3["date_name"]} is a {match_3["vocation"]}
 
-        {match_3["date_name"]}'s personality can be described
-        as follows - {match_2["personality"]}
+    {match_3["date_name"]} is {match_3["age"]} years old.
 
-        {match_3["date_name"]}'s likes can be described
-        as follows -{match_3["likes"]}
+    {match_3["date_name"]}'s personality can be described
+    as follows - {match_2["personality"]}
 
-        {match_3["date_name"]}'s favourite
-        food type is {match_3["food_preference"]}
+    {match_3["date_name"]}'s likes can be described
+    as follows -{match_3["likes"]}
 
-        {match_3["date_name"]}'s favourite
-        drink type is {match_3["drink_preference"]}
+    {match_3["date_name"]}'s favourite
+    food type is {match_3["food_preference"]}
 
-        {match_3["date_name"]}'s favourite thing to have
-        after a meal is {match_3["dessert_preference"]}
-        '''
-        )
-    input(" (press enter to continue) :")
-    os.system('clear')
+    {match_3["date_name"]}'s favourite
+    drink type is {match_3["drink_preference"]}
 
-
-profile_function()
+    {match_3["date_name"]}'s favourite thing to have
+    after a meal is {match_3["dessert_preference"]}
+    '''
+    )
+input(" (press enter to continue) :")
+match_1 = None
+match_2 = None
+match_3 = None
+os.system('clear')
 
 
 functions.date_who()
