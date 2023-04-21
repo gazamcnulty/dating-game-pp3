@@ -517,14 +517,13 @@ def beverage_choice():
         f'''
         The waiter asks if you would like to order a drink.
         {date} says "I would love a drink!"
-
+        ''')
+    time.sleep(5)
+    print('''
         What will you order?
 
         a) Beer b) Wine c) Dr.Pepper
-        '''
-        )
-    time.sleep(5)
-
+        ''')
     drink_choice = input("Please choose a, b, or c :").lower().strip()
     os.system('clear')
     if drink_choice == 'c':
@@ -635,16 +634,15 @@ def observation_chat():
         in awkward silence for a moment.
         Searching for something to say
         you look more closely at your date
-        and ask about something you notice.
-
-        What will you ask them?
+        and ask about something you notice.''')
+    time.sleep(5)
+    print('''What will you ask them?
 
         a)You look like you’re in great shape, do you exercise a lot?
         b)I like your outfit, do you have an interest in fashion?
         c)Has your nose ever been broken?
         '''
         )
-    time.sleep(5)
 
     observation = input("please choose a, b, or c :").lower().strip()
     os.system('clear')
@@ -814,9 +812,10 @@ def talk_about_me():
         As the conversation continues, {date} asks about you.
         “But what about you {user},
         tell me something about yourself.
-        How would you describe yourself?”
+        How would you describe yourself?”''')
 
-        What should you say?
+    time.sleep(5)
+    print('''What should you say?
 
         a) "I’m mad craic,
         I love having a laugh with people and making memories"
@@ -824,8 +823,7 @@ def talk_about_me():
         I’m a good friend once you get to know me"
         c) "I’m confident, I have a drive to succeed,
         both in work and in relationships"
-        '''
-        )
+        ''')
 
     global endearment
     personality = input("please choose a, b, or c").lower().strip()
@@ -953,17 +951,17 @@ def eat_meal():
         to tuck into the food, until - disaster!
         It seems the dish on front of {date} is not what they ordered.
         They appear to be a bit confused at first ,
-        then disappointed when they realise what has happened.
+        then disappointed when they realise what has happened.''')
 
-        You both lock eyes. What do you say ?
+    time.sleep(5)
+    print('''You both lock eyes. What do you say ?
 
         a)“Hey {date} lets swap meals ,
         my dish looks really good I bet you’ll like it!”
         b)“You should let them know they’ve made a mistake,
         they need to bring you the correct meal!”
         c)“Leave this to me , I’ll get the waiter so we can sort this out”
-        '''
-        )
+        ''')
     dilemma = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and dilemma == 'a' and meal_choice == 'c':
@@ -1139,17 +1137,15 @@ def choking():
         A gentleman at a nearby table appears to be choking!
         He jumps up and starts gesturing histrionically,
         while his companions shout for someone to help.
-        "We need to do something!" says {date}
+        "We need to do something!" says {date}''')
 
-        What will you do?
+    time.sleep(5)
+    print('''What will you do?
 
         a) Attempt the heimlich manoevre on the choking man.
         b) Run outside and shout for a doctor
         c) Throw some pepper under his nostrils to make him sneeze
-
-        '''
-        )
-
+        ''')
     choke_response = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if choke_response == 'a':
@@ -1241,15 +1237,13 @@ def singing():
         "The two of you seem to be having a lovely evening.
         Would you like to make a request?"
         {date} nods excitedly
-        "absolutely , {user} what sond would you like to hear?"
-
-        What song will you choose?
+        "absolutely , {user} what sond would you like to hear?"''')
+    time.sleep(5)
+    print('''What song will you choose?
 
         a) In the air tonight
         b) The book of love
-        c) Master of Puppets
-        '''
-        )
+        c) Master of Puppets''')
     song_choice = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if song_choice == 'a':
@@ -1373,9 +1367,9 @@ def robbery():
         He bellows "THIS IS A ROBBERY!"
         Nearby patrons scream and panic,
         while you and {date} scramble under the table.
-        This is a dangerous situation, {date} is scared.
-
-        What should you do?
+        This is a dangerous situation, {date} is scared.''')
+    time.sleep(5)
+    print('''What should you do?
 
         a) Don't take any action , let the robber
         do what he wants so you can both stay safe.
@@ -1383,8 +1377,7 @@ def robbery():
         Challenge the scoundrel in single combat.
         c) Look more closely at the robber,
         for some kind of detail or info that can help.
-        '''
-        )
+        ''')
     robbery_choice = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if robbery_choice == 'a':
@@ -1506,20 +1499,18 @@ def rodent():
         a patron nearby shrieks with terror.
         "It's a rat!"
         Sure enough, you see the rodent sprinting across the floor.
-        {date} is disgusted and the waiter is mortified.
-
-        What should you do?
+        {date} is disgusted and the waiter is mortified.''')
+    time.sleep(5)
+    print('''What should you do?
 
         a) Throw your knife at the rat
         b) Throw your complaint at the manager
         c) Throw your money on the table and leave
-        '''
-        )
+        ''')
     rodent_response = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if date == 'Henrietta' and rodent_response == 'a':
-        print(
-            f'''
+        print(f'''
             Like a cold hearted assasin , your throw the knife
             directly at the disease carrying creature.
             {date} emits a blood curdling scream.
@@ -1531,15 +1522,13 @@ def rodent():
 
             Maybe you're the true rat.
 
-            '''
-            )
+            ''')
         input(" (press enter to continue) :")
         os.system('clear')
         game_failure()
     elif (date == 'Francis' or 'Sarah') and rodent_response == 'a':
         endearment += 2
-        print(
-            f'''
+        print(f'''
             Like a cold hearted assasin , your throw the knife
             directly at the disease carrying creature.
             Unfortunately you overestimated and the throw misses,
@@ -1556,12 +1545,10 @@ def rodent():
             Minus 2 points from endearment score.
 
             Your current endearment score is {endearment}
-            '''
-            )
+            ''')
     elif rodent_response == 'b':
         endearment += 1
-        print(
-            f'''
+        print(f'''
             You will not stand for rodents interrupting romance.
             {date} looks on while you march up to the manager
             and deliver an emphatic complaint about the situation.
@@ -1572,12 +1559,10 @@ def rodent():
             Plus 1 point to endearment score.
 
             Your current endearment score is {endearment}
-            '''
-            )
+            ''')
     elif rodent_response == 'c':
         endearment += 3
-        print(
-            f'''
+        print(f'''
             You will not stand for rodents interrupting romance.
             {date} looks on while you throw money on the table.
             "C'mon, we're leaving"
@@ -1598,9 +1583,9 @@ def rodent():
             Plus 3 points to endearment score, thanks to rat-bro.
 
             Your current endearment score is {endearment}
-            '''
-            )
+            ''')
         input(" (press enter to continue) :")
+        os.system('clear')
         goodbye()
     else:
         input_error()
@@ -1616,20 +1601,18 @@ def argument():
     points lost for wrong choice
     '''
     global endearment
-    print(
-        f'''
+    print(f'''
         Just as you're summoning up the courage to tell
         {date} about the size of your Pokémon card collection,
         a nearby table erupts in shouts.
-        It seems like the other couple are having a fierce argument!
-
-        What should you do?
+        It seems like the other couple are having a fierce argument!''')
+    time.sleep(5)
+    print('''What should you do?
 
         a) Mind your own business
         b) Offer to mediate their discussion
         c) Tell them to shut up
-        '''
-        )
+        ''')
     argument_action = input("Please choose a, b, or c").lower().strip()
     os.system('clear')
     if argument_action == 'a':
@@ -1734,7 +1717,7 @@ def random_encounter():
 
         '''
         )
-    chance = random.randint(0, 6)
+    chance = random.randint(1, 5)
     if chance == 1:
         choking()
     elif chance == 2:
@@ -1760,13 +1743,13 @@ def spontaneous():
         {date} are almost finished your food.
         you think to yourself, "Hmm I wonder if this date is going well?"
         "in any case, I can’t coast on good luck. I need
-        to keep the good vibes going. Maybe I can do something else … "
-        What will you do ?
+        to keep the good vibes going. Maybe I can do something else … "''')
+    time.sleep(5)
+    print('''What will you do ?
         a) Call the waiter over and order an expensive bottle of champagne
         b) Pierce a chunk of food, and guide the fork towards your date’s mouth
         c) Lean over to your date and whisper in their ear “ I have a bomb”
-        '''
-        )
+        ''')
     spontaneous_decision = input("Please choose a, b, or c")
     os.system('clear')
     if date == 'Henrietta' and spontaneous_decision == 'a':
@@ -1872,8 +1855,9 @@ def dessert():
         As you finish up your food, you and {date} smile,
         and agree that the food was worth the wait.
         The waiter comes to take away the food and
-        asks if you would like anything for desert.
-        What will you do?
+        asks if you would like anything for desert.''')
+    time.sleep(5)
+    print('''What will you do?
         a) Order ice cream
         b) Order chocolate cake
         c) Order coffee
@@ -1899,7 +1883,7 @@ def dessert():
         print(
             f'''
             {date} doesn't say anything , but they seem dissappointed.
-            Maybe your ordered the wrong thing?
+            Maybe you ordered the wrong thing?
             At least the date is nearly over...
             Minus 1 point from endearment score.
             Your current endearment score is {endearment}
@@ -1979,13 +1963,13 @@ def bill():
         equal distance between you and {date}.
         You both smile and open your mouths to speak at the same time,
         then laugh. {date} lets you go first,
-        “I’m sorry what were you going to say?”
-        What should you say?
+        “I’m sorry what were you going to say?”''')
+    time.sleep(5)
+    print('''What should you say?
         a) “Shall we split the bill  50 / 50 ?”
         b) “Let me pay for the meal, I insist”
         c) “Grab your jacket, get ready to run”
-        '''
-        )
+        ''')
     bill_choice = input("Please choose a, b, or c")
     os.system('clear')
     if date == 'Francis' and bill_choice == 'a':
@@ -2088,13 +2072,13 @@ def goodbye():
         It's hard to tell how much {date} likes you,
         but you'll never know unless you take a chance.
         The luas display shows it will be here in
-        two minues, its now or never!
-        What should you say?
+        two minues, its now or never!''')
+    time.sleep(5)
+    print('''What should you say?
         a) "I'm really glad I met you"
         b) "Kiss me you fool"
         c) "Lets not end the date, cmon lets grab a drink!"
-        '''
-        )
+        ''')
     goodbye_chance = input("Please choose a, b, or c")
     os.system('clear')
     if goodbye_chance == 'a':
@@ -2188,6 +2172,7 @@ def goodbye():
                 You walk {date} to the luas stop to bring your date to a close.
                 Plus 3 points to endearment score.
                 ''')
+            end_check()
         else:
             endearment += 1
             print(
@@ -2208,6 +2193,7 @@ def goodbye():
                 Endearment score plus 1
                 '''
                 )
+            end_check()
     else:
         input_error()
         goodbye()
