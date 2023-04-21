@@ -8,12 +8,13 @@ match_1 = {
     "date_name": "Henrietta",
     "vocation": "college student at Trinity College",
     "age": "25",
-    "personality": '''She doesn’t enjoy sports or dancing.
+    "personality":
+    '''She doesn’t enjoy sports or dancing.
     She prefers long walks with a good podcast.
     She also likes wearing cool clothes and following fashion.
     She considers herself introverted however she
     has a few close friends who mean a lot to her.''',
-    "likes": '''
+    "likes":'''
     She doesn’t like people who are too silly
     She likes people who are honest with her.''',
     "food_preference": "vegetarian",
@@ -26,10 +27,12 @@ match_2 = {
     "date_name": "Francis",
     "vocation": " barman who works in a busy pub in Dublin city",
     "age": "29",
-    "personality": '''He loves to work out at the gym every day.
+    "personality":
+    '''He loves to work out at the gym every day.
     He’s not really into reading but likes videogames.
     Francis considers himself an extrovert.''',
-    "likes": '''He likes to spend his free time hanging out with his friends.
+    "likes":
+    '''He likes to spend his free time hanging out with his friends.
     Francis likes getting to know people, he's always up for a laugh.
     He enjoys watching some sporting events like UFC MMA and WWE.''',
     "food_preference": "anything with meat / protein",
@@ -42,12 +45,14 @@ match_3 = {
     "date_name": "Sarah",
     "vocation": "marketing consultant who works in Dublin.",
     "age": "34",
-    "personality": '''She likes to go cycling on the weekends
+    "personality":
+    '''She likes to go cycling on the weekends
     Sarah has a vast collection of films on dvd.
     She loves to go the Lighthouse Cinema and IFI Cinema.
-    Her job is time consuming and demanding, she is friendly with coworkers.
+    Her job is time consuming and demanding.
     She doesn’t have much time for romance or catching up with friends.''',
-    "likes": '''She isn’t into a lot of sports but will watch
+    "likes":
+    '''She isn’t into a lot of sports but will watch
     the Rugby when its on.
     Sarah likes people who aren’t needy.
     They need to respect her autonomy and independence.
@@ -78,6 +83,7 @@ def profile_function():
         {match_1["date_name"]} is {match_1["age"]} years old.
 
         personality: {match_1["personality"]}
+
         likes: {match_1["likes"]}
 
         favourite food type is {match_1["food_preference"]}
@@ -95,6 +101,7 @@ def profile_function():
         {match_2["date_name"]} is {match_2["age"]} years old.
 
         personality: {match_2["personality"]}
+
         likes : {match_2["likes"]}
 
         favourite food type is {match_2["food_preference"]}
@@ -111,7 +118,8 @@ def profile_function():
         {match_3["date_name"]} is a {match_3["vocation"]}
         {match_3["date_name"]} is {match_3["age"]} years old.
 
-        personality: {match_2["personality"]}
+        personality: {match_3["personality"]}
+
         likes: {match_3["likes"]}
 
         favourite food type is {match_3["food_preference"]}
