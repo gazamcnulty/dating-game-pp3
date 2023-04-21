@@ -1,7 +1,5 @@
-import time
 import os
-import sys
-import random
+
 
 
 # Here I will store character profiles in dictionaries.
@@ -94,16 +92,11 @@ def profile_function():
 
     input("Are you ready to meet the first match? (press enter to continue: )")
     os.system('clear')
-    os.system('cls')
-    input("(press enter to continue: )")
-    os.system('clear')
-    os.system('cls')
     print(
         f'''
         The first match is {match_1["date_name"]}.
 
         {match_1["date_name"]} is a {match_1["vocation"]}
-
         {match_1["date_name"]} is {match_1["age"]} years old.
 
         {match_1["date_name"]}'s personality can be described
@@ -114,10 +107,8 @@ def profile_function():
 
         {match_1["date_name"]}'s favourite food type
         is {match_1["food_preference"]}
-
         {match_1["date_name"]}'s favourite drink type
         is {match_1["drink_preference"]}
-
         {match_1["date_name"]}'s favourite thing to have
         after a meal is {match_1["dessert_preference"]}
         '''
@@ -125,13 +116,10 @@ def profile_function():
 
     input("Meet your second match? (press enter to continue: )")
     os.system('clear')
-    os.system('cls')
     print(
         f'''
         The second match is {match_2["date_name"]}.
-
         {match_2["date_name"]} is a {match_2["vocation"]}
-
         {match_2["date_name"]} is {match_2["age"]} years old.
 
         {match_2["date_name"]}'s personality can be described
@@ -142,24 +130,18 @@ def profile_function():
 
         {match_2["date_name"]}'s favourite
         food type is {match_2["food_preference"]}
-
         {match_2["date_name"]}'s favourite drink type is
-
         {match_2["drink_preference"]}
-
         {match_2["date_name"]}'s favourite thing to have
         after a meal is {match_2["dessert_preference"]}
         '''
         )
     input("Meet your third match? (press enter to continue: )")
     os.system('clear')
-    os.system('cls')
     print(
         f'''
         The third match is {match_3["date_name"]}.
-
         {match_3["date_name"]} is a {match_3["vocation"]}
-
         {match_3["date_name"]} is {match_3["age"]} years old.
 
         {match_3["date_name"]}'s personality can be described
@@ -170,14 +152,11 @@ def profile_function():
 
         {match_3["date_name"]}'s favourite
         food type is {match_3["food_preference"]}
-
         {match_3["date_name"]}'s favourite
         drink type is {match_3["drink_preference"]}
-
         {match_3["date_name"]}'s favourite thing to have
         after a meal is {match_3["dessert_preference"]}
         '''
         )
     input(" (press enter to continue) :")
     os.system('clear')
-    os.system('cls')
