@@ -1,6 +1,5 @@
+# imports
 import os
-
-
 
 # Here I will store character profiles in dictionaries.
 

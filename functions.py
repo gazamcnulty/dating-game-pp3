@@ -1,6 +1,6 @@
-'''
-Imports
-'''
+
+# Imports
+
 import time
 import os
 import sys
@@ -11,10 +11,10 @@ date_time = None
 meal_choice = None
 
 
-"""
-below are functions to be imported into
-run.py file
-"""
+
+# below are functions to be imported into
+# run.py file
+
 
 
 def input_error():
@@ -1407,7 +1407,7 @@ def robbery():
             )
         input(" (press enter to continue) :")
         os.system('clear')
-        game_failure()
+        reflection()
     elif robbery_choice == 'c':
         endearment += 1
         print(
